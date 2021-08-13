@@ -1,11 +1,12 @@
 module git.fd.io/govpp.git
 
-go 1.13
+go 1.16
 
 require (
 	github.com/bennyscetbun/jsongo v1.1.0
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/ftrvxmtrx/fd v0.0.0-20150925145434-c6d800382fff
+	github.com/hashicorp/go-version v1.5.0
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/lunixbochs/struc v0.0.0-20200521075829-a4cb8d33dbbe
 	github.com/onsi/gomega v1.19.0

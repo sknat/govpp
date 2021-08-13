@@ -33,6 +33,7 @@ type Options struct {
 	ImportPrefix     string // prefix for import paths
 	NoVersionInfo    bool   // disables generating version info
 	NoSourcePathInfo bool   // disables the 'source: /path' comment
+	GenerateWrappers bool   // enables wrappers generation
 }
 
 func Run(apiDir string, filesToGenerate []string, opts Options, f func(*Generator) error) {

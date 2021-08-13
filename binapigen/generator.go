@@ -30,6 +30,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/hashicorp/go-version"
 	"github.com/sirupsen/logrus"
 
 	"git.fd.io/govpp.git/binapigen/vppapi"
@@ -158,7 +159,71 @@ func (g *Generator) Generate() error {
 			return fmt.Errorf("writing source package %s failed: %v", genfile.filename, err)
 		}
 	}
+
+	if g.opts.GenerateWrappers {
+		g.GenerateWrappers()
+	}
+
 	return nil
+}
+
+func (g *Generator) GenerateWrappers() error {
+	generated := 0
+	for _, tmpl := range wrapperTemplateDB {
+		if g.requirementsSatisfied(tmpl) {
+			generated++
+			err := g.generateWrapper(tmpl)
+			if err != nil {
+				return fmt.Errorf("generating wrapper %s failed: %v", tmpl.filename, err)
+			}
+		}
+	}
+	logrus.Infof("Generated %d wrappers", generated)
+	return nil
+}
+
+func (g *Generator) generateWrapper(t templateDef) error {
+	args := WrapperRenderArgs{
+		PackageName: filepath.Base(g.opts.ImportPrefix),
+		ImportPath:  g.opts.ImportPrefix,
+	}
+	outputFilename := filepath.Join(g.opts.OutputDir, t.filename)
+	file, err := os.Create(outputFilename)
+	if err != nil {
+		return fmt.Errorf("error opening wrapper file for writing: %v", err)
+	}
+	defer file.Close()
+
+	return renderTemplate(t.templateName, args, file)
+}
+
+func (g *Generator) requirementsSatisfied(t templateDef) bool {
+	for _, dep := range t.deps {
+		// Check if required API is generated and if its version matches the constraints
+		if file, ok := g.FilesByName[dep.apiName]; ok {
+			if !file.Generate {
+				return false
+			}
+			if file.Version == "" {
+				return false
+			}
+			v, err := version.NewVersion(file.Version)
+			if err != nil {
+				logrus.Debugf("Could not parse %s api version: %s", dep.apiName, file.Version)
+			}
+			constraint, err := version.NewConstraint(dep.versionConstraints)
+			if err != nil {
+				logrus.Debugf("Could not parse template %s dependency version constraint: %s", t.filename, dep.versionConstraints)
+			}
+			if !constraint.Check(v) {
+				return false
+			}
+		} else {
+			logrus.Debugf("Template %s dependency %s seems non-existent", t.filename, dep.apiName)
+			return false
+		}
+	}
+	return true
 }
 
 type GenFile struct {

@@ -64,6 +64,7 @@ func main() {
 		debugLog         = flag.Bool("debug", false, "Enable verbose logging.")
 		noVersionInfo    = flag.Bool("no-version-info", false, "Disable version info in generated files.")
 		noSourcePathInfo = flag.Bool("no-source-path-info", false, "Disable source path info in generated files.")
+		withWrappers     = flag.Bool("with-wrappers", false, "Enable high-level wrappers generation.")
 	)
 	flag.Parse()
 
@@ -91,6 +92,7 @@ func main() {
 		OutputDir:        *theOutputDir,
 		NoVersionInfo:    *noVersionInfo,
 		NoSourcePathInfo: *noSourcePathInfo,
+		GenerateWrappers: *withWrappers,
 	}
 	if opts.OutputDir == "binapi" {
 		if wd, _ := os.Getwd(); filepath.Base(wd) == "binapi" {
