@@ -42,6 +42,9 @@ func (*OddbufEnableDisable) GetCrcString() string   { return "3865946c" }
 func (*OddbufEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *OddbufEnableDisable) GetRetVal() error {
+	return nil
+}
 
 func (m *OddbufEnableDisable) Size() (size int) {
 	if m == nil {
@@ -78,6 +81,9 @@ func (*OddbufEnableDisableReply) GetMessageName() string { return "oddbuf_enable
 func (*OddbufEnableDisableReply) GetCrcString() string   { return "e8d4e804" }
 func (*OddbufEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *OddbufEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *OddbufEnableDisableReply) Size() (size int) {

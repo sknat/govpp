@@ -897,6 +897,9 @@ func (*GtpuAddDelTunnel) GetCrcString() string   { return "9a26a51c" }
 func (*GtpuAddDelTunnel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GtpuAddDelTunnel) GetRetVal() error {
+	return nil
+}
 
 func (m *GtpuAddDelTunnel) Size() (size int) {
 	if m == nil {
@@ -955,6 +958,9 @@ func (*GtpuAddDelTunnelReply) GetCrcString() string   { return "5383d31f" }
 func (*GtpuAddDelTunnelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GtpuAddDelTunnelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GtpuAddDelTunnelReply) Size() (size int) {
 	if m == nil {
@@ -996,6 +1002,9 @@ func (*GtpuTunnelDetails) GetMessageName() string { return "gtpu_tunnel_details"
 func (*GtpuTunnelDetails) GetCrcString() string   { return "a4d81a09" }
 func (*GtpuTunnelDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GtpuTunnelDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GtpuTunnelDetails) Size() (size int) {
@@ -1054,6 +1063,9 @@ func (*GtpuTunnelDump) GetCrcString() string   { return "f9e6675e" }
 func (*GtpuTunnelDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GtpuTunnelDump) GetRetVal() error {
+	return nil
+}
 
 func (m *GtpuTunnelDump) Size() (size int) {
 	if m == nil {
@@ -1088,6 +1100,9 @@ func (*SwInterfaceSetGtpuBypass) GetMessageName() string { return "sw_interface_
 func (*SwInterfaceSetGtpuBypass) GetCrcString() string   { return "65247409" }
 func (*SwInterfaceSetGtpuBypass) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetGtpuBypass) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetGtpuBypass) Size() (size int) {
@@ -1129,6 +1144,9 @@ func (*SwInterfaceSetGtpuBypassReply) GetMessageName() string {
 func (*SwInterfaceSetGtpuBypassReply) GetCrcString() string { return "e8d4e804" }
 func (*SwInterfaceSetGtpuBypassReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceSetGtpuBypassReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SwInterfaceSetGtpuBypassReply) Size() (size int) {

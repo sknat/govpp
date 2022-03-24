@@ -65,6 +65,9 @@ func (*SrLocalsidAddDel) GetCrcString() string   { return "5a36c324" }
 func (*SrLocalsidAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SrLocalsidAddDel) GetRetVal() error {
+	return nil
+}
 
 func (m *SrLocalsidAddDel) Size() (size int) {
 	if m == nil {
@@ -122,6 +125,9 @@ func (*SrLocalsidAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*SrLocalsidAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SrLocalsidAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SrLocalsidAddDelReply) Size() (size int) {
 	if m == nil {
@@ -160,6 +166,9 @@ func (*SrLocalsidsDetails) GetMessageName() string { return "sr_localsids_detail
 func (*SrLocalsidsDetails) GetCrcString() string   { return "2e9221b9" }
 func (*SrLocalsidsDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SrLocalsidsDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SrLocalsidsDetails) Size() (size int) {
@@ -213,6 +222,9 @@ func (*SrLocalsidsDump) GetCrcString() string   { return "51077d14" }
 func (*SrLocalsidsDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SrLocalsidsDump) GetRetVal() error {
+	return nil
+}
 
 func (m *SrLocalsidsDump) Size() (size int) {
 	if m == nil {
@@ -246,6 +258,9 @@ func (*SrPoliciesDetails) GetMessageName() string { return "sr_policies_details"
 func (*SrPoliciesDetails) GetCrcString() string   { return "db6ff2a1" }
 func (*SrPoliciesDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SrPoliciesDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SrPoliciesDetails) Size() (size int) {
@@ -321,6 +336,9 @@ func (*SrPoliciesDump) GetCrcString() string   { return "51077d14" }
 func (*SrPoliciesDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SrPoliciesDump) GetRetVal() error {
+	return nil
+}
 
 func (m *SrPoliciesDump) Size() (size int) {
 	if m == nil {
@@ -357,6 +375,9 @@ func (*SrPoliciesWithSlIndexDetails) GetMessageName() string {
 func (*SrPoliciesWithSlIndexDetails) GetCrcString() string { return "ca2e9bc8" }
 func (*SrPoliciesWithSlIndexDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SrPoliciesWithSlIndexDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SrPoliciesWithSlIndexDetails) Size() (size int) {
@@ -436,6 +457,9 @@ func (*SrPoliciesWithSlIndexDump) GetCrcString() string   { return "51077d14" }
 func (*SrPoliciesWithSlIndexDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SrPoliciesWithSlIndexDump) GetRetVal() error {
+	return nil
+}
 
 func (m *SrPoliciesWithSlIndexDump) Size() (size int) {
 	if m == nil {
@@ -469,6 +493,9 @@ func (*SrPolicyAdd) GetMessageName() string { return "sr_policy_add" }
 func (*SrPolicyAdd) GetCrcString() string   { return "44ac92e8" }
 func (*SrPolicyAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SrPolicyAdd) GetRetVal() error {
+	return nil
 }
 
 func (m *SrPolicyAdd) Size() (size int) {
@@ -530,6 +557,9 @@ func (*SrPolicyAddReply) GetCrcString() string   { return "e8d4e804" }
 func (*SrPolicyAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SrPolicyAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SrPolicyAddReply) Size() (size int) {
 	if m == nil {
@@ -563,6 +593,9 @@ func (*SrPolicyDel) GetMessageName() string { return "sr_policy_del" }
 func (*SrPolicyDel) GetCrcString() string   { return "cb4d48d5" }
 func (*SrPolicyDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SrPolicyDel) GetRetVal() error {
+	return nil
 }
 
 func (m *SrPolicyDel) Size() (size int) {
@@ -599,6 +632,9 @@ func (*SrPolicyDelReply) GetMessageName() string { return "sr_policy_del_reply" 
 func (*SrPolicyDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*SrPolicyDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SrPolicyDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SrPolicyDelReply) Size() (size int) {
@@ -638,6 +674,9 @@ func (*SrPolicyMod) GetMessageName() string { return "sr_policy_mod" }
 func (*SrPolicyMod) GetCrcString() string   { return "b97bb56e" }
 func (*SrPolicyMod) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SrPolicyMod) GetRetVal() error {
+	return nil
 }
 
 func (m *SrPolicyMod) Size() (size int) {
@@ -702,6 +741,9 @@ func (*SrPolicyModReply) GetCrcString() string   { return "e8d4e804" }
 func (*SrPolicyModReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SrPolicyModReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SrPolicyModReply) Size() (size int) {
 	if m == nil {
@@ -734,6 +776,9 @@ func (*SrSetEncapHopLimit) GetMessageName() string { return "sr_set_encap_hop_li
 func (*SrSetEncapHopLimit) GetCrcString() string   { return "aa75d7d0" }
 func (*SrSetEncapHopLimit) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SrSetEncapHopLimit) GetRetVal() error {
+	return nil
 }
 
 func (m *SrSetEncapHopLimit) Size() (size int) {
@@ -768,6 +813,9 @@ func (*SrSetEncapHopLimitReply) GetCrcString() string   { return "e8d4e804" }
 func (*SrSetEncapHopLimitReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SrSetEncapHopLimitReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SrSetEncapHopLimitReply) Size() (size int) {
 	if m == nil {
@@ -801,6 +849,9 @@ func (*SrSetEncapSource) GetCrcString() string   { return "d3bad5e1" }
 func (*SrSetEncapSource) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SrSetEncapSource) GetRetVal() error {
+	return nil
+}
 
 func (m *SrSetEncapSource) Size() (size int) {
 	if m == nil {
@@ -833,6 +884,9 @@ func (*SrSetEncapSourceReply) GetMessageName() string { return "sr_set_encap_sou
 func (*SrSetEncapSourceReply) GetCrcString() string   { return "e8d4e804" }
 func (*SrSetEncapSourceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SrSetEncapSourceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SrSetEncapSourceReply) Size() (size int) {
@@ -872,6 +926,9 @@ func (*SrSteeringAddDel) GetMessageName() string { return "sr_steering_add_del" 
 func (*SrSteeringAddDel) GetCrcString() string   { return "e46b0a0f" }
 func (*SrSteeringAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SrSteeringAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *SrSteeringAddDel) Size() (size int) {
@@ -930,6 +987,9 @@ func (*SrSteeringAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*SrSteeringAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SrSteeringAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SrSteeringAddDelReply) Size() (size int) {
 	if m == nil {
@@ -966,6 +1026,9 @@ func (*SrSteeringPolDetails) GetMessageName() string { return "sr_steering_pol_d
 func (*SrSteeringPolDetails) GetCrcString() string   { return "d41258c9" }
 func (*SrSteeringPolDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SrSteeringPolDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SrSteeringPolDetails) Size() (size int) {
@@ -1015,6 +1078,9 @@ func (*SrSteeringPolDump) GetMessageName() string { return "sr_steering_pol_dump
 func (*SrSteeringPolDump) GetCrcString() string   { return "51077d14" }
 func (*SrSteeringPolDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SrSteeringPolDump) GetRetVal() error {
+	return nil
 }
 
 func (m *SrSteeringPolDump) Size() (size int) {

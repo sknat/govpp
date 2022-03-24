@@ -924,6 +924,9 @@ func (*BfdAuthDelKey) GetCrcString() string   { return "65310b22" }
 func (*BfdAuthDelKey) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BfdAuthDelKey) GetRetVal() error {
+	return nil
+}
 
 func (m *BfdAuthDelKey) Size() (size int) {
 	if m == nil {
@@ -956,6 +959,9 @@ func (*BfdAuthDelKeyReply) GetMessageName() string { return "bfd_auth_del_key_re
 func (*BfdAuthDelKeyReply) GetCrcString() string   { return "e8d4e804" }
 func (*BfdAuthDelKeyReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BfdAuthDelKeyReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *BfdAuthDelKeyReply) Size() (size int) {
@@ -991,6 +997,9 @@ func (*BfdAuthKeysDetails) GetMessageName() string { return "bfd_auth_keys_detai
 func (*BfdAuthKeysDetails) GetCrcString() string   { return "84130e9f" }
 func (*BfdAuthKeysDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BfdAuthKeysDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *BfdAuthKeysDetails) Size() (size int) {
@@ -1029,6 +1038,9 @@ func (*BfdAuthKeysDump) GetCrcString() string   { return "51077d14" }
 func (*BfdAuthKeysDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BfdAuthKeysDump) GetRetVal() error {
+	return nil
+}
 
 func (m *BfdAuthKeysDump) Size() (size int) {
 	if m == nil {
@@ -1060,6 +1072,9 @@ func (*BfdAuthSetKey) GetMessageName() string { return "bfd_auth_set_key" }
 func (*BfdAuthSetKey) GetCrcString() string   { return "690b8877" }
 func (*BfdAuthSetKey) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BfdAuthSetKey) GetRetVal() error {
+	return nil
 }
 
 func (m *BfdAuthSetKey) Size() (size int) {
@@ -1104,6 +1119,9 @@ func (*BfdAuthSetKeyReply) GetCrcString() string   { return "e8d4e804" }
 func (*BfdAuthSetKeyReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BfdAuthSetKeyReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BfdAuthSetKeyReply) Size() (size int) {
 	if m == nil {
@@ -1144,6 +1162,9 @@ func (*BfdUDPAdd) GetMessageName() string { return "bfd_udp_add" }
 func (*BfdUDPAdd) GetCrcString() string   { return "7a6d1185" }
 func (*BfdUDPAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BfdUDPAdd) GetRetVal() error {
+	return nil
 }
 
 func (m *BfdUDPAdd) Size() (size int) {
@@ -1208,6 +1229,9 @@ func (*BfdUDPAddReply) GetCrcString() string   { return "e8d4e804" }
 func (*BfdUDPAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BfdUDPAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BfdUDPAddReply) Size() (size int) {
 	if m == nil {
@@ -1245,6 +1269,9 @@ func (*BfdUDPAuthActivate) GetMessageName() string { return "bfd_udp_auth_activa
 func (*BfdUDPAuthActivate) GetCrcString() string   { return "493ee0ec" }
 func (*BfdUDPAuthActivate) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BfdUDPAuthActivate) GetRetVal() error {
+	return nil
 }
 
 func (m *BfdUDPAuthActivate) Size() (size int) {
@@ -1300,6 +1327,9 @@ func (*BfdUDPAuthActivateReply) GetCrcString() string   { return "e8d4e804" }
 func (*BfdUDPAuthActivateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BfdUDPAuthActivateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BfdUDPAuthActivateReply) Size() (size int) {
 	if m == nil {
@@ -1335,6 +1365,9 @@ func (*BfdUDPAuthDeactivate) GetMessageName() string { return "bfd_udp_auth_deac
 func (*BfdUDPAuthDeactivate) GetCrcString() string   { return "99978c32" }
 func (*BfdUDPAuthDeactivate) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BfdUDPAuthDeactivate) GetRetVal() error {
+	return nil
 }
 
 func (m *BfdUDPAuthDeactivate) Size() (size int) {
@@ -1384,6 +1417,9 @@ func (*BfdUDPAuthDeactivateReply) GetCrcString() string   { return "e8d4e804" }
 func (*BfdUDPAuthDeactivateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BfdUDPAuthDeactivateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BfdUDPAuthDeactivateReply) Size() (size int) {
 	if m == nil {
@@ -1418,6 +1454,9 @@ func (*BfdUDPDel) GetMessageName() string { return "bfd_udp_del" }
 func (*BfdUDPDel) GetCrcString() string   { return "8096514d" }
 func (*BfdUDPDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BfdUDPDel) GetRetVal() error {
+	return nil
 }
 
 func (m *BfdUDPDel) Size() (size int) {
@@ -1462,6 +1501,9 @@ func (*BfdUDPDelEchoSource) GetCrcString() string   { return "51077d14" }
 func (*BfdUDPDelEchoSource) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BfdUDPDelEchoSource) GetRetVal() error {
+	return nil
+}
 
 func (m *BfdUDPDelEchoSource) Size() (size int) {
 	if m == nil {
@@ -1490,6 +1532,9 @@ func (*BfdUDPDelEchoSourceReply) GetMessageName() string { return "bfd_udp_del_e
 func (*BfdUDPDelEchoSourceReply) GetCrcString() string   { return "e8d4e804" }
 func (*BfdUDPDelEchoSourceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BfdUDPDelEchoSourceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *BfdUDPDelEchoSourceReply) Size() (size int) {
@@ -1524,6 +1569,9 @@ func (*BfdUDPDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*BfdUDPDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BfdUDPDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BfdUDPDelReply) Size() (size int) {
 	if m == nil {
@@ -1554,6 +1602,9 @@ func (*BfdUDPGetEchoSource) GetMessageName() string { return "bfd_udp_get_echo_s
 func (*BfdUDPGetEchoSource) GetCrcString() string   { return "51077d14" }
 func (*BfdUDPGetEchoSource) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BfdUDPGetEchoSource) GetRetVal() error {
+	return nil
 }
 
 func (m *BfdUDPGetEchoSource) Size() (size int) {
@@ -1589,6 +1640,9 @@ func (*BfdUDPGetEchoSourceReply) GetMessageName() string { return "bfd_udp_get_e
 func (*BfdUDPGetEchoSourceReply) GetCrcString() string   { return "1e00cfce" }
 func (*BfdUDPGetEchoSourceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BfdUDPGetEchoSourceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *BfdUDPGetEchoSourceReply) Size() (size int) {
@@ -1646,6 +1700,9 @@ func (*BfdUDPMod) GetCrcString() string   { return "783a3ff6" }
 func (*BfdUDPMod) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BfdUDPMod) GetRetVal() error {
+	return nil
+}
 
 func (m *BfdUDPMod) Size() (size int) {
 	if m == nil {
@@ -1700,6 +1757,9 @@ func (*BfdUDPModReply) GetCrcString() string   { return "e8d4e804" }
 func (*BfdUDPModReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BfdUDPModReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BfdUDPModReply) Size() (size int) {
 	if m == nil {
@@ -1741,6 +1801,9 @@ func (*BfdUDPSessionDetails) GetMessageName() string { return "bfd_udp_session_d
 func (*BfdUDPSessionDetails) GetCrcString() string   { return "60653c02" }
 func (*BfdUDPSessionDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BfdUDPSessionDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *BfdUDPSessionDetails) Size() (size int) {
@@ -1806,6 +1869,9 @@ func (*BfdUDPSessionDump) GetCrcString() string   { return "51077d14" }
 func (*BfdUDPSessionDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BfdUDPSessionDump) GetRetVal() error {
+	return nil
+}
 
 func (m *BfdUDPSessionDump) Size() (size int) {
 	if m == nil {
@@ -1837,6 +1903,9 @@ func (*BfdUDPSessionSetFlags) GetMessageName() string { return "bfd_udp_session_
 func (*BfdUDPSessionSetFlags) GetCrcString() string   { return "cf313851" }
 func (*BfdUDPSessionSetFlags) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BfdUDPSessionSetFlags) GetRetVal() error {
+	return nil
 }
 
 func (m *BfdUDPSessionSetFlags) Size() (size int) {
@@ -1886,6 +1955,9 @@ func (*BfdUDPSessionSetFlagsReply) GetCrcString() string   { return "e8d4e804" }
 func (*BfdUDPSessionSetFlagsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BfdUDPSessionSetFlagsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BfdUDPSessionSetFlagsReply) Size() (size int) {
 	if m == nil {
@@ -1918,6 +1990,9 @@ func (*BfdUDPSetEchoSource) GetMessageName() string { return "bfd_udp_set_echo_s
 func (*BfdUDPSetEchoSource) GetCrcString() string   { return "f9e6675e" }
 func (*BfdUDPSetEchoSource) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BfdUDPSetEchoSource) GetRetVal() error {
+	return nil
 }
 
 func (m *BfdUDPSetEchoSource) Size() (size int) {
@@ -1952,6 +2027,9 @@ func (*BfdUDPSetEchoSourceReply) GetCrcString() string   { return "e8d4e804" }
 func (*BfdUDPSetEchoSourceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BfdUDPSetEchoSourceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BfdUDPSetEchoSourceReply) Size() (size int) {
 	if m == nil {
@@ -1985,6 +2063,9 @@ func (*WantBfdEvents) GetMessageName() string { return "want_bfd_events" }
 func (*WantBfdEvents) GetCrcString() string   { return "c5e2af94" }
 func (*WantBfdEvents) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *WantBfdEvents) GetRetVal() error {
+	return nil
 }
 
 func (m *WantBfdEvents) Size() (size int) {
@@ -2021,6 +2102,9 @@ func (*WantBfdEventsReply) GetMessageName() string { return "want_bfd_events_rep
 func (*WantBfdEventsReply) GetCrcString() string   { return "e8d4e804" }
 func (*WantBfdEventsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *WantBfdEventsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *WantBfdEventsReply) Size() (size int) {

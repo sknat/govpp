@@ -395,6 +395,9 @@ func (*ClassifyAddDelSession) GetCrcString() string   { return "f20879f0" }
 func (*ClassifyAddDelSession) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *ClassifyAddDelSession) GetRetVal() error {
+	return nil
+}
 
 func (m *ClassifyAddDelSession) Size() (size int) {
 	if m == nil {
@@ -453,6 +456,9 @@ func (*ClassifyAddDelSessionReply) GetCrcString() string   { return "e8d4e804" }
 func (*ClassifyAddDelSessionReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *ClassifyAddDelSessionReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *ClassifyAddDelSessionReply) Size() (size int) {
 	if m == nil {
@@ -497,6 +503,9 @@ func (*ClassifyAddDelTable) GetMessageName() string { return "classify_add_del_t
 func (*ClassifyAddDelTable) GetCrcString() string   { return "6849e39e" }
 func (*ClassifyAddDelTable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *ClassifyAddDelTable) GetRetVal() error {
+	return nil
 }
 
 func (m *ClassifyAddDelTable) Size() (size int) {
@@ -571,6 +580,9 @@ func (*ClassifyAddDelTableReply) GetCrcString() string   { return "05486349" }
 func (*ClassifyAddDelTableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *ClassifyAddDelTableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *ClassifyAddDelTableReply) Size() (size int) {
 	if m == nil {
@@ -618,6 +630,9 @@ func (*ClassifySessionDetails) GetMessageName() string { return "classify_sessio
 func (*ClassifySessionDetails) GetCrcString() string   { return "60e3ef94" }
 func (*ClassifySessionDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ClassifySessionDetails) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ClassifySessionDetails) Size() (size int) {
@@ -671,6 +686,9 @@ func (*ClassifySessionDump) GetCrcString() string   { return "0cca2cd9" }
 func (*ClassifySessionDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *ClassifySessionDump) GetRetVal() error {
+	return nil
+}
 
 func (m *ClassifySessionDump) Size() (size int) {
 	if m == nil {
@@ -705,6 +723,9 @@ func (*ClassifySetInterfaceIPTable) GetMessageName() string { return "classify_s
 func (*ClassifySetInterfaceIPTable) GetCrcString() string   { return "e0b097c7" }
 func (*ClassifySetInterfaceIPTable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *ClassifySetInterfaceIPTable) GetRetVal() error {
+	return nil
 }
 
 func (m *ClassifySetInterfaceIPTable) Size() (size int) {
@@ -747,6 +768,9 @@ func (*ClassifySetInterfaceIPTableReply) GetCrcString() string { return "e8d4e80
 func (*ClassifySetInterfaceIPTableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *ClassifySetInterfaceIPTableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *ClassifySetInterfaceIPTableReply) Size() (size int) {
 	if m == nil {
@@ -785,6 +809,9 @@ func (*ClassifySetInterfaceL2Tables) GetMessageName() string {
 func (*ClassifySetInterfaceL2Tables) GetCrcString() string { return "5a6ddf65" }
 func (*ClassifySetInterfaceL2Tables) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *ClassifySetInterfaceL2Tables) GetRetVal() error {
+	return nil
 }
 
 func (m *ClassifySetInterfaceL2Tables) Size() (size int) {
@@ -833,6 +860,9 @@ func (*ClassifySetInterfaceL2TablesReply) GetCrcString() string { return "e8d4e8
 func (*ClassifySetInterfaceL2TablesReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *ClassifySetInterfaceL2TablesReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *ClassifySetInterfaceL2TablesReply) Size() (size int) {
 	if m == nil {
@@ -865,6 +895,9 @@ func (*ClassifyTableByInterface) GetMessageName() string { return "classify_tabl
 func (*ClassifyTableByInterface) GetCrcString() string   { return "f9e6675e" }
 func (*ClassifyTableByInterface) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *ClassifyTableByInterface) GetRetVal() error {
+	return nil
 }
 
 func (m *ClassifyTableByInterface) Size() (size int) {
@@ -904,6 +937,9 @@ func (*ClassifyTableByInterfaceReply) GetMessageName() string {
 func (*ClassifyTableByInterfaceReply) GetCrcString() string { return "ed4197db" }
 func (*ClassifyTableByInterfaceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ClassifyTableByInterfaceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ClassifyTableByInterfaceReply) Size() (size int) {
@@ -948,6 +984,9 @@ func (*ClassifyTableIds) GetCrcString() string   { return "51077d14" }
 func (*ClassifyTableIds) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *ClassifyTableIds) GetRetVal() error {
+	return nil
+}
 
 func (m *ClassifyTableIds) Size() (size int) {
 	if m == nil {
@@ -978,6 +1017,9 @@ func (*ClassifyTableIdsReply) GetMessageName() string { return "classify_table_i
 func (*ClassifyTableIdsReply) GetCrcString() string   { return "d1d20e1d" }
 func (*ClassifyTableIdsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ClassifyTableIdsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ClassifyTableIdsReply) Size() (size int) {
@@ -1027,6 +1069,9 @@ func (*ClassifyTableInfo) GetCrcString() string   { return "0cca2cd9" }
 func (*ClassifyTableInfo) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *ClassifyTableInfo) GetRetVal() error {
+	return nil
+}
 
 func (m *ClassifyTableInfo) Size() (size int) {
 	if m == nil {
@@ -1068,6 +1113,9 @@ func (*ClassifyTableInfoReply) GetMessageName() string { return "classify_table_
 func (*ClassifyTableInfoReply) GetCrcString() string   { return "4a573c0e" }
 func (*ClassifyTableInfoReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ClassifyTableInfoReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ClassifyTableInfoReply) Size() (size int) {
@@ -1131,6 +1179,9 @@ func (*FlowClassifyDetails) GetCrcString() string   { return "dfd08765" }
 func (*FlowClassifyDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *FlowClassifyDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *FlowClassifyDetails) Size() (size int) {
 	if m == nil {
@@ -1167,6 +1218,9 @@ func (*FlowClassifyDump) GetMessageName() string { return "flow_classify_dump" }
 func (*FlowClassifyDump) GetCrcString() string   { return "8a6ad43d" }
 func (*FlowClassifyDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *FlowClassifyDump) GetRetVal() error {
+	return nil
 }
 
 func (m *FlowClassifyDump) Size() (size int) {
@@ -1206,6 +1260,9 @@ func (*FlowClassifySetInterface) GetMessageName() string { return "flow_classify
 func (*FlowClassifySetInterface) GetCrcString() string   { return "b6192f1c" }
 func (*FlowClassifySetInterface) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *FlowClassifySetInterface) GetRetVal() error {
+	return nil
 }
 
 func (m *FlowClassifySetInterface) Size() (size int) {
@@ -1251,6 +1308,9 @@ func (*FlowClassifySetInterfaceReply) GetCrcString() string { return "e8d4e804" 
 func (*FlowClassifySetInterfaceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *FlowClassifySetInterfaceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *FlowClassifySetInterfaceReply) Size() (size int) {
 	if m == nil {
@@ -1287,6 +1347,9 @@ func (*InputACLSetInterface) GetMessageName() string { return "input_acl_set_int
 func (*InputACLSetInterface) GetCrcString() string   { return "de7ad708" }
 func (*InputACLSetInterface) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *InputACLSetInterface) GetRetVal() error {
+	return nil
 }
 
 func (m *InputACLSetInterface) Size() (size int) {
@@ -1333,6 +1396,9 @@ func (*InputACLSetInterfaceReply) GetCrcString() string   { return "e8d4e804" }
 func (*InputACLSetInterfaceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *InputACLSetInterfaceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *InputACLSetInterfaceReply) Size() (size int) {
 	if m == nil {
@@ -1369,6 +1435,9 @@ func (*OutputACLSetInterface) GetMessageName() string { return "output_acl_set_i
 func (*OutputACLSetInterface) GetCrcString() string   { return "de7ad708" }
 func (*OutputACLSetInterface) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *OutputACLSetInterface) GetRetVal() error {
+	return nil
 }
 
 func (m *OutputACLSetInterface) Size() (size int) {
@@ -1415,6 +1484,9 @@ func (*OutputACLSetInterfaceReply) GetCrcString() string   { return "e8d4e804" }
 func (*OutputACLSetInterfaceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *OutputACLSetInterfaceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *OutputACLSetInterfaceReply) Size() (size int) {
 	if m == nil {
@@ -1448,6 +1520,9 @@ func (*PolicerClassifyDetails) GetMessageName() string { return "policer_classif
 func (*PolicerClassifyDetails) GetCrcString() string   { return "dfd08765" }
 func (*PolicerClassifyDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PolicerClassifyDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *PolicerClassifyDetails) Size() (size int) {
@@ -1485,6 +1560,9 @@ func (*PolicerClassifyDump) GetMessageName() string { return "policer_classify_d
 func (*PolicerClassifyDump) GetCrcString() string   { return "6bfe6603" }
 func (*PolicerClassifyDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PolicerClassifyDump) GetRetVal() error {
+	return nil
 }
 
 func (m *PolicerClassifyDump) Size() (size int) {
@@ -1525,6 +1603,9 @@ func (*PolicerClassifySetInterface) GetMessageName() string { return "policer_cl
 func (*PolicerClassifySetInterface) GetCrcString() string   { return "de7ad708" }
 func (*PolicerClassifySetInterface) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PolicerClassifySetInterface) GetRetVal() error {
+	return nil
 }
 
 func (m *PolicerClassifySetInterface) Size() (size int) {
@@ -1572,6 +1653,9 @@ func (*PolicerClassifySetInterfaceReply) GetMessageName() string {
 func (*PolicerClassifySetInterfaceReply) GetCrcString() string { return "e8d4e804" }
 func (*PolicerClassifySetInterfaceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PolicerClassifySetInterfaceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *PolicerClassifySetInterfaceReply) Size() (size int) {

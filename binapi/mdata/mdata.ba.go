@@ -41,6 +41,9 @@ func (*MdataEnableDisable) GetCrcString() string   { return "2e7b47df" }
 func (*MdataEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MdataEnableDisable) GetRetVal() error {
+	return nil
+}
 
 func (m *MdataEnableDisable) Size() (size int) {
 	if m == nil {
@@ -74,6 +77,9 @@ func (*MdataEnableDisableReply) GetMessageName() string { return "mdata_enable_d
 func (*MdataEnableDisableReply) GetCrcString() string   { return "e8d4e804" }
 func (*MdataEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MdataEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *MdataEnableDisableReply) Size() (size int) {

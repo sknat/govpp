@@ -43,6 +43,9 @@ func (*PgCapture) GetCrcString() string   { return "453da78d" }
 func (*PgCapture) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *PgCapture) GetRetVal() error {
+	return nil
+}
 
 func (m *PgCapture) Size() (size int) {
 	if m == nil {
@@ -89,6 +92,9 @@ func (*PgCaptureReply) GetCrcString() string   { return "e8d4e804" }
 func (*PgCaptureReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *PgCaptureReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *PgCaptureReply) Size() (size int) {
 	if m == nil {
@@ -123,6 +129,9 @@ func (*PgCreateInterface) GetMessageName() string { return "pg_create_interface"
 func (*PgCreateInterface) GetCrcString() string   { return "b1ecff05" }
 func (*PgCreateInterface) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PgCreateInterface) GetRetVal() error {
+	return nil
 }
 
 func (m *PgCreateInterface) Size() (size int) {
@@ -164,6 +173,9 @@ func (*PgCreateInterfaceReply) GetCrcString() string   { return "fda5941f" }
 func (*PgCreateInterfaceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *PgCreateInterfaceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *PgCreateInterfaceReply) Size() (size int) {
 	if m == nil {
@@ -201,6 +213,9 @@ func (*PgEnableDisable) GetMessageName() string { return "pg_enable_disable" }
 func (*PgEnableDisable) GetCrcString() string   { return "0cb71d10" }
 func (*PgEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PgEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *PgEnableDisable) Size() (size int) {
@@ -241,6 +256,9 @@ func (*PgEnableDisableReply) GetMessageName() string { return "pg_enable_disable
 func (*PgEnableDisableReply) GetCrcString() string   { return "e8d4e804" }
 func (*PgEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PgEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *PgEnableDisableReply) Size() (size int) {

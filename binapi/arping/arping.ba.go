@@ -45,6 +45,9 @@ func (*Arping) GetCrcString() string   { return "48817482" }
 func (*Arping) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *Arping) GetRetVal() error {
+	return nil
+}
 
 func (m *Arping) Size() (size int) {
 	if m == nil {
@@ -93,6 +96,9 @@ func (*ArpingReply) GetMessageName() string { return "arping_reply" }
 func (*ArpingReply) GetCrcString() string   { return "bb9d1cbd" }
 func (*ArpingReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ArpingReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ArpingReply) Size() (size int) {

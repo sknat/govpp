@@ -962,6 +962,9 @@ func (*L2tpv3CreateTunnel) GetCrcString() string   { return "596892cb" }
 func (*L2tpv3CreateTunnel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *L2tpv3CreateTunnel) GetRetVal() error {
+	return nil
+}
 
 func (m *L2tpv3CreateTunnel) Size() (size int) {
 	if m == nil {
@@ -1023,6 +1026,9 @@ func (*L2tpv3CreateTunnelReply) GetCrcString() string   { return "5383d31f" }
 func (*L2tpv3CreateTunnelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *L2tpv3CreateTunnelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *L2tpv3CreateTunnelReply) Size() (size int) {
 	if m == nil {
@@ -1062,6 +1068,9 @@ func (*L2tpv3InterfaceEnableDisable) GetCrcString() string { return "3865946c" }
 func (*L2tpv3InterfaceEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *L2tpv3InterfaceEnableDisable) GetRetVal() error {
+	return nil
+}
 
 func (m *L2tpv3InterfaceEnableDisable) Size() (size int) {
 	if m == nil {
@@ -1100,6 +1109,9 @@ func (*L2tpv3InterfaceEnableDisableReply) GetCrcString() string { return "e8d4e8
 func (*L2tpv3InterfaceEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *L2tpv3InterfaceEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *L2tpv3InterfaceEnableDisableReply) Size() (size int) {
 	if m == nil {
@@ -1133,6 +1145,9 @@ func (*L2tpv3SetLookupKey) GetCrcString() string   { return "c9892c86" }
 func (*L2tpv3SetLookupKey) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *L2tpv3SetLookupKey) GetRetVal() error {
+	return nil
+}
 
 func (m *L2tpv3SetLookupKey) Size() (size int) {
 	if m == nil {
@@ -1165,6 +1180,9 @@ func (*L2tpv3SetLookupKeyReply) GetMessageName() string { return "l2tpv3_set_loo
 func (*L2tpv3SetLookupKeyReply) GetCrcString() string   { return "e8d4e804" }
 func (*L2tpv3SetLookupKeyReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *L2tpv3SetLookupKeyReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *L2tpv3SetLookupKeyReply) Size() (size int) {
@@ -1200,6 +1218,9 @@ func (*L2tpv3SetTunnelCookies) GetMessageName() string { return "l2tpv3_set_tunn
 func (*L2tpv3SetTunnelCookies) GetCrcString() string   { return "b3f4faf7" }
 func (*L2tpv3SetTunnelCookies) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *L2tpv3SetTunnelCookies) GetRetVal() error {
+	return nil
 }
 
 func (m *L2tpv3SetTunnelCookies) Size() (size int) {
@@ -1239,6 +1260,9 @@ func (*L2tpv3SetTunnelCookiesReply) GetMessageName() string { return "l2tpv3_set
 func (*L2tpv3SetTunnelCookiesReply) GetCrcString() string   { return "e8d4e804" }
 func (*L2tpv3SetTunnelCookiesReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *L2tpv3SetTunnelCookiesReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *L2tpv3SetTunnelCookiesReply) Size() (size int) {
@@ -1280,6 +1304,9 @@ func (*SwIfL2tpv3TunnelDetails) GetMessageName() string { return "sw_if_l2tpv3_t
 func (*SwIfL2tpv3TunnelDetails) GetCrcString() string   { return "1dab5c7e" }
 func (*SwIfL2tpv3TunnelDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwIfL2tpv3TunnelDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SwIfL2tpv3TunnelDetails) Size() (size int) {
@@ -1350,6 +1377,9 @@ func (*SwIfL2tpv3TunnelDump) GetMessageName() string { return "sw_if_l2tpv3_tunn
 func (*SwIfL2tpv3TunnelDump) GetCrcString() string   { return "51077d14" }
 func (*SwIfL2tpv3TunnelDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwIfL2tpv3TunnelDump) GetRetVal() error {
+	return nil
 }
 
 func (m *SwIfL2tpv3TunnelDump) Size() (size int) {

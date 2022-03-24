@@ -42,6 +42,9 @@ func (*SwInterfaceSpanDetails) GetCrcString() string   { return "23966371" }
 func (*SwInterfaceSpanDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSpanDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceSpanDetails) Size() (size int) {
 	if m == nil {
@@ -84,6 +87,9 @@ func (*SwInterfaceSpanDump) GetCrcString() string   { return "67c54650" }
 func (*SwInterfaceSpanDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceSpanDump) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceSpanDump) Size() (size int) {
 	if m == nil {
@@ -121,6 +127,9 @@ func (*SwInterfaceSpanEnableDisable) GetMessageName() string {
 func (*SwInterfaceSpanEnableDisable) GetCrcString() string { return "7216258d" }
 func (*SwInterfaceSpanEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSpanEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSpanEnableDisable) Size() (size int) {
@@ -165,6 +174,9 @@ func (*SwInterfaceSpanEnableDisableReply) GetMessageName() string {
 func (*SwInterfaceSpanEnableDisableReply) GetCrcString() string { return "e8d4e804" }
 func (*SwInterfaceSpanEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceSpanEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SwInterfaceSpanEnableDisableReply) Size() (size int) {

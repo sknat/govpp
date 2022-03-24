@@ -357,6 +357,9 @@ func (*Vmxnet3Create) GetCrcString() string   { return "71a07314" }
 func (*Vmxnet3Create) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *Vmxnet3Create) GetRetVal() error {
+	return nil
+}
 
 func (m *Vmxnet3Create) Size() (size int) {
 	if m == nil {
@@ -412,6 +415,9 @@ func (*Vmxnet3CreateReply) GetCrcString() string   { return "5383d31f" }
 func (*Vmxnet3CreateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *Vmxnet3CreateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *Vmxnet3CreateReply) Size() (size int) {
 	if m == nil {
@@ -448,6 +454,9 @@ func (*Vmxnet3Delete) GetCrcString() string   { return "f9e6675e" }
 func (*Vmxnet3Delete) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *Vmxnet3Delete) GetRetVal() error {
+	return nil
+}
 
 func (m *Vmxnet3Delete) Size() (size int) {
 	if m == nil {
@@ -480,6 +489,9 @@ func (*Vmxnet3DeleteReply) GetMessageName() string { return "vmxnet3_delete_repl
 func (*Vmxnet3DeleteReply) GetCrcString() string   { return "e8d4e804" }
 func (*Vmxnet3DeleteReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *Vmxnet3DeleteReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *Vmxnet3DeleteReply) Size() (size int) {
@@ -522,6 +534,9 @@ func (*Vmxnet3Details) GetMessageName() string { return "vmxnet3_details" }
 func (*Vmxnet3Details) GetCrcString() string   { return "829ba055" }
 func (*Vmxnet3Details) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *Vmxnet3Details) GetRetVal() error {
+	return nil
 }
 
 func (m *Vmxnet3Details) Size() (size int) {
@@ -640,6 +655,9 @@ func (*Vmxnet3Dump) GetMessageName() string { return "vmxnet3_dump" }
 func (*Vmxnet3Dump) GetCrcString() string   { return "51077d14" }
 func (*Vmxnet3Dump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *Vmxnet3Dump) GetRetVal() error {
+	return nil
 }
 
 func (m *Vmxnet3Dump) Size() (size int) {

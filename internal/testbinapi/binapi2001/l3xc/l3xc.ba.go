@@ -1073,6 +1073,9 @@ func (*L3xcDel) GetCrcString() string   { return "e7dbef91" }
 func (*L3xcDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *L3xcDel) GetRetVal() error {
+	return nil
+}
 
 func (m *L3xcDel) Size() (size int) {
 	if m == nil {
@@ -1109,6 +1112,9 @@ func (*L3xcDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*L3xcDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *L3xcDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *L3xcDelReply) Size() (size int) {
 	if m == nil {
@@ -1141,6 +1147,9 @@ func (*L3xcDetails) GetMessageName() string { return "l3xc_details" }
 func (*L3xcDetails) GetCrcString() string   { return "d4f69627" }
 func (*L3xcDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *L3xcDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *L3xcDetails) Size() (size int) {
@@ -1254,6 +1263,9 @@ func (*L3xcDump) GetCrcString() string   { return "f9e6675e" }
 func (*L3xcDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *L3xcDump) GetRetVal() error {
+	return nil
+}
 
 func (m *L3xcDump) Size() (size int) {
 	if m == nil {
@@ -1285,6 +1297,9 @@ func (*L3xcPluginGetVersion) GetCrcString() string   { return "51077d14" }
 func (*L3xcPluginGetVersion) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *L3xcPluginGetVersion) GetRetVal() error {
+	return nil
+}
 
 func (m *L3xcPluginGetVersion) Size() (size int) {
 	if m == nil {
@@ -1314,6 +1329,9 @@ func (*L3xcPluginGetVersionReply) GetMessageName() string { return "l3xc_plugin_
 func (*L3xcPluginGetVersionReply) GetCrcString() string   { return "9b32cf86" }
 func (*L3xcPluginGetVersionReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *L3xcPluginGetVersionReply) GetRetVal() error {
+	return nil
 }
 
 func (m *L3xcPluginGetVersionReply) Size() (size int) {
@@ -1350,6 +1368,9 @@ func (*L3xcUpdate) GetMessageName() string { return "l3xc_update" }
 func (*L3xcUpdate) GetCrcString() string   { return "0787b1d3" }
 func (*L3xcUpdate) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *L3xcUpdate) GetRetVal() error {
+	return nil
 }
 
 func (m *L3xcUpdate) Size() (size int) {
@@ -1463,6 +1484,9 @@ func (*L3xcUpdateReply) GetMessageName() string { return "l3xc_update_reply" }
 func (*L3xcUpdateReply) GetCrcString() string   { return "1992deab" }
 func (*L3xcUpdateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *L3xcUpdateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *L3xcUpdateReply) Size() (size int) {

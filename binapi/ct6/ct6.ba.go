@@ -42,6 +42,9 @@ func (*Ct6EnableDisable) GetCrcString() string   { return "5d02ac02" }
 func (*Ct6EnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *Ct6EnableDisable) GetRetVal() error {
+	return nil
+}
 
 func (m *Ct6EnableDisable) Size() (size int) {
 	if m == nil {
@@ -80,6 +83,9 @@ func (*Ct6EnableDisableReply) GetMessageName() string { return "ct6_enable_disab
 func (*Ct6EnableDisableReply) GetCrcString() string   { return "e8d4e804" }
 func (*Ct6EnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *Ct6EnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *Ct6EnableDisableReply) Size() (size int) {

@@ -43,6 +43,9 @@ func (*SwInterfaceSetVxlanGpeBypass) GetCrcString() string { return "e74ca095" }
 func (*SwInterfaceSetVxlanGpeBypass) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceSetVxlanGpeBypass) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceSetVxlanGpeBypass) Size() (size int) {
 	if m == nil {
@@ -84,6 +87,9 @@ func (*SwInterfaceSetVxlanGpeBypassReply) GetCrcString() string { return "e8d4e8
 func (*SwInterfaceSetVxlanGpeBypassReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetVxlanGpeBypassReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetVxlanGpeBypassReply) Size() (size int) {
 	if m == nil {
@@ -124,6 +130,9 @@ func (*VxlanGpeAddDelTunnel) GetMessageName() string { return "vxlan_gpe_add_del
 func (*VxlanGpeAddDelTunnel) GetCrcString() string   { return "d15850ba" }
 func (*VxlanGpeAddDelTunnel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VxlanGpeAddDelTunnel) GetRetVal() error {
+	return nil
 }
 
 func (m *VxlanGpeAddDelTunnel) Size() (size int) {
@@ -185,6 +194,9 @@ func (*VxlanGpeAddDelTunnelReply) GetCrcString() string   { return "fda5941f" }
 func (*VxlanGpeAddDelTunnelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *VxlanGpeAddDelTunnelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *VxlanGpeAddDelTunnelReply) Size() (size int) {
 	if m == nil {
@@ -228,6 +240,9 @@ func (*VxlanGpeTunnelDetails) GetMessageName() string { return "vxlan_gpe_tunnel
 func (*VxlanGpeTunnelDetails) GetCrcString() string   { return "2673fbfa" }
 func (*VxlanGpeTunnelDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *VxlanGpeTunnelDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *VxlanGpeTunnelDetails) Size() (size int) {
@@ -287,6 +302,9 @@ func (*VxlanGpeTunnelDump) GetMessageName() string { return "vxlan_gpe_tunnel_du
 func (*VxlanGpeTunnelDump) GetCrcString() string   { return "529cb13f" }
 func (*VxlanGpeTunnelDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VxlanGpeTunnelDump) GetRetVal() error {
+	return nil
 }
 
 func (m *VxlanGpeTunnelDump) Size() (size int) {

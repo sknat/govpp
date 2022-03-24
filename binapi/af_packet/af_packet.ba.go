@@ -43,6 +43,9 @@ func (*AfPacketCreate) GetCrcString() string   { return "a190415f" }
 func (*AfPacketCreate) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *AfPacketCreate) GetRetVal() error {
+	return nil
+}
 
 func (m *AfPacketCreate) Size() (size int) {
 	if m == nil {
@@ -82,6 +85,9 @@ func (*AfPacketCreateReply) GetMessageName() string { return "af_packet_create_r
 func (*AfPacketCreateReply) GetCrcString() string   { return "5383d31f" }
 func (*AfPacketCreateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *AfPacketCreateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *AfPacketCreateReply) Size() (size int) {
@@ -126,6 +132,9 @@ func (*AfPacketCreateV2) GetMessageName() string { return "af_packet_create_v2" 
 func (*AfPacketCreateV2) GetCrcString() string   { return "4aff0436" }
 func (*AfPacketCreateV2) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *AfPacketCreateV2) GetRetVal() error {
+	return nil
 }
 
 func (m *AfPacketCreateV2) Size() (size int) {
@@ -185,6 +194,9 @@ func (*AfPacketCreateV2Reply) GetCrcString() string   { return "5383d31f" }
 func (*AfPacketCreateV2Reply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *AfPacketCreateV2Reply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *AfPacketCreateV2Reply) Size() (size int) {
 	if m == nil {
@@ -221,6 +233,9 @@ func (*AfPacketDelete) GetCrcString() string   { return "863fa648" }
 func (*AfPacketDelete) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *AfPacketDelete) GetRetVal() error {
+	return nil
+}
 
 func (m *AfPacketDelete) Size() (size int) {
 	if m == nil {
@@ -253,6 +268,9 @@ func (*AfPacketDeleteReply) GetMessageName() string { return "af_packet_delete_r
 func (*AfPacketDeleteReply) GetCrcString() string   { return "e8d4e804" }
 func (*AfPacketDeleteReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *AfPacketDeleteReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *AfPacketDeleteReply) Size() (size int) {
@@ -288,6 +306,9 @@ func (*AfPacketDetails) GetCrcString() string   { return "58c7c042" }
 func (*AfPacketDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *AfPacketDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *AfPacketDetails) Size() (size int) {
 	if m == nil {
@@ -322,6 +343,9 @@ func (*AfPacketDump) GetCrcString() string   { return "51077d14" }
 func (*AfPacketDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *AfPacketDump) GetRetVal() error {
+	return nil
+}
 
 func (m *AfPacketDump) Size() (size int) {
 	if m == nil {
@@ -351,6 +375,9 @@ func (*AfPacketSetL4CksumOffload) GetMessageName() string { return "af_packet_se
 func (*AfPacketSetL4CksumOffload) GetCrcString() string   { return "319cd5c8" }
 func (*AfPacketSetL4CksumOffload) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *AfPacketSetL4CksumOffload) GetRetVal() error {
+	return nil
 }
 
 func (m *AfPacketSetL4CksumOffload) Size() (size int) {
@@ -389,6 +416,9 @@ func (*AfPacketSetL4CksumOffloadReply) GetMessageName() string {
 func (*AfPacketSetL4CksumOffloadReply) GetCrcString() string { return "e8d4e804" }
 func (*AfPacketSetL4CksumOffloadReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *AfPacketSetL4CksumOffloadReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *AfPacketSetL4CksumOffloadReply) Size() (size int) {

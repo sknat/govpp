@@ -40,6 +40,9 @@ func (*PotProfileActivate) GetCrcString() string   { return "0770af98" }
 func (*PotProfileActivate) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *PotProfileActivate) GetRetVal() error {
+	return nil
+}
 
 func (m *PotProfileActivate) Size() (size int) {
 	if m == nil {
@@ -75,6 +78,9 @@ func (*PotProfileActivateReply) GetMessageName() string { return "pot_profile_ac
 func (*PotProfileActivateReply) GetCrcString() string   { return "e8d4e804" }
 func (*PotProfileActivateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PotProfileActivateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *PotProfileActivateReply) Size() (size int) {
@@ -116,6 +122,9 @@ func (*PotProfileAdd) GetMessageName() string { return "pot_profile_add" }
 func (*PotProfileAdd) GetCrcString() string   { return "ad5da3a3" }
 func (*PotProfileAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PotProfileAdd) GetRetVal() error {
+	return nil
 }
 
 func (m *PotProfileAdd) Size() (size int) {
@@ -174,6 +183,9 @@ func (*PotProfileAddReply) GetCrcString() string   { return "e8d4e804" }
 func (*PotProfileAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *PotProfileAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *PotProfileAddReply) Size() (size int) {
 	if m == nil {
@@ -207,6 +219,9 @@ func (*PotProfileDel) GetCrcString() string   { return "cd63f53b" }
 func (*PotProfileDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *PotProfileDel) GetRetVal() error {
+	return nil
+}
 
 func (m *PotProfileDel) Size() (size int) {
 	if m == nil {
@@ -239,6 +254,9 @@ func (*PotProfileDelReply) GetMessageName() string { return "pot_profile_del_rep
 func (*PotProfileDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*PotProfileDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PotProfileDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *PotProfileDelReply) Size() (size int) {
@@ -280,6 +298,9 @@ func (*PotProfileShowConfigDetails) GetMessageName() string { return "pot_profil
 func (*PotProfileShowConfigDetails) GetCrcString() string   { return "b7ce0618" }
 func (*PotProfileShowConfigDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PotProfileShowConfigDetails) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *PotProfileShowConfigDetails) Size() (size int) {
@@ -337,6 +358,9 @@ func (*PotProfileShowConfigDump) GetMessageName() string { return "pot_profile_s
 func (*PotProfileShowConfigDump) GetCrcString() string   { return "005b7d59" }
 func (*PotProfileShowConfigDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PotProfileShowConfigDump) GetRetVal() error {
+	return nil
 }
 
 func (m *PotProfileShowConfigDump) Size() (size int) {

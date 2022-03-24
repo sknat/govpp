@@ -434,6 +434,9 @@ func (*CreateVhostUserIf) GetCrcString() string   { return "591ee951" }
 func (*CreateVhostUserIf) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *CreateVhostUserIf) GetRetVal() error {
+	return nil
+}
 
 func (m *CreateVhostUserIf) Size() (size int) {
 	if m == nil {
@@ -495,6 +498,9 @@ func (*CreateVhostUserIfReply) GetCrcString() string   { return "5383d31f" }
 func (*CreateVhostUserIfReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *CreateVhostUserIfReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *CreateVhostUserIfReply) Size() (size int) {
 	if m == nil {
@@ -531,6 +537,9 @@ func (*DeleteVhostUserIf) GetCrcString() string   { return "f9e6675e" }
 func (*DeleteVhostUserIf) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *DeleteVhostUserIf) GetRetVal() error {
+	return nil
+}
 
 func (m *DeleteVhostUserIf) Size() (size int) {
 	if m == nil {
@@ -563,6 +572,9 @@ func (*DeleteVhostUserIfReply) GetMessageName() string { return "delete_vhost_us
 func (*DeleteVhostUserIfReply) GetCrcString() string   { return "e8d4e804" }
 func (*DeleteVhostUserIfReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *DeleteVhostUserIfReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *DeleteVhostUserIfReply) Size() (size int) {
@@ -601,6 +613,9 @@ func (*ModifyVhostUserIf) GetMessageName() string { return "modify_vhost_user_if
 func (*ModifyVhostUserIf) GetCrcString() string   { return "fcfeaf16" }
 func (*ModifyVhostUserIf) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *ModifyVhostUserIf) GetRetVal() error {
+	return nil
 }
 
 func (m *ModifyVhostUserIf) Size() (size int) {
@@ -650,6 +665,9 @@ func (*ModifyVhostUserIfReply) GetCrcString() string   { return "e8d4e804" }
 func (*ModifyVhostUserIfReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *ModifyVhostUserIfReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *ModifyVhostUserIfReply) Size() (size int) {
 	if m == nil {
@@ -690,6 +708,9 @@ func (*SwInterfaceVhostUserDetails) GetMessageName() string { return "sw_interfa
 func (*SwInterfaceVhostUserDetails) GetCrcString() string   { return "98530df1" }
 func (*SwInterfaceVhostUserDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceVhostUserDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceVhostUserDetails) Size() (size int) {
@@ -747,6 +768,9 @@ func (*SwInterfaceVhostUserDump) GetMessageName() string { return "sw_interface_
 func (*SwInterfaceVhostUserDump) GetCrcString() string   { return "f9e6675e" }
 func (*SwInterfaceVhostUserDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceVhostUserDump) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceVhostUserDump) Size() (size int) {

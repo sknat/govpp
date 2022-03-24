@@ -893,6 +893,9 @@ func (*StnAddDelRule) GetCrcString() string   { return "53f751e6" }
 func (*StnAddDelRule) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *StnAddDelRule) GetRetVal() error {
+	return nil
+}
 
 func (m *StnAddDelRule) Size() (size int) {
 	if m == nil {
@@ -935,6 +938,9 @@ func (*StnAddDelRuleReply) GetCrcString() string   { return "e8d4e804" }
 func (*StnAddDelRuleReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *StnAddDelRuleReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *StnAddDelRuleReply) Size() (size int) {
 	if m == nil {
@@ -968,6 +974,9 @@ func (*StnRulesDetails) GetMessageName() string { return "stn_rules_details" }
 func (*StnRulesDetails) GetCrcString() string   { return "b0f6606c" }
 func (*StnRulesDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *StnRulesDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *StnRulesDetails) Size() (size int) {
@@ -1005,6 +1014,9 @@ func (*StnRulesDump) GetMessageName() string { return "stn_rules_dump" }
 func (*StnRulesDump) GetCrcString() string   { return "51077d14" }
 func (*StnRulesDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *StnRulesDump) GetRetVal() error {
+	return nil
 }
 
 func (m *StnRulesDump) Size() (size int) {

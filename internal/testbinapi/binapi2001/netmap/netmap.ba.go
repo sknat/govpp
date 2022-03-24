@@ -43,6 +43,9 @@ func (*NetmapCreate) GetCrcString() string   { return "5299044e" }
 func (*NetmapCreate) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *NetmapCreate) GetRetVal() error {
+	return nil
+}
 
 func (m *NetmapCreate) Size() (size int) {
 	if m == nil {
@@ -90,6 +93,9 @@ func (*NetmapCreateReply) GetCrcString() string   { return "e8d4e804" }
 func (*NetmapCreateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *NetmapCreateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *NetmapCreateReply) Size() (size int) {
 	if m == nil {
@@ -122,6 +128,9 @@ func (*NetmapDelete) GetMessageName() string { return "netmap_delete" }
 func (*NetmapDelete) GetCrcString() string   { return "a8b6c201" }
 func (*NetmapDelete) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *NetmapDelete) GetRetVal() error {
+	return nil
 }
 
 func (m *NetmapDelete) Size() (size int) {
@@ -156,6 +165,9 @@ func (*NetmapDeleteReply) GetMessageName() string { return "netmap_delete_reply"
 func (*NetmapDeleteReply) GetCrcString() string   { return "e8d4e804" }
 func (*NetmapDeleteReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *NetmapDeleteReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *NetmapDeleteReply) Size() (size int) {

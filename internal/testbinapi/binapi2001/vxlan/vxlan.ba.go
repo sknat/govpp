@@ -41,6 +41,9 @@ func (*SwInterfaceSetVxlanBypass) GetCrcString() string   { return "e74ca095" }
 func (*SwInterfaceSetVxlanBypass) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceSetVxlanBypass) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceSetVxlanBypass) Size() (size int) {
 	if m == nil {
@@ -82,6 +85,9 @@ func (*SwInterfaceSetVxlanBypassReply) GetCrcString() string { return "e8d4e804"
 func (*SwInterfaceSetVxlanBypassReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetVxlanBypassReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetVxlanBypassReply) Size() (size int) {
 	if m == nil {
@@ -122,6 +128,9 @@ func (*VxlanAddDelTunnel) GetMessageName() string { return "vxlan_add_del_tunnel
 func (*VxlanAddDelTunnel) GetCrcString() string   { return "00f4bdd0" }
 func (*VxlanAddDelTunnel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VxlanAddDelTunnel) GetRetVal() error {
+	return nil
 }
 
 func (m *VxlanAddDelTunnel) Size() (size int) {
@@ -183,6 +192,9 @@ func (*VxlanAddDelTunnelReply) GetCrcString() string   { return "fda5941f" }
 func (*VxlanAddDelTunnelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *VxlanAddDelTunnelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *VxlanAddDelTunnelReply) Size() (size int) {
 	if m == nil {
@@ -220,6 +232,9 @@ func (*VxlanOffloadRx) GetMessageName() string { return "vxlan_offload_rx" }
 func (*VxlanOffloadRx) GetCrcString() string   { return "f0b08786" }
 func (*VxlanOffloadRx) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VxlanOffloadRx) GetRetVal() error {
+	return nil
 }
 
 func (m *VxlanOffloadRx) Size() (size int) {
@@ -259,6 +274,9 @@ func (*VxlanOffloadRxReply) GetMessageName() string { return "vxlan_offload_rx_r
 func (*VxlanOffloadRxReply) GetCrcString() string   { return "e8d4e804" }
 func (*VxlanOffloadRxReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *VxlanOffloadRxReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *VxlanOffloadRxReply) Size() (size int) {
@@ -300,6 +318,9 @@ func (*VxlanTunnelDetails) GetMessageName() string { return "vxlan_tunnel_detail
 func (*VxlanTunnelDetails) GetCrcString() string   { return "ce38e127" }
 func (*VxlanTunnelDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *VxlanTunnelDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *VxlanTunnelDetails) Size() (size int) {
@@ -359,6 +380,9 @@ func (*VxlanTunnelDump) GetMessageName() string { return "vxlan_tunnel_dump" }
 func (*VxlanTunnelDump) GetCrcString() string   { return "529cb13f" }
 func (*VxlanTunnelDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VxlanTunnelDump) GetRetVal() error {
+	return nil
 }
 
 func (m *VxlanTunnelDump) Size() (size int) {

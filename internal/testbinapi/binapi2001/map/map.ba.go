@@ -894,6 +894,9 @@ func (*MapAddDelRule) GetCrcString() string   { return "c65b32f7" }
 func (*MapAddDelRule) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MapAddDelRule) GetRetVal() error {
+	return nil
+}
 
 func (m *MapAddDelRule) Size() (size int) {
 	if m == nil {
@@ -936,6 +939,9 @@ func (*MapAddDelRuleReply) GetCrcString() string   { return "e8d4e804" }
 func (*MapAddDelRuleReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MapAddDelRuleReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MapAddDelRuleReply) Size() (size int) {
 	if m == nil {
@@ -975,6 +981,9 @@ func (*MapAddDomain) GetMessageName() string { return "map_add_domain" }
 func (*MapAddDomain) GetCrcString() string   { return "7a5a18c9" }
 func (*MapAddDomain) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MapAddDomain) GetRetVal() error {
+	return nil
 }
 
 func (m *MapAddDomain) Size() (size int) {
@@ -1040,6 +1049,9 @@ func (*MapAddDomainReply) GetCrcString() string   { return "3e6d4e2c" }
 func (*MapAddDomainReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MapAddDomainReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MapAddDomainReply) Size() (size int) {
 	if m == nil {
@@ -1076,6 +1088,9 @@ func (*MapDelDomain) GetCrcString() string   { return "8ac76db6" }
 func (*MapDelDomain) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MapDelDomain) GetRetVal() error {
+	return nil
+}
 
 func (m *MapDelDomain) Size() (size int) {
 	if m == nil {
@@ -1108,6 +1123,9 @@ func (*MapDelDomainReply) GetMessageName() string { return "map_del_domain_reply
 func (*MapDelDomainReply) GetCrcString() string   { return "e8d4e804" }
 func (*MapDelDomainReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MapDelDomainReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *MapDelDomainReply) Size() (size int) {
@@ -1150,6 +1168,9 @@ func (*MapDomainDetails) GetMessageName() string { return "map_domain_details" }
 func (*MapDomainDetails) GetCrcString() string   { return "fc1859dd" }
 func (*MapDomainDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MapDomainDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *MapDomainDetails) Size() (size int) {
@@ -1218,6 +1239,9 @@ func (*MapDomainDump) GetCrcString() string   { return "51077d14" }
 func (*MapDomainDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MapDomainDump) GetRetVal() error {
+	return nil
+}
 
 func (m *MapDomainDump) Size() (size int) {
 	if m == nil {
@@ -1248,6 +1272,9 @@ func (*MapIfEnableDisable) GetMessageName() string { return "map_if_enable_disab
 func (*MapIfEnableDisable) GetCrcString() string   { return "59bb32f4" }
 func (*MapIfEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MapIfEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *MapIfEnableDisable) Size() (size int) {
@@ -1288,6 +1315,9 @@ func (*MapIfEnableDisableReply) GetCrcString() string   { return "e8d4e804" }
 func (*MapIfEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MapIfEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MapIfEnableDisableReply) Size() (size int) {
 	if m == nil {
@@ -1322,6 +1352,9 @@ func (*MapParamAddDelPreResolve) GetMessageName() string { return "map_param_add
 func (*MapParamAddDelPreResolve) GetCrcString() string   { return "17008c66" }
 func (*MapParamAddDelPreResolve) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MapParamAddDelPreResolve) GetRetVal() error {
+	return nil
 }
 
 func (m *MapParamAddDelPreResolve) Size() (size int) {
@@ -1364,6 +1397,9 @@ func (*MapParamAddDelPreResolveReply) GetCrcString() string { return "e8d4e804" 
 func (*MapParamAddDelPreResolveReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MapParamAddDelPreResolveReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MapParamAddDelPreResolveReply) Size() (size int) {
 	if m == nil {
@@ -1394,6 +1430,9 @@ func (*MapParamGet) GetMessageName() string { return "map_param_get" }
 func (*MapParamGet) GetCrcString() string   { return "51077d14" }
 func (*MapParamGet) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MapParamGet) GetRetVal() error {
+	return nil
 }
 
 func (m *MapParamGet) Size() (size int) {
@@ -1437,6 +1476,9 @@ func (*MapParamGetReply) GetMessageName() string { return "map_param_get_reply" 
 func (*MapParamGetReply) GetCrcString() string   { return "28092156" }
 func (*MapParamGetReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MapParamGetReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *MapParamGetReply) Size() (size int) {
@@ -1514,6 +1556,9 @@ func (*MapParamSetFragmentation) GetCrcString() string   { return "9ff54d90" }
 func (*MapParamSetFragmentation) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MapParamSetFragmentation) GetRetVal() error {
+	return nil
+}
 
 func (m *MapParamSetFragmentation) Size() (size int) {
 	if m == nil {
@@ -1552,6 +1597,9 @@ func (*MapParamSetFragmentationReply) GetCrcString() string { return "e8d4e804" 
 func (*MapParamSetFragmentationReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MapParamSetFragmentationReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MapParamSetFragmentationReply) Size() (size int) {
 	if m == nil {
@@ -1584,6 +1632,9 @@ func (*MapParamSetICMP) GetMessageName() string { return "map_param_set_icmp" }
 func (*MapParamSetICMP) GetCrcString() string   { return "58210cbf" }
 func (*MapParamSetICMP) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MapParamSetICMP) GetRetVal() error {
+	return nil
 }
 
 func (m *MapParamSetICMP) Size() (size int) {
@@ -1618,6 +1669,9 @@ func (*MapParamSetICMP6) GetCrcString() string   { return "5d01f8c1" }
 func (*MapParamSetICMP6) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MapParamSetICMP6) GetRetVal() error {
+	return nil
+}
 
 func (m *MapParamSetICMP6) Size() (size int) {
 	if m == nil {
@@ -1650,6 +1704,9 @@ func (*MapParamSetICMP6Reply) GetMessageName() string { return "map_param_set_ic
 func (*MapParamSetICMP6Reply) GetCrcString() string   { return "e8d4e804" }
 func (*MapParamSetICMP6Reply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MapParamSetICMP6Reply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *MapParamSetICMP6Reply) Size() (size int) {
@@ -1684,6 +1741,9 @@ func (*MapParamSetICMPReply) GetCrcString() string   { return "e8d4e804" }
 func (*MapParamSetICMPReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MapParamSetICMPReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MapParamSetICMPReply) Size() (size int) {
 	if m == nil {
@@ -1717,6 +1777,9 @@ func (*MapParamSetSecurityCheck) GetMessageName() string { return "map_param_set
 func (*MapParamSetSecurityCheck) GetCrcString() string   { return "6abe9836" }
 func (*MapParamSetSecurityCheck) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MapParamSetSecurityCheck) GetRetVal() error {
+	return nil
 }
 
 func (m *MapParamSetSecurityCheck) Size() (size int) {
@@ -1756,6 +1819,9 @@ func (*MapParamSetSecurityCheckReply) GetCrcString() string { return "e8d4e804" 
 func (*MapParamSetSecurityCheckReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MapParamSetSecurityCheckReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MapParamSetSecurityCheckReply) Size() (size int) {
 	if m == nil {
@@ -1788,6 +1854,9 @@ func (*MapParamSetTCP) GetMessageName() string { return "map_param_set_tcp" }
 func (*MapParamSetTCP) GetCrcString() string   { return "87a825d9" }
 func (*MapParamSetTCP) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MapParamSetTCP) GetRetVal() error {
+	return nil
 }
 
 func (m *MapParamSetTCP) Size() (size int) {
@@ -1822,6 +1891,9 @@ func (*MapParamSetTCPReply) GetCrcString() string   { return "e8d4e804" }
 func (*MapParamSetTCPReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MapParamSetTCPReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MapParamSetTCPReply) Size() (size int) {
 	if m == nil {
@@ -1855,6 +1927,9 @@ func (*MapParamSetTrafficClass) GetMessageName() string { return "map_param_set_
 func (*MapParamSetTrafficClass) GetCrcString() string   { return "9cac455c" }
 func (*MapParamSetTrafficClass) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MapParamSetTrafficClass) GetRetVal() error {
+	return nil
 }
 
 func (m *MapParamSetTrafficClass) Size() (size int) {
@@ -1894,6 +1969,9 @@ func (*MapParamSetTrafficClassReply) GetCrcString() string { return "e8d4e804" }
 func (*MapParamSetTrafficClassReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MapParamSetTrafficClassReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MapParamSetTrafficClassReply) Size() (size int) {
 	if m == nil {
@@ -1927,6 +2005,9 @@ func (*MapRuleDetails) GetMessageName() string { return "map_rule_details" }
 func (*MapRuleDetails) GetCrcString() string   { return "c7cbeea5" }
 func (*MapRuleDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MapRuleDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *MapRuleDetails) Size() (size int) {
@@ -1964,6 +2045,9 @@ func (*MapRuleDump) GetCrcString() string   { return "e43e6ff6" }
 func (*MapRuleDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MapRuleDump) GetRetVal() error {
+	return nil
+}
 
 func (m *MapRuleDump) Size() (size int) {
 	if m == nil {
@@ -1994,6 +2078,9 @@ func (*MapSummaryStats) GetMessageName() string { return "map_summary_stats" }
 func (*MapSummaryStats) GetCrcString() string   { return "51077d14" }
 func (*MapSummaryStats) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MapSummaryStats) GetRetVal() error {
+	return nil
 }
 
 func (m *MapSummaryStats) Size() (size int) {
@@ -2028,6 +2115,9 @@ func (*MapSummaryStatsReply) GetMessageName() string { return "map_summary_stats
 func (*MapSummaryStatsReply) GetCrcString() string   { return "0e4ace0e" }
 func (*MapSummaryStatsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MapSummaryStatsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *MapSummaryStatsReply) Size() (size int) {

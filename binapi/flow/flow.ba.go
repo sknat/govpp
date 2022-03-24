@@ -44,6 +44,9 @@ func (*FlowAdd) GetCrcString() string   { return "f946ed84" }
 func (*FlowAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *FlowAdd) GetRetVal() error {
+	return nil
+}
 
 func (m *FlowAdd) Size() (size int) {
 	if m == nil {
@@ -103,6 +106,9 @@ func (*FlowAddReply) GetCrcString() string   { return "8587dc85" }
 func (*FlowAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *FlowAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *FlowAddReply) Size() (size int) {
 	if m == nil {
@@ -140,6 +146,9 @@ func (*FlowDel) GetCrcString() string   { return "b6b9b02c" }
 func (*FlowDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *FlowDel) GetRetVal() error {
+	return nil
+}
 
 func (m *FlowDel) Size() (size int) {
 	if m == nil {
@@ -173,6 +182,9 @@ func (*FlowDelReply) GetMessageName() string { return "flow_del_reply" }
 func (*FlowDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*FlowDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *FlowDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *FlowDelReply) Size() (size int) {
@@ -208,6 +220,9 @@ func (*FlowDisable) GetMessageName() string { return "flow_disable" }
 func (*FlowDisable) GetCrcString() string   { return "2024be69" }
 func (*FlowDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *FlowDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *FlowDisable) Size() (size int) {
@@ -246,6 +261,9 @@ func (*FlowDisableReply) GetCrcString() string   { return "e8d4e804" }
 func (*FlowDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *FlowDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *FlowDisableReply) Size() (size int) {
 	if m == nil {
@@ -280,6 +298,9 @@ func (*FlowEnable) GetMessageName() string { return "flow_enable" }
 func (*FlowEnable) GetCrcString() string   { return "2024be69" }
 func (*FlowEnable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *FlowEnable) GetRetVal() error {
+	return nil
 }
 
 func (m *FlowEnable) Size() (size int) {
@@ -317,6 +338,9 @@ func (*FlowEnableReply) GetMessageName() string { return "flow_enable_reply" }
 func (*FlowEnableReply) GetCrcString() string   { return "e8d4e804" }
 func (*FlowEnableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *FlowEnableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *FlowEnableReply) Size() (size int) {

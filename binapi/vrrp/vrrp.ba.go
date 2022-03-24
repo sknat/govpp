@@ -176,6 +176,9 @@ func (*VrrpVrAddDel) GetCrcString() string   { return "c5cf15aa" }
 func (*VrrpVrAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *VrrpVrAddDel) GetRetVal() error {
+	return nil
+}
 
 func (m *VrrpVrAddDel) Size() (size int) {
 	if m == nil {
@@ -249,6 +252,9 @@ func (*VrrpVrAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*VrrpVrAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *VrrpVrAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *VrrpVrAddDelReply) Size() (size int) {
 	if m == nil {
@@ -284,6 +290,9 @@ func (*VrrpVrDetails) GetMessageName() string { return "vrrp_vr_details" }
 func (*VrrpVrDetails) GetCrcString() string   { return "46edcebd" }
 func (*VrrpVrDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *VrrpVrDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *VrrpVrDetails) Size() (size int) {
@@ -376,6 +385,9 @@ func (*VrrpVrDump) GetCrcString() string   { return "f9e6675e" }
 func (*VrrpVrDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *VrrpVrDump) GetRetVal() error {
+	return nil
+}
 
 func (m *VrrpVrDump) Size() (size int) {
 	if m == nil {
@@ -411,6 +423,9 @@ func (*VrrpVrEvent) GetMessageName() string { return "vrrp_vr_event" }
 func (*VrrpVrEvent) GetCrcString() string   { return "c1fea6a5" }
 func (*VrrpVrEvent) GetMessageType() api.MessageType {
 	return api.EventMessage
+}
+func (m *VrrpVrEvent) GetRetVal() error {
+	return nil
 }
 
 func (m *VrrpVrEvent) Size() (size int) {
@@ -463,6 +478,9 @@ func (*VrrpVrPeerDetails) GetMessageName() string { return "vrrp_vr_peer_details
 func (*VrrpVrPeerDetails) GetCrcString() string   { return "3d99c108" }
 func (*VrrpVrPeerDetails) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VrrpVrPeerDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *VrrpVrPeerDetails) Size() (size int) {
@@ -530,6 +548,9 @@ func (*VrrpVrPeerDump) GetCrcString() string   { return "6fa3f7c4" }
 func (*VrrpVrPeerDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *VrrpVrPeerDump) GetRetVal() error {
+	return nil
+}
 
 func (m *VrrpVrPeerDump) Size() (size int) {
 	if m == nil {
@@ -572,6 +593,9 @@ func (*VrrpVrSetPeers) GetMessageName() string { return "vrrp_vr_set_peers" }
 func (*VrrpVrSetPeers) GetCrcString() string   { return "20bec71f" }
 func (*VrrpVrSetPeers) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VrrpVrSetPeers) GetRetVal() error {
+	return nil
 }
 
 func (m *VrrpVrSetPeers) Size() (size int) {
@@ -637,6 +661,9 @@ func (*VrrpVrSetPeersReply) GetCrcString() string   { return "e8d4e804" }
 func (*VrrpVrSetPeersReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *VrrpVrSetPeersReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *VrrpVrSetPeersReply) Size() (size int) {
 	if m == nil {
@@ -672,6 +699,9 @@ func (*VrrpVrStartStop) GetMessageName() string { return "vrrp_vr_start_stop" }
 func (*VrrpVrStartStop) GetCrcString() string   { return "0662a3b7" }
 func (*VrrpVrStartStop) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VrrpVrStartStop) GetRetVal() error {
+	return nil
 }
 
 func (m *VrrpVrStartStop) Size() (size int) {
@@ -715,6 +745,9 @@ func (*VrrpVrStartStopReply) GetCrcString() string   { return "e8d4e804" }
 func (*VrrpVrStartStopReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *VrrpVrStartStopReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *VrrpVrStartStopReply) Size() (size int) {
 	if m == nil {
@@ -752,6 +785,9 @@ func (*VrrpVrTrackIfAddDel) GetMessageName() string { return "vrrp_vr_track_if_a
 func (*VrrpVrTrackIfAddDel) GetCrcString() string   { return "d67df299" }
 func (*VrrpVrTrackIfAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VrrpVrTrackIfAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *VrrpVrTrackIfAddDel) Size() (size int) {
@@ -820,6 +856,9 @@ func (*VrrpVrTrackIfAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*VrrpVrTrackIfAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *VrrpVrTrackIfAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *VrrpVrTrackIfAddDelReply) Size() (size int) {
 	if m == nil {
@@ -856,6 +895,9 @@ func (*VrrpVrTrackIfDetails) GetMessageName() string { return "vrrp_vr_track_if_
 func (*VrrpVrTrackIfDetails) GetCrcString() string   { return "73c36f81" }
 func (*VrrpVrTrackIfDetails) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VrrpVrTrackIfDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *VrrpVrTrackIfDetails) Size() (size int) {
@@ -924,6 +966,9 @@ func (*VrrpVrTrackIfDump) GetCrcString() string   { return "a34dfc6d" }
 func (*VrrpVrTrackIfDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *VrrpVrTrackIfDump) GetRetVal() error {
+	return nil
+}
 
 func (m *VrrpVrTrackIfDump) Size() (size int) {
 	if m == nil {
@@ -967,6 +1012,9 @@ func (*WantVrrpVrEvents) GetCrcString() string   { return "c5e2af94" }
 func (*WantVrrpVrEvents) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *WantVrrpVrEvents) GetRetVal() error {
+	return nil
+}
 
 func (m *WantVrrpVrEvents) Size() (size int) {
 	if m == nil {
@@ -1002,6 +1050,9 @@ func (*WantVrrpVrEventsReply) GetMessageName() string { return "want_vrrp_vr_eve
 func (*WantVrrpVrEventsReply) GetCrcString() string   { return "e8d4e804" }
 func (*WantVrrpVrEventsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *WantVrrpVrEventsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *WantVrrpVrEventsReply) Size() (size int) {

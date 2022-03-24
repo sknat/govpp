@@ -75,6 +75,9 @@ func (*MplsIPBindUnbind) GetCrcString() string   { return "c7533b32" }
 func (*MplsIPBindUnbind) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MplsIPBindUnbind) GetRetVal() error {
+	return nil
+}
 
 func (m *MplsIPBindUnbind) Size() (size int) {
 	if m == nil {
@@ -126,6 +129,9 @@ func (*MplsIPBindUnbindReply) GetCrcString() string   { return "e8d4e804" }
 func (*MplsIPBindUnbindReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MplsIPBindUnbindReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MplsIPBindUnbindReply) Size() (size int) {
 	if m == nil {
@@ -160,6 +166,9 @@ func (*MplsRouteAddDel) GetMessageName() string { return "mpls_route_add_del" }
 func (*MplsRouteAddDel) GetCrcString() string   { return "8e1d1e07" }
 func (*MplsRouteAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MplsRouteAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *MplsRouteAddDel) Size() (size int) {
@@ -289,6 +298,9 @@ func (*MplsRouteAddDelReply) GetCrcString() string   { return "1992deab" }
 func (*MplsRouteAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MplsRouteAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MplsRouteAddDelReply) Size() (size int) {
 	if m == nil {
@@ -324,6 +336,9 @@ func (*MplsRouteDetails) GetMessageName() string { return "mpls_route_details" }
 func (*MplsRouteDetails) GetCrcString() string   { return "9b5043dc" }
 func (*MplsRouteDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MplsRouteDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *MplsRouteDetails) Size() (size int) {
@@ -446,6 +461,9 @@ func (*MplsRouteDump) GetCrcString() string   { return "935fdefa" }
 func (*MplsRouteDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MplsRouteDump) GetRetVal() error {
+	return nil
+}
 
 func (m *MplsRouteDump) Size() (size int) {
 	if m == nil {
@@ -482,6 +500,9 @@ func (*MplsTableAddDel) GetMessageName() string { return "mpls_table_add_del" }
 func (*MplsTableAddDel) GetCrcString() string   { return "57817512" }
 func (*MplsTableAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MplsTableAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *MplsTableAddDel) Size() (size int) {
@@ -522,6 +543,9 @@ func (*MplsTableAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*MplsTableAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MplsTableAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MplsTableAddDelReply) Size() (size int) {
 	if m == nil {
@@ -554,6 +578,9 @@ func (*MplsTableDetails) GetMessageName() string { return "mpls_table_details" }
 func (*MplsTableDetails) GetCrcString() string   { return "f03ecdc8" }
 func (*MplsTableDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MplsTableDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *MplsTableDetails) Size() (size int) {
@@ -589,6 +616,9 @@ func (*MplsTableDump) GetCrcString() string   { return "51077d14" }
 func (*MplsTableDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MplsTableDump) GetRetVal() error {
+	return nil
+}
 
 func (m *MplsTableDump) Size() (size int) {
 	if m == nil {
@@ -618,6 +648,9 @@ func (*MplsTunnelAddDel) GetMessageName() string { return "mpls_tunnel_add_del" 
 func (*MplsTunnelAddDel) GetCrcString() string   { return "44350ac1" }
 func (*MplsTunnelAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *MplsTunnelAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *MplsTunnelAddDel) Size() (size int) {
@@ -745,6 +778,9 @@ func (*MplsTunnelAddDelReply) GetCrcString() string   { return "afb01472" }
 func (*MplsTunnelAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MplsTunnelAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MplsTunnelAddDelReply) Size() (size int) {
 	if m == nil {
@@ -783,6 +819,9 @@ func (*MplsTunnelDetails) GetMessageName() string { return "mpls_tunnel_details"
 func (*MplsTunnelDetails) GetCrcString() string   { return "57118ae3" }
 func (*MplsTunnelDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MplsTunnelDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *MplsTunnelDetails) Size() (size int) {
@@ -905,6 +944,9 @@ func (*MplsTunnelDump) GetCrcString() string   { return "f9e6675e" }
 func (*MplsTunnelDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MplsTunnelDump) GetRetVal() error {
+	return nil
+}
 
 func (m *MplsTunnelDump) Size() (size int) {
 	if m == nil {
@@ -938,6 +980,9 @@ func (*SwInterfaceSetMplsEnable) GetMessageName() string { return "sw_interface_
 func (*SwInterfaceSetMplsEnable) GetCrcString() string   { return "ae6cfcfb" }
 func (*SwInterfaceSetMplsEnable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetMplsEnable) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetMplsEnable) Size() (size int) {
@@ -976,6 +1021,9 @@ func (*SwInterfaceSetMplsEnableReply) GetMessageName() string {
 func (*SwInterfaceSetMplsEnableReply) GetCrcString() string { return "e8d4e804" }
 func (*SwInterfaceSetMplsEnableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceSetMplsEnableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SwInterfaceSetMplsEnableReply) Size() (size int) {

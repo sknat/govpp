@@ -42,6 +42,9 @@ func (*MrvlPp2Create) GetCrcString() string   { return "3a108396" }
 func (*MrvlPp2Create) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MrvlPp2Create) GetRetVal() error {
+	return nil
+}
 
 func (m *MrvlPp2Create) Size() (size int) {
 	if m == nil {
@@ -82,6 +85,9 @@ func (*MrvlPp2CreateReply) GetCrcString() string   { return "5383d31f" }
 func (*MrvlPp2CreateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *MrvlPp2CreateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *MrvlPp2CreateReply) Size() (size int) {
 	if m == nil {
@@ -118,6 +124,9 @@ func (*MrvlPp2Delete) GetCrcString() string   { return "f9e6675e" }
 func (*MrvlPp2Delete) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *MrvlPp2Delete) GetRetVal() error {
+	return nil
+}
 
 func (m *MrvlPp2Delete) Size() (size int) {
 	if m == nil {
@@ -150,6 +159,9 @@ func (*MrvlPp2DeleteReply) GetMessageName() string { return "mrvl_pp2_delete_rep
 func (*MrvlPp2DeleteReply) GetCrcString() string   { return "e8d4e804" }
 func (*MrvlPp2DeleteReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *MrvlPp2DeleteReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *MrvlPp2DeleteReply) Size() (size int) {

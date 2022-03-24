@@ -42,6 +42,9 @@ func (*TCPConfigureSrcAddresses) GetCrcString() string   { return "67eede0d" }
 func (*TCPConfigureSrcAddresses) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *TCPConfigureSrcAddresses) GetRetVal() error {
+	return nil
+}
 
 func (m *TCPConfigureSrcAddresses) Size() (size int) {
 	if m == nil {
@@ -88,6 +91,9 @@ func (*TCPConfigureSrcAddressesReply) GetMessageName() string {
 func (*TCPConfigureSrcAddressesReply) GetCrcString() string { return "e8d4e804" }
 func (*TCPConfigureSrcAddressesReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *TCPConfigureSrcAddressesReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *TCPConfigureSrcAddressesReply) Size() (size int) {

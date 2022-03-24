@@ -143,6 +143,9 @@ func (*FlowprobeParams) GetCrcString() string   { return "baa46c09" }
 func (*FlowprobeParams) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *FlowprobeParams) GetRetVal() error {
+	return nil
+}
 
 func (m *FlowprobeParams) Size() (size int) {
 	if m == nil {
@@ -182,6 +185,9 @@ func (*FlowprobeParamsReply) GetCrcString() string   { return "e8d4e804" }
 func (*FlowprobeParamsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *FlowprobeParamsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *FlowprobeParamsReply) Size() (size int) {
 	if m == nil {
@@ -216,6 +222,9 @@ func (*FlowprobeTxInterfaceAddDel) GetMessageName() string { return "flowprobe_t
 func (*FlowprobeTxInterfaceAddDel) GetCrcString() string   { return "b782c976" }
 func (*FlowprobeTxInterfaceAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *FlowprobeTxInterfaceAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *FlowprobeTxInterfaceAddDel) Size() (size int) {
@@ -257,6 +266,9 @@ func (*FlowprobeTxInterfaceAddDelReply) GetMessageName() string {
 func (*FlowprobeTxInterfaceAddDelReply) GetCrcString() string { return "e8d4e804" }
 func (*FlowprobeTxInterfaceAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *FlowprobeTxInterfaceAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *FlowprobeTxInterfaceAddDelReply) Size() (size int) {

@@ -99,6 +99,9 @@ func (*CryptoSetAsyncDispatch) GetCrcString() string   { return "5ca4adc0" }
 func (*CryptoSetAsyncDispatch) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *CryptoSetAsyncDispatch) GetRetVal() error {
+	return nil
+}
 
 func (m *CryptoSetAsyncDispatch) Size() (size int) {
 	if m == nil {
@@ -131,6 +134,9 @@ func (*CryptoSetAsyncDispatchReply) GetMessageName() string { return "crypto_set
 func (*CryptoSetAsyncDispatchReply) GetCrcString() string   { return "e8d4e804" }
 func (*CryptoSetAsyncDispatchReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *CryptoSetAsyncDispatchReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *CryptoSetAsyncDispatchReply) Size() (size int) {
@@ -167,6 +173,9 @@ func (*CryptoSetHandler) GetMessageName() string { return "crypto_set_handler" }
 func (*CryptoSetHandler) GetCrcString() string   { return "ce9ad00d" }
 func (*CryptoSetHandler) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *CryptoSetHandler) GetRetVal() error {
+	return nil
 }
 
 func (m *CryptoSetHandler) Size() (size int) {
@@ -209,6 +218,9 @@ func (*CryptoSetHandlerReply) GetMessageName() string { return "crypto_set_handl
 func (*CryptoSetHandlerReply) GetCrcString() string   { return "e8d4e804" }
 func (*CryptoSetHandlerReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *CryptoSetHandlerReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *CryptoSetHandlerReply) Size() (size int) {

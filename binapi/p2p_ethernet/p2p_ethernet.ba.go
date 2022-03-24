@@ -43,6 +43,9 @@ func (*P2pEthernetAdd) GetCrcString() string   { return "36a1a6dc" }
 func (*P2pEthernetAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *P2pEthernetAdd) GetRetVal() error {
+	return nil
+}
 
 func (m *P2pEthernetAdd) Size() (size int) {
 	if m == nil {
@@ -83,6 +86,9 @@ func (*P2pEthernetAddReply) GetCrcString() string   { return "5383d31f" }
 func (*P2pEthernetAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *P2pEthernetAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *P2pEthernetAddReply) Size() (size int) {
 	if m == nil {
@@ -120,6 +126,9 @@ func (*P2pEthernetDel) GetCrcString() string   { return "62f81c8c" }
 func (*P2pEthernetDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *P2pEthernetDel) GetRetVal() error {
+	return nil
+}
 
 func (m *P2pEthernetDel) Size() (size int) {
 	if m == nil {
@@ -155,6 +164,9 @@ func (*P2pEthernetDelReply) GetMessageName() string { return "p2p_ethernet_del_r
 func (*P2pEthernetDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*P2pEthernetDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *P2pEthernetDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *P2pEthernetDelReply) Size() (size int) {

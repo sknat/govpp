@@ -42,6 +42,9 @@ func (*IP6NdAddressAutoconfig) GetCrcString() string   { return "9e14a4a7" }
 func (*IP6NdAddressAutoconfig) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IP6NdAddressAutoconfig) GetRetVal() error {
+	return nil
+}
 
 func (m *IP6NdAddressAutoconfig) Size() (size int) {
 	if m == nil {
@@ -80,6 +83,9 @@ func (*IP6NdAddressAutoconfigReply) GetMessageName() string { return "ip6_nd_add
 func (*IP6NdAddressAutoconfigReply) GetCrcString() string   { return "e8d4e804" }
 func (*IP6NdAddressAutoconfigReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IP6NdAddressAutoconfigReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *IP6NdAddressAutoconfigReply) Size() (size int) {

@@ -86,6 +86,9 @@ func (*LispAddDelAdjacency) GetCrcString() string   { return "2ce0e6f6" }
 func (*LispAddDelAdjacency) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LispAddDelAdjacency) GetRetVal() error {
+	return nil
+}
 
 func (m *LispAddDelAdjacency) Size() (size int) {
 	if m == nil {
@@ -134,6 +137,9 @@ func (*LispAddDelAdjacencyReply) GetCrcString() string   { return "e8d4e804" }
 func (*LispAddDelAdjacencyReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispAddDelAdjacencyReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispAddDelAdjacencyReply) Size() (size int) {
 	if m == nil {
@@ -170,6 +176,9 @@ func (*LispAddDelLocalEid) GetMessageName() string { return "lisp_add_del_local_
 func (*LispAddDelLocalEid) GetCrcString() string   { return "4e5a83a2" }
 func (*LispAddDelLocalEid) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispAddDelLocalEid) GetRetVal() error {
+	return nil
 }
 
 func (m *LispAddDelLocalEid) Size() (size int) {
@@ -223,6 +232,9 @@ func (*LispAddDelLocalEidReply) GetCrcString() string   { return "e8d4e804" }
 func (*LispAddDelLocalEidReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispAddDelLocalEidReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispAddDelLocalEidReply) Size() (size int) {
 	if m == nil {
@@ -259,6 +271,9 @@ func (*LispAddDelLocator) GetMessageName() string { return "lisp_add_del_locator
 func (*LispAddDelLocator) GetCrcString() string   { return "af4d8f13" }
 func (*LispAddDelLocator) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispAddDelLocator) GetRetVal() error {
+	return nil
 }
 
 func (m *LispAddDelLocator) Size() (size int) {
@@ -305,6 +320,9 @@ func (*LispAddDelLocatorReply) GetCrcString() string   { return "e8d4e804" }
 func (*LispAddDelLocatorReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispAddDelLocatorReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispAddDelLocatorReply) Size() (size int) {
 	if m == nil {
@@ -340,6 +358,9 @@ func (*LispAddDelLocatorSet) GetMessageName() string { return "lisp_add_del_loca
 func (*LispAddDelLocatorSet) GetCrcString() string   { return "6fcd6471" }
 func (*LispAddDelLocatorSet) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispAddDelLocatorSet) GetRetVal() error {
+	return nil
 }
 
 func (m *LispAddDelLocatorSet) Size() (size int) {
@@ -406,6 +427,9 @@ func (*LispAddDelLocatorSetReply) GetCrcString() string   { return "b6666db4" }
 func (*LispAddDelLocatorSetReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispAddDelLocatorSetReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispAddDelLocatorSetReply) Size() (size int) {
 	if m == nil {
@@ -445,6 +469,9 @@ func (*LispAddDelMapRequestItrRlocs) GetCrcString() string { return "6be88e45" }
 func (*LispAddDelMapRequestItrRlocs) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LispAddDelMapRequestItrRlocs) GetRetVal() error {
+	return nil
+}
 
 func (m *LispAddDelMapRequestItrRlocs) Size() (size int) {
 	if m == nil {
@@ -483,6 +510,9 @@ func (*LispAddDelMapRequestItrRlocsReply) GetCrcString() string { return "e8d4e8
 func (*LispAddDelMapRequestItrRlocsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispAddDelMapRequestItrRlocsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispAddDelMapRequestItrRlocsReply) Size() (size int) {
 	if m == nil {
@@ -516,6 +546,9 @@ func (*LispAddDelMapResolver) GetMessageName() string { return "lisp_add_del_map
 func (*LispAddDelMapResolver) GetCrcString() string   { return "ce19e32d" }
 func (*LispAddDelMapResolver) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispAddDelMapResolver) GetRetVal() error {
+	return nil
 }
 
 func (m *LispAddDelMapResolver) Size() (size int) {
@@ -556,6 +589,9 @@ func (*LispAddDelMapResolverReply) GetCrcString() string   { return "e8d4e804" }
 func (*LispAddDelMapResolverReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispAddDelMapResolverReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispAddDelMapResolverReply) Size() (size int) {
 	if m == nil {
@@ -589,6 +625,9 @@ func (*LispAddDelMapServer) GetMessageName() string { return "lisp_add_del_map_s
 func (*LispAddDelMapServer) GetCrcString() string   { return "ce19e32d" }
 func (*LispAddDelMapServer) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispAddDelMapServer) GetRetVal() error {
+	return nil
 }
 
 func (m *LispAddDelMapServer) Size() (size int) {
@@ -628,6 +667,9 @@ func (*LispAddDelMapServerReply) GetMessageName() string { return "lisp_add_del_
 func (*LispAddDelMapServerReply) GetCrcString() string   { return "e8d4e804" }
 func (*LispAddDelMapServerReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *LispAddDelMapServerReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *LispAddDelMapServerReply) Size() (size int) {
@@ -669,6 +711,9 @@ func (*LispAddDelRemoteMapping) GetMessageName() string { return "lisp_add_del_r
 func (*LispAddDelRemoteMapping) GetCrcString() string   { return "6d5c789e" }
 func (*LispAddDelRemoteMapping) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispAddDelRemoteMapping) GetRetVal() error {
+	return nil
 }
 
 func (m *LispAddDelRemoteMapping) Size() (size int) {
@@ -760,6 +805,9 @@ func (*LispAddDelRemoteMappingReply) GetCrcString() string { return "e8d4e804" }
 func (*LispAddDelRemoteMappingReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispAddDelRemoteMappingReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispAddDelRemoteMappingReply) Size() (size int) {
 	if m == nil {
@@ -792,6 +840,9 @@ func (*LispAdjacenciesGet) GetMessageName() string { return "lisp_adjacencies_ge
 func (*LispAdjacenciesGet) GetCrcString() string   { return "8d1f2fe9" }
 func (*LispAdjacenciesGet) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispAdjacenciesGet) GetRetVal() error {
+	return nil
 }
 
 func (m *LispAdjacenciesGet) Size() (size int) {
@@ -827,6 +878,9 @@ func (*LispAdjacenciesGetReply) GetMessageName() string { return "lisp_adjacenci
 func (*LispAdjacenciesGetReply) GetCrcString() string   { return "807257bf" }
 func (*LispAdjacenciesGetReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *LispAdjacenciesGetReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *LispAdjacenciesGetReply) Size() (size int) {
@@ -895,6 +949,9 @@ func (*LispEidTableAddDelMap) GetCrcString() string   { return "9481416b" }
 func (*LispEidTableAddDelMap) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LispEidTableAddDelMap) GetRetVal() error {
+	return nil
+}
 
 func (m *LispEidTableAddDelMap) Size() (size int) {
 	if m == nil {
@@ -937,6 +994,9 @@ func (*LispEidTableAddDelMapReply) GetCrcString() string   { return "e8d4e804" }
 func (*LispEidTableAddDelMapReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispEidTableAddDelMapReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispEidTableAddDelMapReply) Size() (size int) {
 	if m == nil {
@@ -978,6 +1038,9 @@ func (*LispEidTableDetails) GetMessageName() string { return "lisp_eid_table_det
 func (*LispEidTableDetails) GetCrcString() string   { return "1c29f792" }
 func (*LispEidTableDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *LispEidTableDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *LispEidTableDetails) Size() (size int) {
@@ -1053,6 +1116,9 @@ func (*LispEidTableDump) GetCrcString() string   { return "629468b5" }
 func (*LispEidTableDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LispEidTableDump) GetRetVal() error {
+	return nil
+}
 
 func (m *LispEidTableDump) Size() (size int) {
 	if m == nil {
@@ -1102,6 +1168,9 @@ func (*LispEidTableMapDetails) GetCrcString() string   { return "0b6859e2" }
 func (*LispEidTableMapDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispEidTableMapDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *LispEidTableMapDetails) Size() (size int) {
 	if m == nil {
@@ -1138,6 +1207,9 @@ func (*LispEidTableMapDump) GetCrcString() string   { return "d6cf0c3d" }
 func (*LispEidTableMapDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LispEidTableMapDump) GetRetVal() error {
+	return nil
+}
 
 func (m *LispEidTableMapDump) Size() (size int) {
 	if m == nil {
@@ -1171,6 +1243,9 @@ func (*LispEidTableVniDetails) GetCrcString() string   { return "64abc01e" }
 func (*LispEidTableVniDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispEidTableVniDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *LispEidTableVniDetails) Size() (size int) {
 	if m == nil {
@@ -1202,6 +1277,9 @@ func (*LispEidTableVniDump) GetCrcString() string   { return "51077d14" }
 func (*LispEidTableVniDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LispEidTableVniDump) GetRetVal() error {
+	return nil
+}
 
 func (m *LispEidTableVniDump) Size() (size int) {
 	if m == nil {
@@ -1230,6 +1308,9 @@ func (*LispEnableDisable) GetMessageName() string { return "lisp_enable_disable"
 func (*LispEnableDisable) GetCrcString() string   { return "c264d7bf" }
 func (*LispEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *LispEnableDisable) Size() (size int) {
@@ -1264,6 +1345,9 @@ func (*LispEnableDisableReply) GetCrcString() string   { return "e8d4e804" }
 func (*LispEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispEnableDisableReply) Size() (size int) {
 	if m == nil {
@@ -1294,6 +1378,9 @@ func (*LispGetMapRequestItrRlocs) GetMessageName() string { return "lisp_get_map
 func (*LispGetMapRequestItrRlocs) GetCrcString() string   { return "51077d14" }
 func (*LispGetMapRequestItrRlocs) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispGetMapRequestItrRlocs) GetRetVal() error {
+	return nil
 }
 
 func (m *LispGetMapRequestItrRlocs) Size() (size int) {
@@ -1326,6 +1413,9 @@ func (*LispGetMapRequestItrRlocsReply) GetMessageName() string {
 func (*LispGetMapRequestItrRlocsReply) GetCrcString() string { return "76580f3a" }
 func (*LispGetMapRequestItrRlocsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *LispGetMapRequestItrRlocsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *LispGetMapRequestItrRlocsReply) Size() (size int) {
@@ -1366,6 +1456,9 @@ func (*LispLocatorDetails) GetMessageName() string { return "lisp_locator_detail
 func (*LispLocatorDetails) GetCrcString() string   { return "2c620ffe" }
 func (*LispLocatorDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *LispLocatorDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *LispLocatorDetails) Size() (size int) {
@@ -1417,6 +1510,9 @@ func (*LispLocatorDump) GetCrcString() string   { return "b954fad7" }
 func (*LispLocatorDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LispLocatorDump) GetRetVal() error {
+	return nil
+}
 
 func (m *LispLocatorDump) Size() (size int) {
 	if m == nil {
@@ -1457,6 +1553,9 @@ func (*LispLocatorSetDetails) GetCrcString() string   { return "5b33a105" }
 func (*LispLocatorSetDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispLocatorSetDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *LispLocatorSetDetails) Size() (size int) {
 	if m == nil {
@@ -1493,6 +1592,9 @@ func (*LispLocatorSetDump) GetCrcString() string   { return "c2cb5922" }
 func (*LispLocatorSetDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LispLocatorSetDump) GetRetVal() error {
+	return nil
+}
 
 func (m *LispLocatorSetDump) Size() (size int) {
 	if m == nil {
@@ -1527,6 +1629,9 @@ func (*LispMapRegisterEnableDisable) GetMessageName() string {
 func (*LispMapRegisterEnableDisable) GetCrcString() string { return "c264d7bf" }
 func (*LispMapRegisterEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispMapRegisterEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *LispMapRegisterEnableDisable) Size() (size int) {
@@ -1563,6 +1668,9 @@ func (*LispMapRegisterEnableDisableReply) GetCrcString() string { return "e8d4e8
 func (*LispMapRegisterEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispMapRegisterEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispMapRegisterEnableDisableReply) Size() (size int) {
 	if m == nil {
@@ -1595,6 +1703,9 @@ func (*LispMapRequestMode) GetMessageName() string { return "lisp_map_request_mo
 func (*LispMapRequestMode) GetCrcString() string   { return "f43c26ae" }
 func (*LispMapRequestMode) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispMapRequestMode) GetRetVal() error {
+	return nil
 }
 
 func (m *LispMapRequestMode) Size() (size int) {
@@ -1629,6 +1740,9 @@ func (*LispMapRequestModeReply) GetCrcString() string   { return "e8d4e804" }
 func (*LispMapRequestModeReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispMapRequestModeReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispMapRequestModeReply) Size() (size int) {
 	if m == nil {
@@ -1661,6 +1775,9 @@ func (*LispMapResolverDetails) GetMessageName() string { return "lisp_map_resolv
 func (*LispMapResolverDetails) GetCrcString() string   { return "3e78fc57" }
 func (*LispMapResolverDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *LispMapResolverDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *LispMapResolverDetails) Size() (size int) {
@@ -1696,6 +1813,9 @@ func (*LispMapResolverDump) GetCrcString() string   { return "51077d14" }
 func (*LispMapResolverDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LispMapResolverDump) GetRetVal() error {
+	return nil
+}
 
 func (m *LispMapResolverDump) Size() (size int) {
 	if m == nil {
@@ -1724,6 +1844,9 @@ func (*LispMapServerDetails) GetMessageName() string { return "lisp_map_server_d
 func (*LispMapServerDetails) GetCrcString() string   { return "3e78fc57" }
 func (*LispMapServerDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *LispMapServerDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *LispMapServerDetails) Size() (size int) {
@@ -1759,6 +1882,9 @@ func (*LispMapServerDump) GetCrcString() string   { return "51077d14" }
 func (*LispMapServerDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LispMapServerDump) GetRetVal() error {
+	return nil
+}
 
 func (m *LispMapServerDump) Size() (size int) {
 	if m == nil {
@@ -1788,6 +1914,9 @@ func (*LispPitrSetLocatorSet) GetMessageName() string { return "lisp_pitr_set_lo
 func (*LispPitrSetLocatorSet) GetCrcString() string   { return "486e2b76" }
 func (*LispPitrSetLocatorSet) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispPitrSetLocatorSet) GetRetVal() error {
+	return nil
 }
 
 func (m *LispPitrSetLocatorSet) Size() (size int) {
@@ -1825,6 +1954,9 @@ func (*LispPitrSetLocatorSetReply) GetCrcString() string   { return "e8d4e804" }
 func (*LispPitrSetLocatorSetReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispPitrSetLocatorSetReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispPitrSetLocatorSetReply) Size() (size int) {
 	if m == nil {
@@ -1857,6 +1989,9 @@ func (*LispRlocProbeEnableDisable) GetMessageName() string { return "lisp_rloc_p
 func (*LispRlocProbeEnableDisable) GetCrcString() string   { return "c264d7bf" }
 func (*LispRlocProbeEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispRlocProbeEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *LispRlocProbeEnableDisable) Size() (size int) {
@@ -1893,6 +2028,9 @@ func (*LispRlocProbeEnableDisableReply) GetCrcString() string { return "e8d4e804
 func (*LispRlocProbeEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispRlocProbeEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispRlocProbeEnableDisableReply) Size() (size int) {
 	if m == nil {
@@ -1926,6 +2064,9 @@ func (*LispUsePetr) GetMessageName() string { return "lisp_use_petr" }
 func (*LispUsePetr) GetCrcString() string   { return "d87dbad9" }
 func (*LispUsePetr) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LispUsePetr) GetRetVal() error {
+	return nil
 }
 
 func (m *LispUsePetr) Size() (size int) {
@@ -1966,6 +2107,9 @@ func (*LispUsePetrReply) GetCrcString() string   { return "e8d4e804" }
 func (*LispUsePetrReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LispUsePetrReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LispUsePetrReply) Size() (size int) {
 	if m == nil {
@@ -1996,6 +2140,9 @@ func (*ShowLispMapRegisterState) GetMessageName() string { return "show_lisp_map
 func (*ShowLispMapRegisterState) GetCrcString() string   { return "51077d14" }
 func (*ShowLispMapRegisterState) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *ShowLispMapRegisterState) GetRetVal() error {
+	return nil
 }
 
 func (m *ShowLispMapRegisterState) Size() (size int) {
@@ -2028,6 +2175,9 @@ func (*ShowLispMapRegisterStateReply) GetMessageName() string {
 func (*ShowLispMapRegisterStateReply) GetCrcString() string { return "e33a377b" }
 func (*ShowLispMapRegisterStateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ShowLispMapRegisterStateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ShowLispMapRegisterStateReply) Size() (size int) {
@@ -2063,6 +2213,9 @@ func (*ShowLispMapRequestMode) GetCrcString() string   { return "51077d14" }
 func (*ShowLispMapRequestMode) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *ShowLispMapRequestMode) GetRetVal() error {
+	return nil
+}
 
 func (m *ShowLispMapRequestMode) Size() (size int) {
 	if m == nil {
@@ -2094,6 +2247,9 @@ func (*ShowLispMapRequestModeReply) GetMessageName() string {
 func (*ShowLispMapRequestModeReply) GetCrcString() string { return "5b05038e" }
 func (*ShowLispMapRequestModeReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ShowLispMapRequestModeReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ShowLispMapRequestModeReply) Size() (size int) {
@@ -2129,6 +2285,9 @@ func (*ShowLispPitr) GetCrcString() string   { return "51077d14" }
 func (*ShowLispPitr) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *ShowLispPitr) GetRetVal() error {
+	return nil
+}
 
 func (m *ShowLispPitr) Size() (size int) {
 	if m == nil {
@@ -2159,6 +2318,9 @@ func (*ShowLispPitrReply) GetMessageName() string { return "show_lisp_pitr_reply
 func (*ShowLispPitrReply) GetCrcString() string   { return "27aa69b1" }
 func (*ShowLispPitrReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ShowLispPitrReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ShowLispPitrReply) Size() (size int) {
@@ -2197,6 +2359,9 @@ func (*ShowLispRlocProbeState) GetCrcString() string   { return "51077d14" }
 func (*ShowLispRlocProbeState) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *ShowLispRlocProbeState) GetRetVal() error {
+	return nil
+}
 
 func (m *ShowLispRlocProbeState) Size() (size int) {
 	if m == nil {
@@ -2228,6 +2393,9 @@ func (*ShowLispRlocProbeStateReply) GetMessageName() string {
 func (*ShowLispRlocProbeStateReply) GetCrcString() string { return "e33a377b" }
 func (*ShowLispRlocProbeStateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ShowLispRlocProbeStateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ShowLispRlocProbeStateReply) Size() (size int) {
@@ -2263,6 +2431,9 @@ func (*ShowLispStatus) GetCrcString() string   { return "51077d14" }
 func (*ShowLispStatus) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *ShowLispStatus) GetRetVal() error {
+	return nil
+}
 
 func (m *ShowLispStatus) Size() (size int) {
 	if m == nil {
@@ -2293,6 +2464,9 @@ func (*ShowLispStatusReply) GetMessageName() string { return "show_lisp_status_r
 func (*ShowLispStatusReply) GetCrcString() string   { return "9e8f10c0" }
 func (*ShowLispStatusReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ShowLispStatusReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ShowLispStatusReply) Size() (size int) {
@@ -2331,6 +2505,9 @@ func (*ShowLispUsePetr) GetCrcString() string   { return "51077d14" }
 func (*ShowLispUsePetr) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *ShowLispUsePetr) GetRetVal() error {
+	return nil
+}
 
 func (m *ShowLispUsePetr) Size() (size int) {
 	if m == nil {
@@ -2361,6 +2538,9 @@ func (*ShowLispUsePetrReply) GetMessageName() string { return "show_lisp_use_pet
 func (*ShowLispUsePetrReply) GetCrcString() string   { return "22b9a4b0" }
 func (*ShowLispUsePetrReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *ShowLispUsePetrReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *ShowLispUsePetrReply) Size() (size int) {

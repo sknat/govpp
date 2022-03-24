@@ -62,6 +62,10 @@ func (*defaultReply) GetCrcString() string   { return "xxxxxxxx" }
 func (*defaultReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *defaultReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(m.Retval)
+}
+
 func (m *defaultReply) Size() int {
 	if m == nil {
 		return 0

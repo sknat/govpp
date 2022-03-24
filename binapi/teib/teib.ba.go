@@ -50,6 +50,9 @@ func (*TeibDetails) GetCrcString() string   { return "981ee1a1" }
 func (*TeibDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *TeibDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *TeibDetails) Size() (size int) {
 	if m == nil {
@@ -96,6 +99,9 @@ func (*TeibDump) GetCrcString() string   { return "51077d14" }
 func (*TeibDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *TeibDump) GetRetVal() error {
+	return nil
+}
 
 func (m *TeibDump) Size() (size int) {
 	if m == nil {
@@ -125,6 +131,9 @@ func (*TeibEntryAddDel) GetMessageName() string { return "teib_entry_add_del" }
 func (*TeibEntryAddDel) GetCrcString() string   { return "8016cfd2" }
 func (*TeibEntryAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *TeibEntryAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *TeibEntryAddDel) Size() (size int) {
@@ -176,6 +185,9 @@ func (*TeibEntryAddDelReply) GetMessageName() string { return "teib_entry_add_de
 func (*TeibEntryAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*TeibEntryAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *TeibEntryAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *TeibEntryAddDelReply) Size() (size int) {

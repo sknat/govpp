@@ -42,6 +42,9 @@ func (*SctpAddSrcDstConnection) GetCrcString() string   { return "45c59b2f" }
 func (*SctpAddSrcDstConnection) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SctpAddSrcDstConnection) GetRetVal() error {
+	return nil
+}
 
 func (m *SctpAddSrcDstConnection) Size() (size int) {
 	if m == nil {
@@ -88,6 +91,9 @@ func (*SctpAddSrcDstConnectionReply) GetCrcString() string { return "e8d4e804" }
 func (*SctpAddSrcDstConnectionReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SctpAddSrcDstConnectionReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SctpAddSrcDstConnectionReply) Size() (size int) {
 	if m == nil {
@@ -121,6 +127,9 @@ func (*SctpConfig) GetMessageName() string { return "sctp_config" }
 func (*SctpConfig) GetCrcString() string   { return "7617eced" }
 func (*SctpConfig) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SctpConfig) GetRetVal() error {
+	return nil
 }
 
 func (m *SctpConfig) Size() (size int) {
@@ -158,6 +167,9 @@ func (*SctpConfigReply) GetCrcString() string   { return "e8d4e804" }
 func (*SctpConfigReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SctpConfigReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SctpConfigReply) Size() (size int) {
 	if m == nil {
@@ -193,6 +205,9 @@ func (*SctpDelSrcDstConnection) GetMessageName() string { return "sctp_del_src_d
 func (*SctpDelSrcDstConnection) GetCrcString() string   { return "45c59b2f" }
 func (*SctpDelSrcDstConnection) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SctpDelSrcDstConnection) GetRetVal() error {
+	return nil
 }
 
 func (m *SctpDelSrcDstConnection) Size() (size int) {
@@ -239,6 +254,9 @@ func (*SctpDelSrcDstConnectionReply) GetMessageName() string {
 func (*SctpDelSrcDstConnectionReply) GetCrcString() string { return "e8d4e804" }
 func (*SctpDelSrcDstConnectionReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SctpDelSrcDstConnectionReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SctpDelSrcDstConnectionReply) Size() (size int) {

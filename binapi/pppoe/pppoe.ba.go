@@ -43,6 +43,9 @@ func (*PppoeAddDelCp) GetCrcString() string   { return "eacd9aaa" }
 func (*PppoeAddDelCp) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *PppoeAddDelCp) GetRetVal() error {
+	return nil
+}
 
 func (m *PppoeAddDelCp) Size() (size int) {
 	if m == nil {
@@ -78,6 +81,9 @@ func (*PppoeAddDelCpReply) GetMessageName() string { return "pppoe_add_del_cp_re
 func (*PppoeAddDelCpReply) GetCrcString() string   { return "e8d4e804" }
 func (*PppoeAddDelCpReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PppoeAddDelCpReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *PppoeAddDelCpReply) Size() (size int) {
@@ -115,6 +121,9 @@ func (*PppoeAddDelSession) GetMessageName() string { return "pppoe_add_del_sessi
 func (*PppoeAddDelSession) GetCrcString() string   { return "f6fd759e" }
 func (*PppoeAddDelSession) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PppoeAddDelSession) GetRetVal() error {
+	return nil
 }
 
 func (m *PppoeAddDelSession) Size() (size int) {
@@ -165,6 +174,9 @@ func (*PppoeAddDelSessionReply) GetCrcString() string   { return "5383d31f" }
 func (*PppoeAddDelSessionReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *PppoeAddDelSessionReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *PppoeAddDelSessionReply) Size() (size int) {
 	if m == nil {
@@ -206,6 +218,9 @@ func (*PppoeSessionDetails) GetMessageName() string { return "pppoe_session_deta
 func (*PppoeSessionDetails) GetCrcString() string   { return "4b8e8a4a" }
 func (*PppoeSessionDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PppoeSessionDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *PppoeSessionDetails) Size() (size int) {
@@ -260,6 +275,9 @@ func (*PppoeSessionDump) GetMessageName() string { return "pppoe_session_dump" }
 func (*PppoeSessionDump) GetCrcString() string   { return "f9e6675e" }
 func (*PppoeSessionDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PppoeSessionDump) GetRetVal() error {
+	return nil
 }
 
 func (m *PppoeSessionDump) Size() (size int) {

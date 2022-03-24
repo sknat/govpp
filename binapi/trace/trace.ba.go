@@ -43,6 +43,9 @@ func (*TraceProfileAdd) GetCrcString() string   { return "de08aa6d" }
 func (*TraceProfileAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *TraceProfileAdd) GetRetVal() error {
+	return nil
+}
 
 func (m *TraceProfileAdd) Size() (size int) {
 	if m == nil {
@@ -88,6 +91,9 @@ func (*TraceProfileAddReply) GetCrcString() string   { return "e8d4e804" }
 func (*TraceProfileAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *TraceProfileAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *TraceProfileAddReply) Size() (size int) {
 	if m == nil {
@@ -119,6 +125,9 @@ func (*TraceProfileDel) GetCrcString() string   { return "51077d14" }
 func (*TraceProfileDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *TraceProfileDel) GetRetVal() error {
+	return nil
+}
 
 func (m *TraceProfileDel) Size() (size int) {
 	if m == nil {
@@ -147,6 +156,9 @@ func (*TraceProfileDelReply) GetMessageName() string { return "trace_profile_del
 func (*TraceProfileDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*TraceProfileDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *TraceProfileDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *TraceProfileDelReply) Size() (size int) {
@@ -178,6 +190,9 @@ func (*TraceProfileShowConfig) GetMessageName() string { return "trace_profile_s
 func (*TraceProfileShowConfig) GetCrcString() string   { return "51077d14" }
 func (*TraceProfileShowConfig) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *TraceProfileShowConfig) GetRetVal() error {
+	return nil
 }
 
 func (m *TraceProfileShowConfig) Size() (size int) {
@@ -212,6 +227,9 @@ func (*TraceProfileShowConfigReply) GetMessageName() string { return "trace_prof
 func (*TraceProfileShowConfigReply) GetCrcString() string   { return "0f1d374c" }
 func (*TraceProfileShowConfigReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *TraceProfileShowConfigReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *TraceProfileShowConfigReply) Size() (size int) {

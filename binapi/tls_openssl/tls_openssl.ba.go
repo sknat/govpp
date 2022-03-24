@@ -42,6 +42,9 @@ func (*TLSOpensslSetEngine) GetCrcString() string   { return "e34d95c1" }
 func (*TLSOpensslSetEngine) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *TLSOpensslSetEngine) GetRetVal() error {
+	return nil
+}
 
 func (m *TLSOpensslSetEngine) Size() (size int) {
 	if m == nil {
@@ -86,6 +89,9 @@ func (*TLSOpensslSetEngineReply) GetMessageName() string { return "tls_openssl_s
 func (*TLSOpensslSetEngineReply) GetCrcString() string   { return "e8d4e804" }
 func (*TLSOpensslSetEngineReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *TLSOpensslSetEngineReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *TLSOpensslSetEngineReply) Size() (size int) {

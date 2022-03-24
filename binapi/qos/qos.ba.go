@@ -109,6 +109,9 @@ func (*QosEgressMapDelete) GetCrcString() string   { return "3a91bde5" }
 func (*QosEgressMapDelete) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *QosEgressMapDelete) GetRetVal() error {
+	return nil
+}
 
 func (m *QosEgressMapDelete) Size() (size int) {
 	if m == nil {
@@ -142,6 +145,9 @@ func (*QosEgressMapDeleteReply) GetCrcString() string   { return "e8d4e804" }
 func (*QosEgressMapDeleteReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *QosEgressMapDeleteReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *QosEgressMapDeleteReply) Size() (size int) {
 	if m == nil {
@@ -174,6 +180,9 @@ func (*QosEgressMapDetails) GetMessageName() string { return "qos_egress_map_det
 func (*QosEgressMapDetails) GetCrcString() string   { return "46c5653c" }
 func (*QosEgressMapDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *QosEgressMapDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *QosEgressMapDetails) Size() (size int) {
@@ -216,6 +225,9 @@ func (*QosEgressMapDump) GetCrcString() string   { return "51077d14" }
 func (*QosEgressMapDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *QosEgressMapDump) GetRetVal() error {
+	return nil
+}
 
 func (m *QosEgressMapDump) Size() (size int) {
 	if m == nil {
@@ -244,6 +256,9 @@ func (*QosEgressMapUpdate) GetMessageName() string { return "qos_egress_map_upda
 func (*QosEgressMapUpdate) GetCrcString() string   { return "6d1c065f" }
 func (*QosEgressMapUpdate) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *QosEgressMapUpdate) GetRetVal() error {
+	return nil
 }
 
 func (m *QosEgressMapUpdate) Size() (size int) {
@@ -288,6 +303,9 @@ func (*QosEgressMapUpdateReply) GetCrcString() string   { return "e8d4e804" }
 func (*QosEgressMapUpdateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *QosEgressMapUpdateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *QosEgressMapUpdateReply) Size() (size int) {
 	if m == nil {
@@ -320,6 +338,9 @@ func (*QosMarkDetails) GetMessageName() string { return "qos_mark_details" }
 func (*QosMarkDetails) GetCrcString() string   { return "89fe81a9" }
 func (*QosMarkDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *QosMarkDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *QosMarkDetails) Size() (size int) {
@@ -360,6 +381,9 @@ func (*QosMarkDetailsReply) GetCrcString() string   { return "e8d4e804" }
 func (*QosMarkDetailsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *QosMarkDetailsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *QosMarkDetailsReply) Size() (size int) {
 	if m == nil {
@@ -392,6 +416,9 @@ func (*QosMarkDump) GetMessageName() string { return "qos_mark_dump" }
 func (*QosMarkDump) GetCrcString() string   { return "f9e6675e" }
 func (*QosMarkDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *QosMarkDump) GetRetVal() error {
+	return nil
 }
 
 func (m *QosMarkDump) Size() (size int) {
@@ -426,6 +453,9 @@ func (*QosMarkEnableDisable) GetMessageName() string { return "qos_mark_enable_d
 func (*QosMarkEnableDisable) GetCrcString() string   { return "1a010f74" }
 func (*QosMarkEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *QosMarkEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *QosMarkEnableDisable) Size() (size int) {
@@ -469,6 +499,9 @@ func (*QosMarkEnableDisableReply) GetCrcString() string   { return "e8d4e804" }
 func (*QosMarkEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *QosMarkEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *QosMarkEnableDisableReply) Size() (size int) {
 	if m == nil {
@@ -501,6 +534,9 @@ func (*QosRecordDetails) GetMessageName() string { return "qos_record_details" }
 func (*QosRecordDetails) GetCrcString() string   { return "a425d4d3" }
 func (*QosRecordDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *QosRecordDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *QosRecordDetails) Size() (size int) {
@@ -536,6 +572,9 @@ func (*QosRecordDump) GetCrcString() string   { return "51077d14" }
 func (*QosRecordDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *QosRecordDump) GetRetVal() error {
+	return nil
+}
 
 func (m *QosRecordDump) Size() (size int) {
 	if m == nil {
@@ -565,6 +604,9 @@ func (*QosRecordEnableDisable) GetMessageName() string { return "qos_record_enab
 func (*QosRecordEnableDisable) GetCrcString() string   { return "2f1a4a38" }
 func (*QosRecordEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *QosRecordEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *QosRecordEnableDisable) Size() (size int) {
@@ -605,6 +647,9 @@ func (*QosRecordEnableDisableReply) GetCrcString() string   { return "e8d4e804" 
 func (*QosRecordEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *QosRecordEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *QosRecordEnableDisableReply) Size() (size int) {
 	if m == nil {
@@ -637,6 +682,9 @@ func (*QosStoreDetails) GetMessageName() string { return "qos_store_details" }
 func (*QosStoreDetails) GetCrcString() string   { return "3ee0aad7" }
 func (*QosStoreDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *QosStoreDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *QosStoreDetails) Size() (size int) {
@@ -675,6 +723,9 @@ func (*QosStoreDump) GetCrcString() string   { return "51077d14" }
 func (*QosStoreDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *QosStoreDump) GetRetVal() error {
+	return nil
+}
 
 func (m *QosStoreDump) Size() (size int) {
 	if m == nil {
@@ -704,6 +755,9 @@ func (*QosStoreEnableDisable) GetMessageName() string { return "qos_store_enable
 func (*QosStoreEnableDisable) GetCrcString() string   { return "f3abcc8b" }
 func (*QosStoreEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *QosStoreEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *QosStoreEnableDisable) Size() (size int) {
@@ -746,6 +800,9 @@ func (*QosStoreEnableDisableReply) GetMessageName() string { return "qos_store_e
 func (*QosStoreEnableDisableReply) GetCrcString() string   { return "e8d4e804" }
 func (*QosStoreEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *QosStoreEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *QosStoreEnableDisableReply) Size() (size int) {

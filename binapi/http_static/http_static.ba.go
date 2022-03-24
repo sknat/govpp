@@ -44,6 +44,9 @@ func (*HTTPStaticEnable) GetCrcString() string   { return "075f8292" }
 func (*HTTPStaticEnable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *HTTPStaticEnable) GetRetVal() error {
+	return nil
+}
 
 func (m *HTTPStaticEnable) Size() (size int) {
 	if m == nil {
@@ -91,6 +94,9 @@ func (*HTTPStaticEnableReply) GetMessageName() string { return "http_static_enab
 func (*HTTPStaticEnableReply) GetCrcString() string   { return "e8d4e804" }
 func (*HTTPStaticEnableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *HTTPStaticEnableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *HTTPStaticEnableReply) Size() (size int) {

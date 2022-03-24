@@ -49,6 +49,9 @@ func (*GeneveAddDelTunnel) GetCrcString() string   { return "99445831" }
 func (*GeneveAddDelTunnel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GeneveAddDelTunnel) GetRetVal() error {
+	return nil
+}
 
 func (m *GeneveAddDelTunnel) Size() (size int) {
 	if m == nil {
@@ -113,6 +116,9 @@ func (*GeneveAddDelTunnel2) GetCrcString() string   { return "8c2a9999" }
 func (*GeneveAddDelTunnel2) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GeneveAddDelTunnel2) GetRetVal() error {
+	return nil
+}
 
 func (m *GeneveAddDelTunnel2) Size() (size int) {
 	if m == nil {
@@ -174,6 +180,9 @@ func (*GeneveAddDelTunnel2Reply) GetCrcString() string   { return "5383d31f" }
 func (*GeneveAddDelTunnel2Reply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GeneveAddDelTunnel2Reply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GeneveAddDelTunnel2Reply) Size() (size int) {
 	if m == nil {
@@ -210,6 +219,9 @@ func (*GeneveAddDelTunnelReply) GetMessageName() string { return "geneve_add_del
 func (*GeneveAddDelTunnelReply) GetCrcString() string   { return "5383d31f" }
 func (*GeneveAddDelTunnelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GeneveAddDelTunnelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *GeneveAddDelTunnelReply) Size() (size int) {
@@ -252,6 +264,9 @@ func (*GeneveTunnelDetails) GetMessageName() string { return "geneve_tunnel_deta
 func (*GeneveTunnelDetails) GetCrcString() string   { return "6b16eb24" }
 func (*GeneveTunnelDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GeneveTunnelDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GeneveTunnelDetails) Size() (size int) {
@@ -310,6 +325,9 @@ func (*GeneveTunnelDump) GetCrcString() string   { return "f9e6675e" }
 func (*GeneveTunnelDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GeneveTunnelDump) GetRetVal() error {
+	return nil
+}
 
 func (m *GeneveTunnelDump) Size() (size int) {
 	if m == nil {
@@ -344,6 +362,9 @@ func (*SwInterfaceSetGeneveBypass) GetMessageName() string { return "sw_interfac
 func (*SwInterfaceSetGeneveBypass) GetCrcString() string   { return "65247409" }
 func (*SwInterfaceSetGeneveBypass) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetGeneveBypass) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetGeneveBypass) Size() (size int) {
@@ -385,6 +406,9 @@ func (*SwInterfaceSetGeneveBypassReply) GetMessageName() string {
 func (*SwInterfaceSetGeneveBypassReply) GetCrcString() string { return "e8d4e804" }
 func (*SwInterfaceSetGeneveBypassReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceSetGeneveBypassReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SwInterfaceSetGeneveBypassReply) Size() (size int) {

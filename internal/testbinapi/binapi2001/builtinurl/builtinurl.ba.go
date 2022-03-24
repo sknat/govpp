@@ -37,6 +37,9 @@ func (*BuiltinurlEnable) GetCrcString() string   { return "51077d14" }
 func (*BuiltinurlEnable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BuiltinurlEnable) GetRetVal() error {
+	return nil
+}
 
 func (m *BuiltinurlEnable) Size() (size int) {
 	if m == nil {
@@ -65,6 +68,9 @@ func (*BuiltinurlEnableReply) GetMessageName() string { return "builtinurl_enabl
 func (*BuiltinurlEnableReply) GetCrcString() string   { return "e8d4e804" }
 func (*BuiltinurlEnableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BuiltinurlEnableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *BuiltinurlEnableReply) Size() (size int) {

@@ -412,6 +412,9 @@ func (*BondCreate) GetCrcString() string   { return "48883c7e" }
 func (*BondCreate) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BondCreate) GetRetVal() error {
+	return nil
+}
 
 func (m *BondCreate) Size() (size int) {
 	if m == nil {
@@ -461,6 +464,9 @@ func (*BondCreateReply) GetCrcString() string   { return "5383d31f" }
 func (*BondCreateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BondCreateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BondCreateReply) Size() (size int) {
 	if m == nil {
@@ -497,6 +503,9 @@ func (*BondDelete) GetCrcString() string   { return "f9e6675e" }
 func (*BondDelete) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BondDelete) GetRetVal() error {
+	return nil
+}
 
 func (m *BondDelete) Size() (size int) {
 	if m == nil {
@@ -529,6 +538,9 @@ func (*BondDeleteReply) GetMessageName() string { return "bond_delete_reply" }
 func (*BondDeleteReply) GetCrcString() string   { return "e8d4e804" }
 func (*BondDeleteReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BondDeleteReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *BondDeleteReply) Size() (size int) {
@@ -563,6 +575,9 @@ func (*BondDetachSlave) GetCrcString() string   { return "f9e6675e" }
 func (*BondDetachSlave) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BondDetachSlave) GetRetVal() error {
+	return nil
+}
 
 func (m *BondDetachSlave) Size() (size int) {
 	if m == nil {
@@ -595,6 +610,9 @@ func (*BondDetachSlaveReply) GetMessageName() string { return "bond_detach_slave
 func (*BondDetachSlaveReply) GetCrcString() string   { return "e8d4e804" }
 func (*BondDetachSlaveReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BondDetachSlaveReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *BondDetachSlaveReply) Size() (size int) {
@@ -631,6 +649,9 @@ func (*BondEnslave) GetMessageName() string { return "bond_enslave" }
 func (*BondEnslave) GetCrcString() string   { return "076ecfa7" }
 func (*BondEnslave) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BondEnslave) GetRetVal() error {
+	return nil
 }
 
 func (m *BondEnslave) Size() (size int) {
@@ -674,6 +695,9 @@ func (*BondEnslaveReply) GetCrcString() string   { return "e8d4e804" }
 func (*BondEnslaveReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BondEnslaveReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BondEnslaveReply) Size() (size int) {
 	if m == nil {
@@ -713,6 +737,9 @@ func (*SwInterfaceBondDetails) GetMessageName() string { return "sw_interface_bo
 func (*SwInterfaceBondDetails) GetCrcString() string   { return "f5ef2106" }
 func (*SwInterfaceBondDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceBondDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceBondDetails) Size() (size int) {
@@ -766,6 +793,9 @@ func (*SwInterfaceBondDump) GetCrcString() string   { return "51077d14" }
 func (*SwInterfaceBondDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceBondDump) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceBondDump) Size() (size int) {
 	if m == nil {
@@ -795,6 +825,9 @@ func (*SwInterfaceSetBondWeight) GetMessageName() string { return "sw_interface_
 func (*SwInterfaceSetBondWeight) GetCrcString() string   { return "deb510a0" }
 func (*SwInterfaceSetBondWeight) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetBondWeight) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetBondWeight) Size() (size int) {
@@ -834,6 +867,9 @@ func (*SwInterfaceSetBondWeightReply) GetCrcString() string { return "e8d4e804" 
 func (*SwInterfaceSetBondWeightReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetBondWeightReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetBondWeightReply) Size() (size int) {
 	if m == nil {
@@ -871,6 +907,9 @@ func (*SwInterfaceSlaveDetails) GetMessageName() string { return "sw_interface_s
 func (*SwInterfaceSlaveDetails) GetCrcString() string   { return "3c4a0e23" }
 func (*SwInterfaceSlaveDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceSlaveDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSlaveDetails) Size() (size int) {
@@ -919,6 +958,9 @@ func (*SwInterfaceSlaveDump) GetMessageName() string { return "sw_interface_slav
 func (*SwInterfaceSlaveDump) GetCrcString() string   { return "f9e6675e" }
 func (*SwInterfaceSlaveDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSlaveDump) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSlaveDump) Size() (size int) {

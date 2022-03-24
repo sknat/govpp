@@ -929,6 +929,9 @@ func (*PppoeAddDelSession) GetCrcString() string   { return "46ace853" }
 func (*PppoeAddDelSession) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *PppoeAddDelSession) GetRetVal() error {
+	return nil
+}
 
 func (m *PppoeAddDelSession) Size() (size int) {
 	if m == nil {
@@ -978,6 +981,9 @@ func (*PppoeAddDelSessionReply) GetCrcString() string   { return "5383d31f" }
 func (*PppoeAddDelSessionReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *PppoeAddDelSessionReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *PppoeAddDelSessionReply) Size() (size int) {
 	if m == nil {
@@ -1019,6 +1025,9 @@ func (*PppoeSessionDetails) GetMessageName() string { return "pppoe_session_deta
 func (*PppoeSessionDetails) GetCrcString() string   { return "332bc742" }
 func (*PppoeSessionDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PppoeSessionDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *PppoeSessionDetails) Size() (size int) {
@@ -1073,6 +1082,9 @@ func (*PppoeSessionDump) GetMessageName() string { return "pppoe_session_dump" }
 func (*PppoeSessionDump) GetCrcString() string   { return "f9e6675e" }
 func (*PppoeSessionDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PppoeSessionDump) GetRetVal() error {
+	return nil
 }
 
 func (m *PppoeSessionDump) Size() (size int) {

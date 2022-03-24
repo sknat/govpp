@@ -641,6 +641,9 @@ func (*VxlanGpeIoamExportEnableDisable) GetCrcString() string { return "e4d4ebfa
 func (*VxlanGpeIoamExportEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *VxlanGpeIoamExportEnableDisable) GetRetVal() error {
+	return nil
+}
 
 func (m *VxlanGpeIoamExportEnableDisable) Size() (size int) {
 	if m == nil {
@@ -681,6 +684,9 @@ func (*VxlanGpeIoamExportEnableDisableReply) GetMessageName() string {
 func (*VxlanGpeIoamExportEnableDisableReply) GetCrcString() string { return "e8d4e804" }
 func (*VxlanGpeIoamExportEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *VxlanGpeIoamExportEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *VxlanGpeIoamExportEnableDisableReply) Size() (size int) {

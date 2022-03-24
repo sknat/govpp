@@ -830,6 +830,9 @@ func (*BierDispEntryAddDel) GetCrcString() string   { return "648323eb" }
 func (*BierDispEntryAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BierDispEntryAddDel) GetRetVal() error {
+	return nil
+}
 
 func (m *BierDispEntryAddDel) Size() (size int) {
 	if m == nil {
@@ -948,6 +951,9 @@ func (*BierDispEntryAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*BierDispEntryAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BierDispEntryAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BierDispEntryAddDelReply) Size() (size int) {
 	if m == nil {
@@ -985,6 +991,9 @@ func (*BierDispEntryDetails) GetMessageName() string { return "bier_disp_entry_d
 func (*BierDispEntryDetails) GetCrcString() string   { return "e5b039a9" }
 func (*BierDispEntryDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BierDispEntryDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *BierDispEntryDetails) Size() (size int) {
@@ -1104,6 +1113,9 @@ func (*BierDispEntryDump) GetCrcString() string   { return "b5fa54ad" }
 func (*BierDispEntryDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BierDispEntryDump) GetRetVal() error {
+	return nil
+}
 
 func (m *BierDispEntryDump) Size() (size int) {
 	if m == nil {
@@ -1137,6 +1149,9 @@ func (*BierDispTableAddDel) GetMessageName() string { return "bier_disp_table_ad
 func (*BierDispTableAddDel) GetCrcString() string   { return "889657ac" }
 func (*BierDispTableAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BierDispTableAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *BierDispTableAddDel) Size() (size int) {
@@ -1174,6 +1189,9 @@ func (*BierDispTableAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*BierDispTableAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BierDispTableAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BierDispTableAddDelReply) Size() (size int) {
 	if m == nil {
@@ -1207,6 +1225,9 @@ func (*BierDispTableDetails) GetCrcString() string   { return "d27942c0" }
 func (*BierDispTableDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BierDispTableDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *BierDispTableDetails) Size() (size int) {
 	if m == nil {
@@ -1237,6 +1258,9 @@ func (*BierDispTableDump) GetMessageName() string { return "bier_disp_table_dump
 func (*BierDispTableDump) GetCrcString() string   { return "51077d14" }
 func (*BierDispTableDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BierDispTableDump) GetRetVal() error {
+	return nil
 }
 
 func (m *BierDispTableDump) Size() (size int) {
@@ -1269,6 +1293,9 @@ func (*BierImpAdd) GetMessageName() string { return "bier_imp_add" }
 func (*BierImpAdd) GetCrcString() string   { return "3856dc3d" }
 func (*BierImpAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BierImpAdd) GetRetVal() error {
+	return nil
 }
 
 func (m *BierImpAdd) Size() (size int) {
@@ -1320,6 +1347,9 @@ func (*BierImpAddReply) GetCrcString() string   { return "d49c5793" }
 func (*BierImpAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BierImpAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BierImpAddReply) Size() (size int) {
 	if m == nil {
@@ -1356,6 +1386,9 @@ func (*BierImpDel) GetCrcString() string   { return "7d45edf6" }
 func (*BierImpDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BierImpDel) GetRetVal() error {
+	return nil
+}
 
 func (m *BierImpDel) Size() (size int) {
 	if m == nil {
@@ -1388,6 +1421,9 @@ func (*BierImpDelReply) GetMessageName() string { return "bier_imp_del_reply" }
 func (*BierImpDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*BierImpDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BierImpDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *BierImpDelReply) Size() (size int) {
@@ -1424,6 +1460,9 @@ func (*BierImpDetails) GetMessageName() string { return "bier_imp_details" }
 func (*BierImpDetails) GetCrcString() string   { return "b76192df" }
 func (*BierImpDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BierImpDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *BierImpDetails) Size() (size int) {
@@ -1472,6 +1511,9 @@ func (*BierImpDump) GetCrcString() string   { return "51077d14" }
 func (*BierImpDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BierImpDump) GetRetVal() error {
+	return nil
+}
 
 func (m *BierImpDump) Size() (size int) {
 	if m == nil {
@@ -1502,6 +1544,9 @@ func (*BierRouteAddDel) GetMessageName() string { return "bier_route_add_del" }
 func (*BierRouteAddDel) GetCrcString() string   { return "f29edca0" }
 func (*BierRouteAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BierRouteAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *BierRouteAddDel) Size() (size int) {
@@ -1627,6 +1672,9 @@ func (*BierRouteAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*BierRouteAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BierRouteAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BierRouteAddDelReply) Size() (size int) {
 	if m == nil {
@@ -1659,6 +1707,9 @@ func (*BierRouteDetails) GetMessageName() string { return "bier_route_details" }
 func (*BierRouteDetails) GetCrcString() string   { return "39ee6a56" }
 func (*BierRouteDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BierRouteDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *BierRouteDetails) Size() (size int) {
@@ -1778,6 +1829,9 @@ func (*BierRouteDump) GetCrcString() string   { return "38339846" }
 func (*BierRouteDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *BierRouteDump) GetRetVal() error {
+	return nil
+}
 
 func (m *BierRouteDump) Size() (size int) {
 	if m == nil {
@@ -1818,6 +1872,9 @@ func (*BierTableAddDel) GetMessageName() string { return "bier_table_add_del" }
 func (*BierTableAddDel) GetCrcString() string   { return "35e59209" }
 func (*BierTableAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BierTableAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *BierTableAddDel) Size() (size int) {
@@ -1864,6 +1921,9 @@ func (*BierTableAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*BierTableAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *BierTableAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *BierTableAddDelReply) Size() (size int) {
 	if m == nil {
@@ -1897,6 +1957,9 @@ func (*BierTableDetails) GetMessageName() string { return "bier_table_details" }
 func (*BierTableDetails) GetCrcString() string   { return "fc44a9dd" }
 func (*BierTableDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *BierTableDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *BierTableDetails) Size() (size int) {
@@ -1937,6 +2000,9 @@ func (*BierTableDump) GetMessageName() string { return "bier_table_dump" }
 func (*BierTableDump) GetCrcString() string   { return "51077d14" }
 func (*BierTableDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *BierTableDump) GetRetVal() error {
+	return nil
 }
 
 func (m *BierTableDump) Size() (size int) {

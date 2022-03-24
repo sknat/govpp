@@ -983,6 +983,9 @@ func (*IPNeighborAddDel) GetCrcString() string   { return "105518b6" }
 func (*IPNeighborAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IPNeighborAddDel) GetRetVal() error {
+	return nil
+}
 
 func (m *IPNeighborAddDel) Size() (size int) {
 	if m == nil {
@@ -1032,6 +1035,9 @@ func (*IPNeighborAddDelReply) GetCrcString() string   { return "1992deab" }
 func (*IPNeighborAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IPNeighborAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IPNeighborAddDelReply) Size() (size int) {
 	if m == nil {
@@ -1070,6 +1076,9 @@ func (*IPNeighborConfig) GetMessageName() string { return "ip_neighbor_config" }
 func (*IPNeighborConfig) GetCrcString() string   { return "f4a5cf44" }
 func (*IPNeighborConfig) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IPNeighborConfig) GetRetVal() error {
+	return nil
 }
 
 func (m *IPNeighborConfig) Size() (size int) {
@@ -1113,6 +1122,9 @@ func (*IPNeighborConfigReply) GetCrcString() string   { return "e8d4e804" }
 func (*IPNeighborConfigReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IPNeighborConfigReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IPNeighborConfigReply) Size() (size int) {
 	if m == nil {
@@ -1145,6 +1157,9 @@ func (*IPNeighborDetails) GetMessageName() string { return "ip_neighbor_details"
 func (*IPNeighborDetails) GetCrcString() string   { return "59121ce9" }
 func (*IPNeighborDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IPNeighborDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *IPNeighborDetails) Size() (size int) {
@@ -1192,6 +1207,9 @@ func (*IPNeighborDump) GetCrcString() string   { return "cd831298" }
 func (*IPNeighborDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IPNeighborDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IPNeighborDump) Size() (size int) {
 	if m == nil {
@@ -1228,6 +1246,9 @@ func (*IPNeighborEvent) GetMessageName() string { return "ip_neighbor_event" }
 func (*IPNeighborEvent) GetCrcString() string   { return "83933131" }
 func (*IPNeighborEvent) GetMessageType() api.MessageType {
 	return api.EventMessage
+}
+func (m *IPNeighborEvent) GetRetVal() error {
+	return nil
 }
 
 func (m *IPNeighborEvent) Size() (size int) {
@@ -1280,6 +1301,9 @@ func (*WantIPNeighborEvents) GetCrcString() string   { return "1a312870" }
 func (*WantIPNeighborEvents) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *WantIPNeighborEvents) GetRetVal() error {
+	return nil
+}
 
 func (m *WantIPNeighborEvents) Size() (size int) {
 	if m == nil {
@@ -1324,6 +1348,9 @@ func (*WantIPNeighborEventsReply) GetMessageName() string { return "want_ip_neig
 func (*WantIPNeighborEventsReply) GetCrcString() string   { return "e8d4e804" }
 func (*WantIPNeighborEventsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *WantIPNeighborEventsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *WantIPNeighborEventsReply) Size() (size int) {

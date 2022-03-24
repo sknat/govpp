@@ -1324,6 +1324,9 @@ func (*GbpBridgeDomainAdd) GetCrcString() string   { return "8454bfdf" }
 func (*GbpBridgeDomainAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpBridgeDomainAdd) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpBridgeDomainAdd) Size() (size int) {
 	if m == nil {
@@ -1372,6 +1375,9 @@ func (*GbpBridgeDomainAddReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpBridgeDomainAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpBridgeDomainAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpBridgeDomainAddReply) Size() (size int) {
 	if m == nil {
@@ -1404,6 +1410,9 @@ func (*GbpBridgeDomainDel) GetMessageName() string { return "gbp_bridge_domain_d
 func (*GbpBridgeDomainDel) GetCrcString() string   { return "c25fdce6" }
 func (*GbpBridgeDomainDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpBridgeDomainDel) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpBridgeDomainDel) Size() (size int) {
@@ -1438,6 +1447,9 @@ func (*GbpBridgeDomainDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpBridgeDomainDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpBridgeDomainDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpBridgeDomainDelReply) Size() (size int) {
 	if m == nil {
@@ -1470,6 +1482,9 @@ func (*GbpBridgeDomainDetails) GetMessageName() string { return "gbp_bridge_doma
 func (*GbpBridgeDomainDetails) GetCrcString() string   { return "2acd15f9" }
 func (*GbpBridgeDomainDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpBridgeDomainDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpBridgeDomainDetails) Size() (size int) {
@@ -1517,6 +1532,9 @@ func (*GbpBridgeDomainDump) GetCrcString() string   { return "51077d14" }
 func (*GbpBridgeDomainDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpBridgeDomainDump) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpBridgeDomainDump) Size() (size int) {
 	if m == nil {
@@ -1545,6 +1563,9 @@ func (*GbpBridgeDomainDumpReply) GetMessageName() string { return "gbp_bridge_do
 func (*GbpBridgeDomainDumpReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpBridgeDomainDumpReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpBridgeDomainDumpReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *GbpBridgeDomainDumpReply) Size() (size int) {
@@ -1579,6 +1600,9 @@ func (*GbpContractAddDel) GetMessageName() string { return "gbp_contract_add_del
 func (*GbpContractAddDel) GetCrcString() string   { return "553e275b" }
 func (*GbpContractAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpContractAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpContractAddDel) Size() (size int) {
@@ -1690,6 +1714,9 @@ func (*GbpContractAddDelReply) GetCrcString() string   { return "1992deab" }
 func (*GbpContractAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpContractAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpContractAddDelReply) Size() (size int) {
 	if m == nil {
@@ -1725,6 +1752,9 @@ func (*GbpContractDetails) GetMessageName() string { return "gbp_contract_detail
 func (*GbpContractDetails) GetCrcString() string   { return "2a18db6e" }
 func (*GbpContractDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpContractDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpContractDetails) Size() (size int) {
@@ -1830,6 +1860,9 @@ func (*GbpContractDump) GetCrcString() string   { return "51077d14" }
 func (*GbpContractDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpContractDump) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpContractDump) Size() (size int) {
 	if m == nil {
@@ -1858,6 +1891,9 @@ func (*GbpEndpointAdd) GetMessageName() string { return "gbp_endpoint_add" }
 func (*GbpEndpointAdd) GetCrcString() string   { return "9ce16d5a" }
 func (*GbpEndpointAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpEndpointAdd) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpEndpointAdd) Size() (size int) {
@@ -1939,6 +1975,9 @@ func (*GbpEndpointAddReply) GetCrcString() string   { return "1dd3ff3e" }
 func (*GbpEndpointAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpEndpointAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpEndpointAddReply) Size() (size int) {
 	if m == nil {
@@ -1975,6 +2014,9 @@ func (*GbpEndpointDel) GetCrcString() string   { return "b93cd566" }
 func (*GbpEndpointDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpEndpointDel) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpEndpointDel) Size() (size int) {
 	if m == nil {
@@ -2007,6 +2049,9 @@ func (*GbpEndpointDelReply) GetMessageName() string { return "gbp_endpoint_del_r
 func (*GbpEndpointDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpEndpointDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpEndpointDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *GbpEndpointDelReply) Size() (size int) {
@@ -2042,6 +2087,9 @@ func (*GbpEndpointDetails) GetMessageName() string { return "gbp_endpoint_detail
 func (*GbpEndpointDetails) GetCrcString() string   { return "08aecb60" }
 func (*GbpEndpointDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpEndpointDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpEndpointDetails) Size() (size int) {
@@ -2126,6 +2174,9 @@ func (*GbpEndpointDump) GetCrcString() string   { return "51077d14" }
 func (*GbpEndpointDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpEndpointDump) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpEndpointDump) Size() (size int) {
 	if m == nil {
@@ -2154,6 +2205,9 @@ func (*GbpEndpointGroupAdd) GetMessageName() string { return "gbp_endpoint_group
 func (*GbpEndpointGroupAdd) GetCrcString() string   { return "8e0f4054" }
 func (*GbpEndpointGroupAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpEndpointGroupAdd) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpEndpointGroupAdd) Size() (size int) {
@@ -2203,6 +2257,9 @@ func (*GbpEndpointGroupAddReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpEndpointGroupAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpEndpointGroupAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpEndpointGroupAddReply) Size() (size int) {
 	if m == nil {
@@ -2235,6 +2292,9 @@ func (*GbpEndpointGroupDel) GetMessageName() string { return "gbp_endpoint_group
 func (*GbpEndpointGroupDel) GetCrcString() string   { return "3436b8b7" }
 func (*GbpEndpointGroupDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpEndpointGroupDel) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpEndpointGroupDel) Size() (size int) {
@@ -2269,6 +2329,9 @@ func (*GbpEndpointGroupDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpEndpointGroupDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpEndpointGroupDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpEndpointGroupDelReply) Size() (size int) {
 	if m == nil {
@@ -2301,6 +2364,9 @@ func (*GbpEndpointGroupDetails) GetMessageName() string { return "gbp_endpoint_g
 func (*GbpEndpointGroupDetails) GetCrcString() string   { return "8f38292c" }
 func (*GbpEndpointGroupDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpEndpointGroupDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpEndpointGroupDetails) Size() (size int) {
@@ -2348,6 +2414,9 @@ func (*GbpEndpointGroupDump) GetCrcString() string   { return "51077d14" }
 func (*GbpEndpointGroupDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpEndpointGroupDump) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpEndpointGroupDump) Size() (size int) {
 	if m == nil {
@@ -2377,6 +2446,9 @@ func (*GbpExtItfAddDel) GetMessageName() string { return "gbp_ext_itf_add_del" }
 func (*GbpExtItfAddDel) GetCrcString() string   { return "12ed5700" }
 func (*GbpExtItfAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpExtItfAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpExtItfAddDel) Size() (size int) {
@@ -2423,6 +2495,9 @@ func (*GbpExtItfAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpExtItfAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpExtItfAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpExtItfAddDelReply) Size() (size int) {
 	if m == nil {
@@ -2455,6 +2530,9 @@ func (*GbpExtItfDetails) GetMessageName() string { return "gbp_ext_itf_details" 
 func (*GbpExtItfDetails) GetCrcString() string   { return "408a45c0" }
 func (*GbpExtItfDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpExtItfDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpExtItfDetails) Size() (size int) {
@@ -2496,6 +2574,9 @@ func (*GbpExtItfDump) GetCrcString() string   { return "51077d14" }
 func (*GbpExtItfDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpExtItfDump) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpExtItfDump) Size() (size int) {
 	if m == nil {
@@ -2525,6 +2606,9 @@ func (*GbpRecircAddDel) GetMessageName() string { return "gbp_recirc_add_del" }
 func (*GbpRecircAddDel) GetCrcString() string   { return "718c69c3" }
 func (*GbpRecircAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpRecircAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpRecircAddDel) Size() (size int) {
@@ -2568,6 +2652,9 @@ func (*GbpRecircAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpRecircAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpRecircAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpRecircAddDelReply) Size() (size int) {
 	if m == nil {
@@ -2600,6 +2687,9 @@ func (*GbpRecircDetails) GetMessageName() string { return "gbp_recirc_details" }
 func (*GbpRecircDetails) GetCrcString() string   { return "66ecc42e" }
 func (*GbpRecircDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpRecircDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpRecircDetails) Size() (size int) {
@@ -2638,6 +2728,9 @@ func (*GbpRecircDump) GetCrcString() string   { return "51077d14" }
 func (*GbpRecircDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpRecircDump) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpRecircDump) Size() (size int) {
 	if m == nil {
@@ -2666,6 +2759,9 @@ func (*GbpRouteDomainAdd) GetMessageName() string { return "gbp_route_domain_add
 func (*GbpRouteDomainAdd) GetCrcString() string   { return "2d0afe38" }
 func (*GbpRouteDomainAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpRouteDomainAdd) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpRouteDomainAdd) Size() (size int) {
@@ -2715,6 +2811,9 @@ func (*GbpRouteDomainAddReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpRouteDomainAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpRouteDomainAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpRouteDomainAddReply) Size() (size int) {
 	if m == nil {
@@ -2747,6 +2846,9 @@ func (*GbpRouteDomainDel) GetMessageName() string { return "gbp_route_domain_del
 func (*GbpRouteDomainDel) GetCrcString() string   { return "bee4edcd" }
 func (*GbpRouteDomainDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpRouteDomainDel) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpRouteDomainDel) Size() (size int) {
@@ -2781,6 +2883,9 @@ func (*GbpRouteDomainDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpRouteDomainDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpRouteDomainDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpRouteDomainDelReply) Size() (size int) {
 	if m == nil {
@@ -2813,6 +2918,9 @@ func (*GbpRouteDomainDetails) GetMessageName() string { return "gbp_route_domain
 func (*GbpRouteDomainDetails) GetCrcString() string   { return "8ab11375" }
 func (*GbpRouteDomainDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpRouteDomainDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpRouteDomainDetails) Size() (size int) {
@@ -2860,6 +2968,9 @@ func (*GbpRouteDomainDump) GetCrcString() string   { return "51077d14" }
 func (*GbpRouteDomainDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpRouteDomainDump) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpRouteDomainDump) Size() (size int) {
 	if m == nil {
@@ -2888,6 +2999,9 @@ func (*GbpRouteDomainDumpReply) GetMessageName() string { return "gbp_route_doma
 func (*GbpRouteDomainDumpReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpRouteDomainDumpReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpRouteDomainDumpReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *GbpRouteDomainDumpReply) Size() (size int) {
@@ -2922,6 +3036,9 @@ func (*GbpSubnetAddDel) GetMessageName() string { return "gbp_subnet_add_del" }
 func (*GbpSubnetAddDel) GetCrcString() string   { return "888aca35" }
 func (*GbpSubnetAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpSubnetAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpSubnetAddDel) Size() (size int) {
@@ -2977,6 +3094,9 @@ func (*GbpSubnetAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpSubnetAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpSubnetAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpSubnetAddDelReply) Size() (size int) {
 	if m == nil {
@@ -3009,6 +3129,9 @@ func (*GbpSubnetDetails) GetMessageName() string { return "gbp_subnet_details" }
 func (*GbpSubnetDetails) GetCrcString() string   { return "4ed84156" }
 func (*GbpSubnetDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpSubnetDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpSubnetDetails) Size() (size int) {
@@ -3059,6 +3182,9 @@ func (*GbpSubnetDump) GetCrcString() string   { return "51077d14" }
 func (*GbpSubnetDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpSubnetDump) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpSubnetDump) Size() (size int) {
 	if m == nil {
@@ -3087,6 +3213,9 @@ func (*GbpVxlanTunnelAdd) GetMessageName() string { return "gbp_vxlan_tunnel_add
 func (*GbpVxlanTunnelAdd) GetCrcString() string   { return "3e070b35" }
 func (*GbpVxlanTunnelAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpVxlanTunnelAdd) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpVxlanTunnelAdd) Size() (size int) {
@@ -3131,6 +3260,9 @@ func (*GbpVxlanTunnelAddReply) GetCrcString() string   { return "5383d31f" }
 func (*GbpVxlanTunnelAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpVxlanTunnelAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpVxlanTunnelAddReply) Size() (size int) {
 	if m == nil {
@@ -3167,6 +3299,9 @@ func (*GbpVxlanTunnelDel) GetCrcString() string   { return "8d1f2fe9" }
 func (*GbpVxlanTunnelDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GbpVxlanTunnelDel) GetRetVal() error {
+	return nil
+}
 
 func (m *GbpVxlanTunnelDel) Size() (size int) {
 	if m == nil {
@@ -3200,6 +3335,9 @@ func (*GbpVxlanTunnelDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*GbpVxlanTunnelDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GbpVxlanTunnelDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *GbpVxlanTunnelDelReply) Size() (size int) {
 	if m == nil {
@@ -3232,6 +3370,9 @@ func (*GbpVxlanTunnelDetails) GetMessageName() string { return "gbp_vxlan_tunnel
 func (*GbpVxlanTunnelDetails) GetCrcString() string   { return "65c6c818" }
 func (*GbpVxlanTunnelDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GbpVxlanTunnelDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpVxlanTunnelDetails) Size() (size int) {
@@ -3272,6 +3413,9 @@ func (*GbpVxlanTunnelDump) GetMessageName() string { return "gbp_vxlan_tunnel_du
 func (*GbpVxlanTunnelDump) GetCrcString() string   { return "51077d14" }
 func (*GbpVxlanTunnelDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *GbpVxlanTunnelDump) GetRetVal() error {
+	return nil
 }
 
 func (m *GbpVxlanTunnelDump) Size() (size int) {

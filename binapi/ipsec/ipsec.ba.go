@@ -117,6 +117,9 @@ func (*IpsecBackendDetails) GetCrcString() string   { return "ee601c29" }
 func (*IpsecBackendDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecBackendDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecBackendDetails) Size() (size int) {
 	if m == nil {
@@ -157,6 +160,9 @@ func (*IpsecBackendDump) GetCrcString() string   { return "51077d14" }
 func (*IpsecBackendDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecBackendDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecBackendDump) Size() (size int) {
 	if m == nil {
@@ -187,6 +193,9 @@ func (*IpsecInterfaceAddDelSpd) GetMessageName() string { return "ipsec_interfac
 func (*IpsecInterfaceAddDelSpd) GetCrcString() string   { return "80f80cbb" }
 func (*IpsecInterfaceAddDelSpd) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecInterfaceAddDelSpd) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecInterfaceAddDelSpd) Size() (size int) {
@@ -229,6 +238,9 @@ func (*IpsecInterfaceAddDelSpdReply) GetCrcString() string { return "e8d4e804" }
 func (*IpsecInterfaceAddDelSpdReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecInterfaceAddDelSpdReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecInterfaceAddDelSpdReply) Size() (size int) {
 	if m == nil {
@@ -261,6 +273,9 @@ func (*IpsecItfCreate) GetMessageName() string { return "ipsec_itf_create" }
 func (*IpsecItfCreate) GetCrcString() string   { return "6f50b3bc" }
 func (*IpsecItfCreate) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecItfCreate) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecItfCreate) Size() (size int) {
@@ -302,6 +317,9 @@ func (*IpsecItfCreateReply) GetCrcString() string   { return "5383d31f" }
 func (*IpsecItfCreateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecItfCreateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecItfCreateReply) Size() (size int) {
 	if m == nil {
@@ -338,6 +356,9 @@ func (*IpsecItfDelete) GetCrcString() string   { return "f9e6675e" }
 func (*IpsecItfDelete) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecItfDelete) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecItfDelete) Size() (size int) {
 	if m == nil {
@@ -371,6 +392,9 @@ func (*IpsecItfDeleteReply) GetCrcString() string   { return "e8d4e804" }
 func (*IpsecItfDeleteReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecItfDeleteReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecItfDeleteReply) Size() (size int) {
 	if m == nil {
@@ -403,6 +427,9 @@ func (*IpsecItfDetails) GetMessageName() string { return "ipsec_itf_details" }
 func (*IpsecItfDetails) GetCrcString() string   { return "548a73b8" }
 func (*IpsecItfDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpsecItfDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecItfDetails) Size() (size int) {
@@ -443,6 +470,9 @@ func (*IpsecItfDump) GetCrcString() string   { return "f9e6675e" }
 func (*IpsecItfDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecItfDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecItfDump) Size() (size int) {
 	if m == nil {
@@ -482,6 +512,9 @@ func (*IpsecSaDetails) GetMessageName() string { return "ipsec_sa_details" }
 func (*IpsecSaDetails) GetCrcString() string   { return "345d14a7" }
 func (*IpsecSaDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpsecSaDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSaDetails) Size() (size int) {
@@ -588,6 +621,9 @@ func (*IpsecSaDump) GetCrcString() string   { return "2076c2f4" }
 func (*IpsecSaDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecSaDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecSaDump) Size() (size int) {
 	if m == nil {
@@ -626,6 +662,9 @@ func (*IpsecSaV2Details) GetMessageName() string { return "ipsec_sa_v2_details" 
 func (*IpsecSaV2Details) GetCrcString() string   { return "e2130051" }
 func (*IpsecSaV2Details) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpsecSaV2Details) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSaV2Details) Size() (size int) {
@@ -737,6 +776,9 @@ func (*IpsecSaV2Dump) GetCrcString() string   { return "2076c2f4" }
 func (*IpsecSaV2Dump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecSaV2Dump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecSaV2Dump) Size() (size int) {
 	if m == nil {
@@ -774,6 +816,9 @@ func (*IpsecSaV3Details) GetMessageName() string { return "ipsec_sa_v3_details" 
 func (*IpsecSaV3Details) GetCrcString() string   { return "2fc991ee" }
 func (*IpsecSaV3Details) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpsecSaV3Details) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSaV3Details) Size() (size int) {
@@ -897,6 +942,9 @@ func (*IpsecSaV3Dump) GetCrcString() string   { return "2076c2f4" }
 func (*IpsecSaV3Dump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecSaV3Dump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecSaV3Dump) Size() (size int) {
 	if m == nil {
@@ -929,6 +977,9 @@ func (*IpsecSadEntryAdd) GetMessageName() string { return "ipsec_sad_entry_add" 
 func (*IpsecSadEntryAdd) GetCrcString() string   { return "50229353" }
 func (*IpsecSadEntryAdd) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecSadEntryAdd) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSadEntryAdd) Size() (size int) {
@@ -1039,6 +1090,9 @@ func (*IpsecSadEntryAddDel) GetCrcString() string   { return "ab64b5c6" }
 func (*IpsecSadEntryAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecSadEntryAddDel) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecSadEntryAddDel) Size() (size int) {
 	if m == nil {
@@ -1130,6 +1184,9 @@ func (*IpsecSadEntryAddDelReply) GetCrcString() string   { return "9ffac24b" }
 func (*IpsecSadEntryAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecSadEntryAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecSadEntryAddDelReply) Size() (size int) {
 	if m == nil {
@@ -1166,6 +1223,9 @@ func (*IpsecSadEntryAddDelV2) GetMessageName() string { return "ipsec_sad_entry_
 func (*IpsecSadEntryAddDelV2) GetCrcString() string   { return "aca78b27" }
 func (*IpsecSadEntryAddDelV2) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecSadEntryAddDelV2) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSadEntryAddDelV2) Size() (size int) {
@@ -1263,6 +1323,9 @@ func (*IpsecSadEntryAddDelV2Reply) GetCrcString() string   { return "9ffac24b" }
 func (*IpsecSadEntryAddDelV2Reply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecSadEntryAddDelV2Reply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecSadEntryAddDelV2Reply) Size() (size int) {
 	if m == nil {
@@ -1299,6 +1362,9 @@ func (*IpsecSadEntryAddDelV3) GetMessageName() string { return "ipsec_sad_entry_
 func (*IpsecSadEntryAddDelV3) GetCrcString() string   { return "c77ebd92" }
 func (*IpsecSadEntryAddDelV3) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecSadEntryAddDelV3) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSadEntryAddDelV3) Size() (size int) {
@@ -1411,6 +1477,9 @@ func (*IpsecSadEntryAddDelV3Reply) GetCrcString() string   { return "9ffac24b" }
 func (*IpsecSadEntryAddDelV3Reply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecSadEntryAddDelV3Reply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecSadEntryAddDelV3Reply) Size() (size int) {
 	if m == nil {
@@ -1448,6 +1517,9 @@ func (*IpsecSadEntryAddReply) GetCrcString() string   { return "9ffac24b" }
 func (*IpsecSadEntryAddReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecSadEntryAddReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecSadEntryAddReply) Size() (size int) {
 	if m == nil {
@@ -1484,6 +1556,9 @@ func (*IpsecSadEntryDel) GetCrcString() string   { return "3a91bde5" }
 func (*IpsecSadEntryDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecSadEntryDel) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecSadEntryDel) Size() (size int) {
 	if m == nil {
@@ -1516,6 +1591,9 @@ func (*IpsecSadEntryDelReply) GetMessageName() string { return "ipsec_sad_entry_
 func (*IpsecSadEntryDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*IpsecSadEntryDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpsecSadEntryDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *IpsecSadEntryDelReply) Size() (size int) {
@@ -1550,6 +1628,9 @@ func (*IpsecSelectBackend) GetMessageName() string { return "ipsec_select_backen
 func (*IpsecSelectBackend) GetCrcString() string   { return "5bcfd3b7" }
 func (*IpsecSelectBackend) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecSelectBackend) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSelectBackend) Size() (size int) {
@@ -1587,6 +1668,9 @@ func (*IpsecSelectBackendReply) GetCrcString() string   { return "e8d4e804" }
 func (*IpsecSelectBackendReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecSelectBackendReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecSelectBackendReply) Size() (size int) {
 	if m == nil {
@@ -1619,6 +1703,9 @@ func (*IpsecSetAsyncMode) GetMessageName() string { return "ipsec_set_async_mode
 func (*IpsecSetAsyncMode) GetCrcString() string   { return "a6465f7c" }
 func (*IpsecSetAsyncMode) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecSetAsyncMode) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSetAsyncMode) Size() (size int) {
@@ -1653,6 +1740,9 @@ func (*IpsecSetAsyncModeReply) GetCrcString() string   { return "e8d4e804" }
 func (*IpsecSetAsyncModeReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecSetAsyncModeReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecSetAsyncModeReply) Size() (size int) {
 	if m == nil {
@@ -1686,6 +1776,9 @@ func (*IpsecSpdAddDel) GetMessageName() string { return "ipsec_spd_add_del" }
 func (*IpsecSpdAddDel) GetCrcString() string   { return "20e89a95" }
 func (*IpsecSpdAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecSpdAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSpdAddDel) Size() (size int) {
@@ -1723,6 +1816,9 @@ func (*IpsecSpdAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*IpsecSpdAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecSpdAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecSpdAddDelReply) Size() (size int) {
 	if m == nil {
@@ -1755,6 +1851,9 @@ func (*IpsecSpdDetails) GetMessageName() string { return "ipsec_spd_details" }
 func (*IpsecSpdDetails) GetCrcString() string   { return "5813d7a2" }
 func (*IpsecSpdDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpsecSpdDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSpdDetails) Size() (size int) {
@@ -1841,6 +1940,9 @@ func (*IpsecSpdDump) GetCrcString() string   { return "afefbf7d" }
 func (*IpsecSpdDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecSpdDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecSpdDump) Size() (size int) {
 	if m == nil {
@@ -1877,6 +1979,9 @@ func (*IpsecSpdEntryAddDel) GetMessageName() string { return "ipsec_spd_entry_ad
 func (*IpsecSpdEntryAddDel) GetCrcString() string   { return "338b7411" }
 func (*IpsecSpdEntryAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecSpdEntryAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSpdEntryAddDel) Size() (size int) {
@@ -1966,6 +2071,9 @@ func (*IpsecSpdEntryAddDelReply) GetCrcString() string   { return "9ffac24b" }
 func (*IpsecSpdEntryAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecSpdEntryAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecSpdEntryAddDelReply) Size() (size int) {
 	if m == nil {
@@ -2002,6 +2110,9 @@ func (*IpsecSpdInterfaceDetails) GetMessageName() string { return "ipsec_spd_int
 func (*IpsecSpdInterfaceDetails) GetCrcString() string   { return "7a0bcf3e" }
 func (*IpsecSpdInterfaceDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpsecSpdInterfaceDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecSpdInterfaceDetails) Size() (size int) {
@@ -2040,6 +2151,9 @@ func (*IpsecSpdInterfaceDump) GetCrcString() string   { return "8971de19" }
 func (*IpsecSpdInterfaceDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecSpdInterfaceDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecSpdInterfaceDump) Size() (size int) {
 	if m == nil {
@@ -2077,6 +2191,9 @@ func (*IpsecSpdsDetails) GetCrcString() string   { return "a04bb254" }
 func (*IpsecSpdsDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecSpdsDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecSpdsDetails) Size() (size int) {
 	if m == nil {
@@ -2111,6 +2228,9 @@ func (*IpsecSpdsDump) GetCrcString() string   { return "51077d14" }
 func (*IpsecSpdsDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecSpdsDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecSpdsDump) Size() (size int) {
 	if m == nil {
@@ -2140,6 +2260,9 @@ func (*IpsecTunnelProtectDel) GetMessageName() string { return "ipsec_tunnel_pro
 func (*IpsecTunnelProtectDel) GetCrcString() string   { return "cd239930" }
 func (*IpsecTunnelProtectDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecTunnelProtectDel) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecTunnelProtectDel) Size() (size int) {
@@ -2180,6 +2303,9 @@ func (*IpsecTunnelProtectDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*IpsecTunnelProtectDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpsecTunnelProtectDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpsecTunnelProtectDelReply) Size() (size int) {
 	if m == nil {
@@ -2212,6 +2338,9 @@ func (*IpsecTunnelProtectDetails) GetMessageName() string { return "ipsec_tunnel
 func (*IpsecTunnelProtectDetails) GetCrcString() string   { return "21663a50" }
 func (*IpsecTunnelProtectDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpsecTunnelProtectDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecTunnelProtectDetails) Size() (size int) {
@@ -2270,6 +2399,9 @@ func (*IpsecTunnelProtectDump) GetCrcString() string   { return "f9e6675e" }
 func (*IpsecTunnelProtectDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpsecTunnelProtectDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpsecTunnelProtectDump) Size() (size int) {
 	if m == nil {
@@ -2302,6 +2434,9 @@ func (*IpsecTunnelProtectUpdate) GetMessageName() string { return "ipsec_tunnel_
 func (*IpsecTunnelProtectUpdate) GetCrcString() string   { return "30d5f133" }
 func (*IpsecTunnelProtectUpdate) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpsecTunnelProtectUpdate) GetRetVal() error {
+	return nil
 }
 
 func (m *IpsecTunnelProtectUpdate) Size() (size int) {
@@ -2361,6 +2496,9 @@ func (*IpsecTunnelProtectUpdateReply) GetMessageName() string {
 func (*IpsecTunnelProtectUpdateReply) GetCrcString() string { return "e8d4e804" }
 func (*IpsecTunnelProtectUpdateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpsecTunnelProtectUpdateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *IpsecTunnelProtectUpdateReply) Size() (size int) {

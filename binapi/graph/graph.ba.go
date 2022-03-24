@@ -94,6 +94,9 @@ func (*GraphNodeDetails) GetCrcString() string   { return "ac762018" }
 func (*GraphNodeDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *GraphNodeDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *GraphNodeDetails) Size() (size int) {
 	if m == nil {
@@ -152,6 +155,9 @@ func (*GraphNodeGet) GetCrcString() string   { return "39c8792e" }
 func (*GraphNodeGet) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *GraphNodeGet) GetRetVal() error {
+	return nil
+}
 
 func (m *GraphNodeGet) Size() (size int) {
 	if m == nil {
@@ -197,6 +203,9 @@ func (*GraphNodeGetReply) GetMessageName() string { return "graph_node_get_reply
 func (*GraphNodeGetReply) GetCrcString() string   { return "53b48f5d" }
 func (*GraphNodeGetReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *GraphNodeGetReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *GraphNodeGetReply) Size() (size int) {

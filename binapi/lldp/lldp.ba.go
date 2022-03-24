@@ -43,6 +43,9 @@ func (*LldpConfig) GetCrcString() string   { return "c14445df" }
 func (*LldpConfig) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LldpConfig) GetRetVal() error {
+	return nil
+}
 
 func (m *LldpConfig) Size() (size int) {
 	if m == nil {
@@ -82,6 +85,9 @@ func (*LldpConfigReply) GetCrcString() string   { return "e8d4e804" }
 func (*LldpConfigReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LldpConfigReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LldpConfigReply) Size() (size int) {
 	if m == nil {
@@ -119,6 +125,9 @@ func (*SwInterfaceSetLldp) GetMessageName() string { return "sw_interface_set_ll
 func (*SwInterfaceSetLldp) GetCrcString() string   { return "57afbcd4" }
 func (*SwInterfaceSetLldp) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetLldp) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetLldp) Size() (size int) {
@@ -168,6 +177,9 @@ func (*SwInterfaceSetLldpReply) GetMessageName() string { return "sw_interface_s
 func (*SwInterfaceSetLldpReply) GetCrcString() string   { return "e8d4e804" }
 func (*SwInterfaceSetLldpReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceSetLldpReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SwInterfaceSetLldpReply) Size() (size int) {

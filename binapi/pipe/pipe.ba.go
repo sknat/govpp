@@ -41,6 +41,9 @@ func (*PipeCreate) GetCrcString() string   { return "bb263bd3" }
 func (*PipeCreate) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *PipeCreate) GetRetVal() error {
+	return nil
+}
 
 func (m *PipeCreate) Size() (size int) {
 	if m == nil {
@@ -78,6 +81,9 @@ func (*PipeCreateReply) GetMessageName() string { return "pipe_create_reply" }
 func (*PipeCreateReply) GetCrcString() string   { return "b7ce310c" }
 func (*PipeCreateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PipeCreateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *PipeCreateReply) Size() (size int) {
@@ -124,6 +130,9 @@ func (*PipeDelete) GetCrcString() string   { return "f9e6675e" }
 func (*PipeDelete) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *PipeDelete) GetRetVal() error {
+	return nil
+}
 
 func (m *PipeDelete) Size() (size int) {
 	if m == nil {
@@ -156,6 +165,9 @@ func (*PipeDeleteReply) GetMessageName() string { return "pipe_delete_reply" }
 func (*PipeDeleteReply) GetCrcString() string   { return "e8d4e804" }
 func (*PipeDeleteReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PipeDeleteReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *PipeDeleteReply) Size() (size int) {
@@ -191,6 +203,9 @@ func (*PipeDetails) GetMessageName() string { return "pipe_details" }
 func (*PipeDetails) GetCrcString() string   { return "c52b799d" }
 func (*PipeDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PipeDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *PipeDetails) Size() (size int) {
@@ -234,6 +249,9 @@ func (*PipeDump) GetMessageName() string { return "pipe_dump" }
 func (*PipeDump) GetCrcString() string   { return "51077d14" }
 func (*PipeDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PipeDump) GetRetVal() error {
+	return nil
 }
 
 func (m *PipeDump) Size() (size int) {

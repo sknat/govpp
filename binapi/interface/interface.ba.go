@@ -45,6 +45,9 @@ func (*CollectDetailedInterfaceStats) GetCrcString() string { return "5501adee" 
 func (*CollectDetailedInterfaceStats) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *CollectDetailedInterfaceStats) GetRetVal() error {
+	return nil
+}
 
 func (m *CollectDetailedInterfaceStats) Size() (size int) {
 	if m == nil {
@@ -83,6 +86,9 @@ func (*CollectDetailedInterfaceStatsReply) GetCrcString() string { return "e8d4e
 func (*CollectDetailedInterfaceStatsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *CollectDetailedInterfaceStatsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *CollectDetailedInterfaceStatsReply) Size() (size int) {
 	if m == nil {
@@ -115,6 +121,9 @@ func (*CreateLoopback) GetMessageName() string { return "create_loopback" }
 func (*CreateLoopback) GetCrcString() string   { return "42bb5d22" }
 func (*CreateLoopback) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *CreateLoopback) GetRetVal() error {
+	return nil
 }
 
 func (m *CreateLoopback) Size() (size int) {
@@ -150,6 +159,9 @@ func (*CreateLoopbackInstance) GetMessageName() string { return "create_loopback
 func (*CreateLoopbackInstance) GetCrcString() string   { return "d36a3ee2" }
 func (*CreateLoopbackInstance) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *CreateLoopbackInstance) GetRetVal() error {
+	return nil
 }
 
 func (m *CreateLoopbackInstance) Size() (size int) {
@@ -191,6 +203,9 @@ func (*CreateLoopbackInstanceReply) GetCrcString() string   { return "5383d31f" 
 func (*CreateLoopbackInstanceReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *CreateLoopbackInstanceReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *CreateLoopbackInstanceReply) Size() (size int) {
 	if m == nil {
@@ -227,6 +242,9 @@ func (*CreateLoopbackReply) GetMessageName() string { return "create_loopback_re
 func (*CreateLoopbackReply) GetCrcString() string   { return "5383d31f" }
 func (*CreateLoopbackReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *CreateLoopbackReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *CreateLoopbackReply) Size() (size int) {
@@ -267,6 +285,9 @@ func (*CreateSubif) GetMessageName() string { return "create_subif" }
 func (*CreateSubif) GetCrcString() string   { return "790ca755" }
 func (*CreateSubif) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *CreateSubif) GetRetVal() error {
+	return nil
 }
 
 func (m *CreateSubif) Size() (size int) {
@@ -314,6 +335,9 @@ func (*CreateSubifReply) GetCrcString() string   { return "5383d31f" }
 func (*CreateSubifReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *CreateSubifReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *CreateSubifReply) Size() (size int) {
 	if m == nil {
@@ -350,6 +374,9 @@ func (*CreateVlanSubif) GetMessageName() string { return "create_vlan_subif" }
 func (*CreateVlanSubif) GetCrcString() string   { return "af34ac8b" }
 func (*CreateVlanSubif) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *CreateVlanSubif) GetRetVal() error {
+	return nil
 }
 
 func (m *CreateVlanSubif) Size() (size int) {
@@ -388,6 +415,9 @@ func (*CreateVlanSubifReply) GetCrcString() string   { return "5383d31f" }
 func (*CreateVlanSubifReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *CreateVlanSubifReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *CreateVlanSubifReply) Size() (size int) {
 	if m == nil {
@@ -424,6 +454,9 @@ func (*DeleteLoopback) GetCrcString() string   { return "f9e6675e" }
 func (*DeleteLoopback) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *DeleteLoopback) GetRetVal() error {
+	return nil
+}
 
 func (m *DeleteLoopback) Size() (size int) {
 	if m == nil {
@@ -456,6 +489,9 @@ func (*DeleteLoopbackReply) GetMessageName() string { return "delete_loopback_re
 func (*DeleteLoopbackReply) GetCrcString() string   { return "e8d4e804" }
 func (*DeleteLoopbackReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *DeleteLoopbackReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *DeleteLoopbackReply) Size() (size int) {
@@ -490,6 +526,9 @@ func (*DeleteSubif) GetCrcString() string   { return "f9e6675e" }
 func (*DeleteSubif) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *DeleteSubif) GetRetVal() error {
+	return nil
+}
 
 func (m *DeleteSubif) Size() (size int) {
 	if m == nil {
@@ -522,6 +561,9 @@ func (*DeleteSubifReply) GetMessageName() string { return "delete_subif_reply" }
 func (*DeleteSubifReply) GetCrcString() string   { return "e8d4e804" }
 func (*DeleteSubifReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *DeleteSubifReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *DeleteSubifReply) Size() (size int) {
@@ -556,6 +598,9 @@ func (*HwInterfaceSetMtu) GetMessageName() string { return "hw_interface_set_mtu
 func (*HwInterfaceSetMtu) GetCrcString() string   { return "e6746899" }
 func (*HwInterfaceSetMtu) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *HwInterfaceSetMtu) GetRetVal() error {
+	return nil
 }
 
 func (m *HwInterfaceSetMtu) Size() (size int) {
@@ -593,6 +638,9 @@ func (*HwInterfaceSetMtuReply) GetCrcString() string   { return "e8d4e804" }
 func (*HwInterfaceSetMtuReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *HwInterfaceSetMtuReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *HwInterfaceSetMtuReply) Size() (size int) {
 	if m == nil {
@@ -626,6 +674,9 @@ func (*InterfaceNameRenumber) GetMessageName() string { return "interface_name_r
 func (*InterfaceNameRenumber) GetCrcString() string   { return "2b8858b8" }
 func (*InterfaceNameRenumber) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *InterfaceNameRenumber) GetRetVal() error {
+	return nil
 }
 
 func (m *InterfaceNameRenumber) Size() (size int) {
@@ -663,6 +714,9 @@ func (*InterfaceNameRenumberReply) GetCrcString() string   { return "e8d4e804" }
 func (*InterfaceNameRenumberReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *InterfaceNameRenumberReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *InterfaceNameRenumberReply) Size() (size int) {
 	if m == nil {
@@ -698,6 +752,9 @@ func (*SwInterfaceAddDelAddress) GetMessageName() string { return "sw_interface_
 func (*SwInterfaceAddDelAddress) GetCrcString() string   { return "5463d73b" }
 func (*SwInterfaceAddDelAddress) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceAddDelAddress) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceAddDelAddress) Size() (size int) {
@@ -749,6 +806,9 @@ func (*SwInterfaceAddDelAddressReply) GetCrcString() string { return "e8d4e804" 
 func (*SwInterfaceAddDelAddressReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceAddDelAddressReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceAddDelAddressReply) Size() (size int) {
 	if m == nil {
@@ -785,6 +845,9 @@ func (*SwInterfaceAddDelMacAddress) GetMessageName() string {
 func (*SwInterfaceAddDelMacAddress) GetCrcString() string { return "638bb9f4" }
 func (*SwInterfaceAddDelMacAddress) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceAddDelMacAddress) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceAddDelMacAddress) Size() (size int) {
@@ -827,6 +890,9 @@ func (*SwInterfaceAddDelMacAddressReply) GetCrcString() string { return "e8d4e80
 func (*SwInterfaceAddDelMacAddressReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceAddDelMacAddressReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceAddDelMacAddressReply) Size() (size int) {
 	if m == nil {
@@ -860,6 +926,9 @@ func (*SwInterfaceAddressReplaceBegin) GetCrcString() string { return "51077d14"
 func (*SwInterfaceAddressReplaceBegin) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceAddressReplaceBegin) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceAddressReplaceBegin) Size() (size int) {
 	if m == nil {
@@ -890,6 +959,9 @@ func (*SwInterfaceAddressReplaceBeginReply) GetMessageName() string {
 func (*SwInterfaceAddressReplaceBeginReply) GetCrcString() string { return "e8d4e804" }
 func (*SwInterfaceAddressReplaceBeginReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceAddressReplaceBeginReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SwInterfaceAddressReplaceBeginReply) Size() (size int) {
@@ -924,6 +996,9 @@ func (*SwInterfaceAddressReplaceEnd) GetCrcString() string { return "51077d14" }
 func (*SwInterfaceAddressReplaceEnd) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceAddressReplaceEnd) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceAddressReplaceEnd) Size() (size int) {
 	if m == nil {
@@ -954,6 +1029,9 @@ func (*SwInterfaceAddressReplaceEndReply) GetMessageName() string {
 func (*SwInterfaceAddressReplaceEndReply) GetCrcString() string { return "e8d4e804" }
 func (*SwInterfaceAddressReplaceEndReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceAddressReplaceEndReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SwInterfaceAddressReplaceEndReply) Size() (size int) {
@@ -988,6 +1066,9 @@ func (*SwInterfaceClearStats) GetCrcString() string   { return "f9e6675e" }
 func (*SwInterfaceClearStats) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceClearStats) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceClearStats) Size() (size int) {
 	if m == nil {
@@ -1020,6 +1101,9 @@ func (*SwInterfaceClearStatsReply) GetMessageName() string { return "sw_interfac
 func (*SwInterfaceClearStatsReply) GetCrcString() string   { return "e8d4e804" }
 func (*SwInterfaceClearStatsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceClearStatsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SwInterfaceClearStatsReply) Size() (size int) {
@@ -1078,6 +1162,9 @@ func (*SwInterfaceDetails) GetMessageName() string { return "sw_interface_detail
 func (*SwInterfaceDetails) GetCrcString() string   { return "6c221fc7" }
 func (*SwInterfaceDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceDetails) Size() (size int) {
@@ -1198,6 +1285,9 @@ func (*SwInterfaceDump) GetCrcString() string   { return "aa610c27" }
 func (*SwInterfaceDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceDump) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceDump) Size() (size int) {
 	if m == nil {
@@ -1239,6 +1329,9 @@ func (*SwInterfaceEvent) GetMessageName() string { return "sw_interface_event" }
 func (*SwInterfaceEvent) GetCrcString() string   { return "2d3d95a7" }
 func (*SwInterfaceEvent) GetMessageType() api.MessageType {
 	return api.EventMessage
+}
+func (m *SwInterfaceEvent) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceEvent) Size() (size int) {
@@ -1282,6 +1375,9 @@ func (*SwInterfaceGetMacAddress) GetCrcString() string   { return "f9e6675e" }
 func (*SwInterfaceGetMacAddress) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceGetMacAddress) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceGetMacAddress) Size() (size int) {
 	if m == nil {
@@ -1317,6 +1413,9 @@ func (*SwInterfaceGetMacAddressReply) GetMessageName() string {
 func (*SwInterfaceGetMacAddressReply) GetCrcString() string { return "40ef2c08" }
 func (*SwInterfaceGetMacAddressReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceGetMacAddressReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SwInterfaceGetMacAddressReply) Size() (size int) {
@@ -1355,6 +1454,9 @@ func (*SwInterfaceGetTable) GetCrcString() string   { return "2d033de4" }
 func (*SwInterfaceGetTable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceGetTable) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceGetTable) Size() (size int) {
 	if m == nil {
@@ -1391,6 +1493,9 @@ func (*SwInterfaceGetTableReply) GetMessageName() string { return "sw_interface_
 func (*SwInterfaceGetTableReply) GetCrcString() string   { return "a6eb0109" }
 func (*SwInterfaceGetTableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SwInterfaceGetTableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SwInterfaceGetTableReply) Size() (size int) {
@@ -1432,6 +1537,9 @@ func (*SwInterfaceRxPlacementDetails) GetMessageName() string {
 func (*SwInterfaceRxPlacementDetails) GetCrcString() string { return "9e44a7ce" }
 func (*SwInterfaceRxPlacementDetails) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceRxPlacementDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceRxPlacementDetails) Size() (size int) {
@@ -1475,6 +1583,9 @@ func (*SwInterfaceRxPlacementDump) GetCrcString() string   { return "f9e6675e" }
 func (*SwInterfaceRxPlacementDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceRxPlacementDump) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceRxPlacementDump) Size() (size int) {
 	if m == nil {
@@ -1508,6 +1619,9 @@ func (*SwInterfaceSetFlags) GetMessageName() string { return "sw_interface_set_f
 func (*SwInterfaceSetFlags) GetCrcString() string   { return "f5aec1b8" }
 func (*SwInterfaceSetFlags) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetFlags) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetFlags) Size() (size int) {
@@ -1545,6 +1659,9 @@ func (*SwInterfaceSetFlagsReply) GetCrcString() string   { return "e8d4e804" }
 func (*SwInterfaceSetFlagsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetFlagsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetFlagsReply) Size() (size int) {
 	if m == nil {
@@ -1578,6 +1695,9 @@ func (*SwInterfaceSetInterfaceName) GetMessageName() string { return "sw_interfa
 func (*SwInterfaceSetInterfaceName) GetCrcString() string   { return "45a1d548" }
 func (*SwInterfaceSetInterfaceName) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetInterfaceName) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetInterfaceName) Size() (size int) {
@@ -1617,6 +1737,9 @@ func (*SwInterfaceSetInterfaceNameReply) GetCrcString() string { return "e8d4e80
 func (*SwInterfaceSetInterfaceNameReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetInterfaceNameReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetInterfaceNameReply) Size() (size int) {
 	if m == nil {
@@ -1652,6 +1775,9 @@ func (*SwInterfaceSetIPDirectedBroadcast) GetMessageName() string {
 func (*SwInterfaceSetIPDirectedBroadcast) GetCrcString() string { return "ae6cfcfb" }
 func (*SwInterfaceSetIPDirectedBroadcast) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetIPDirectedBroadcast) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetIPDirectedBroadcast) Size() (size int) {
@@ -1693,6 +1819,9 @@ func (*SwInterfaceSetIPDirectedBroadcastReply) GetCrcString() string { return "e
 func (*SwInterfaceSetIPDirectedBroadcastReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetIPDirectedBroadcastReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetIPDirectedBroadcastReply) Size() (size int) {
 	if m == nil {
@@ -1726,6 +1855,9 @@ func (*SwInterfaceSetMacAddress) GetMessageName() string { return "sw_interface_
 func (*SwInterfaceSetMacAddress) GetCrcString() string   { return "c536e7eb" }
 func (*SwInterfaceSetMacAddress) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetMacAddress) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetMacAddress) Size() (size int) {
@@ -1765,6 +1897,9 @@ func (*SwInterfaceSetMacAddressReply) GetCrcString() string { return "e8d4e804" 
 func (*SwInterfaceSetMacAddressReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetMacAddressReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetMacAddressReply) Size() (size int) {
 	if m == nil {
@@ -1798,6 +1933,9 @@ func (*SwInterfaceSetMtu) GetMessageName() string { return "sw_interface_set_mtu
 func (*SwInterfaceSetMtu) GetCrcString() string   { return "5cbe85e5" }
 func (*SwInterfaceSetMtu) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetMtu) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetMtu) Size() (size int) {
@@ -1844,6 +1982,9 @@ func (*SwInterfaceSetMtuReply) GetCrcString() string   { return "e8d4e804" }
 func (*SwInterfaceSetMtuReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetMtuReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetMtuReply) Size() (size int) {
 	if m == nil {
@@ -1877,6 +2018,9 @@ func (*SwInterfaceSetPromisc) GetMessageName() string { return "sw_interface_set
 func (*SwInterfaceSetPromisc) GetCrcString() string   { return "d40860d4" }
 func (*SwInterfaceSetPromisc) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetPromisc) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetPromisc) Size() (size int) {
@@ -1914,6 +2058,9 @@ func (*SwInterfaceSetPromiscReply) GetCrcString() string   { return "e8d4e804" }
 func (*SwInterfaceSetPromiscReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetPromiscReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetPromiscReply) Size() (size int) {
 	if m == nil {
@@ -1949,6 +2096,9 @@ func (*SwInterfaceSetRxMode) GetMessageName() string { return "sw_interface_set_
 func (*SwInterfaceSetRxMode) GetCrcString() string   { return "b04d1cfe" }
 func (*SwInterfaceSetRxMode) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetRxMode) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetRxMode) Size() (size int) {
@@ -1992,6 +2142,9 @@ func (*SwInterfaceSetRxModeReply) GetCrcString() string   { return "e8d4e804" }
 func (*SwInterfaceSetRxModeReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetRxModeReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetRxModeReply) Size() (size int) {
 	if m == nil {
@@ -2027,6 +2180,9 @@ func (*SwInterfaceSetRxPlacement) GetMessageName() string { return "sw_interface
 func (*SwInterfaceSetRxPlacement) GetCrcString() string   { return "db65f3c9" }
 func (*SwInterfaceSetRxPlacement) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetRxPlacement) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetRxPlacement) Size() (size int) {
@@ -2072,6 +2228,9 @@ func (*SwInterfaceSetRxPlacementReply) GetCrcString() string { return "e8d4e804"
 func (*SwInterfaceSetRxPlacementReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetRxPlacementReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetRxPlacementReply) Size() (size int) {
 	if m == nil {
@@ -2106,6 +2265,9 @@ func (*SwInterfaceSetTable) GetMessageName() string { return "sw_interface_set_t
 func (*SwInterfaceSetTable) GetCrcString() string   { return "df42a577" }
 func (*SwInterfaceSetTable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetTable) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetTable) Size() (size int) {
@@ -2146,6 +2308,9 @@ func (*SwInterfaceSetTableReply) GetCrcString() string   { return "e8d4e804" }
 func (*SwInterfaceSetTableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetTableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetTableReply) Size() (size int) {
 	if m == nil {
@@ -2181,6 +2346,9 @@ func (*SwInterfaceSetTxPlacement) GetMessageName() string { return "sw_interface
 func (*SwInterfaceSetTxPlacement) GetCrcString() string   { return "4e0cd5ff" }
 func (*SwInterfaceSetTxPlacement) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetTxPlacement) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetTxPlacement) Size() (size int) {
@@ -2235,6 +2403,9 @@ func (*SwInterfaceSetTxPlacementReply) GetCrcString() string { return "e8d4e804"
 func (*SwInterfaceSetTxPlacementReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetTxPlacementReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetTxPlacementReply) Size() (size int) {
 	if m == nil {
@@ -2269,6 +2440,9 @@ func (*SwInterfaceSetUnnumbered) GetMessageName() string { return "sw_interface_
 func (*SwInterfaceSetUnnumbered) GetCrcString() string   { return "154a6439" }
 func (*SwInterfaceSetUnnumbered) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceSetUnnumbered) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceSetUnnumbered) Size() (size int) {
@@ -2311,6 +2485,9 @@ func (*SwInterfaceSetUnnumberedReply) GetCrcString() string { return "e8d4e804" 
 func (*SwInterfaceSetUnnumberedReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceSetUnnumberedReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceSetUnnumberedReply) Size() (size int) {
 	if m == nil {
@@ -2345,6 +2522,9 @@ func (*SwInterfaceTagAddDel) GetMessageName() string { return "sw_interface_tag_
 func (*SwInterfaceTagAddDel) GetCrcString() string   { return "426f8bc1" }
 func (*SwInterfaceTagAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceTagAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceTagAddDel) Size() (size int) {
@@ -2385,6 +2565,9 @@ func (*SwInterfaceTagAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*SwInterfaceTagAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceTagAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceTagAddDelReply) Size() (size int) {
 	if m == nil {
@@ -2423,6 +2606,9 @@ func (*SwInterfaceTxPlacementDetails) GetMessageName() string {
 func (*SwInterfaceTxPlacementDetails) GetCrcString() string { return "00381a2e" }
 func (*SwInterfaceTxPlacementDetails) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SwInterfaceTxPlacementDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *SwInterfaceTxPlacementDetails) Size() (size int) {
@@ -2479,6 +2665,9 @@ func (*SwInterfaceTxPlacementGet) GetCrcString() string   { return "47250981" }
 func (*SwInterfaceTxPlacementGet) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceTxPlacementGet) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceTxPlacementGet) Size() (size int) {
 	if m == nil {
@@ -2518,6 +2707,9 @@ func (*SwInterfaceTxPlacementGetReply) GetCrcString() string { return "53b48f5d"
 func (*SwInterfaceTxPlacementGetReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceTxPlacementGetReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *SwInterfaceTxPlacementGetReply) Size() (size int) {
 	if m == nil {
@@ -2555,6 +2747,9 @@ func (*WantInterfaceEvents) GetCrcString() string   { return "476f5a08" }
 func (*WantInterfaceEvents) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *WantInterfaceEvents) GetRetVal() error {
+	return nil
+}
 
 func (m *WantInterfaceEvents) Size() (size int) {
 	if m == nil {
@@ -2590,6 +2785,9 @@ func (*WantInterfaceEventsReply) GetMessageName() string { return "want_interfac
 func (*WantInterfaceEventsReply) GetCrcString() string   { return "e8d4e804" }
 func (*WantInterfaceEventsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *WantInterfaceEventsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *WantInterfaceEventsReply) Size() (size int) {

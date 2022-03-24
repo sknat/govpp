@@ -298,6 +298,9 @@ func (*L2Emulation) GetCrcString() string   { return "ae6cfcfb" }
 func (*L2Emulation) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *L2Emulation) GetRetVal() error {
+	return nil
+}
 
 func (m *L2Emulation) Size() (size int) {
 	if m == nil {
@@ -333,6 +336,9 @@ func (*L2EmulationReply) GetMessageName() string { return "l2_emulation_reply" }
 func (*L2EmulationReply) GetCrcString() string   { return "e8d4e804" }
 func (*L2EmulationReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *L2EmulationReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *L2EmulationReply) Size() (size int) {

@@ -47,6 +47,9 @@ func (*LbAddDelAs) GetCrcString() string   { return "35d72500" }
 func (*LbAddDelAs) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LbAddDelAs) GetRetVal() error {
+	return nil
+}
 
 func (m *LbAddDelAs) Size() (size int) {
 	if m == nil {
@@ -104,6 +107,9 @@ func (*LbAddDelAsReply) GetCrcString() string   { return "e8d4e804" }
 func (*LbAddDelAsReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LbAddDelAsReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LbAddDelAsReply) Size() (size int) {
 	if m == nil {
@@ -137,6 +143,9 @@ func (*LbAddDelIntfNat4) GetMessageName() string { return "lb_add_del_intf_nat4"
 func (*LbAddDelIntfNat4) GetCrcString() string   { return "47d6e753" }
 func (*LbAddDelIntfNat4) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LbAddDelIntfNat4) GetRetVal() error {
+	return nil
 }
 
 func (m *LbAddDelIntfNat4) Size() (size int) {
@@ -174,6 +183,9 @@ func (*LbAddDelIntfNat4Reply) GetCrcString() string   { return "e8d4e804" }
 func (*LbAddDelIntfNat4Reply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LbAddDelIntfNat4Reply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LbAddDelIntfNat4Reply) Size() (size int) {
 	if m == nil {
@@ -207,6 +219,9 @@ func (*LbAddDelIntfNat6) GetMessageName() string { return "lb_add_del_intf_nat6"
 func (*LbAddDelIntfNat6) GetCrcString() string   { return "47d6e753" }
 func (*LbAddDelIntfNat6) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LbAddDelIntfNat6) GetRetVal() error {
+	return nil
 }
 
 func (m *LbAddDelIntfNat6) Size() (size int) {
@@ -243,6 +258,9 @@ func (*LbAddDelIntfNat6Reply) GetMessageName() string { return "lb_add_del_intf_
 func (*LbAddDelIntfNat6Reply) GetCrcString() string   { return "e8d4e804" }
 func (*LbAddDelIntfNat6Reply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *LbAddDelIntfNat6Reply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *LbAddDelIntfNat6Reply) Size() (size int) {
@@ -285,6 +303,9 @@ func (*LbAddDelVip) GetMessageName() string { return "lb_add_del_vip" }
 func (*LbAddDelVip) GetCrcString() string   { return "6fa569c7" }
 func (*LbAddDelVip) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LbAddDelVip) GetRetVal() error {
+	return nil
 }
 
 func (m *LbAddDelVip) Size() (size int) {
@@ -352,6 +373,9 @@ func (*LbAddDelVipReply) GetCrcString() string   { return "e8d4e804" }
 func (*LbAddDelVipReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LbAddDelVipReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LbAddDelVipReply) Size() (size int) {
 	if m == nil {
@@ -387,6 +411,9 @@ func (*LbAsDetails) GetMessageName() string { return "lb_as_details" }
 func (*LbAsDetails) GetCrcString() string   { return "8d24c29e" }
 func (*LbAsDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *LbAsDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *LbAsDetails) Size() (size int) {
@@ -447,6 +474,9 @@ func (*LbAsDump) GetCrcString() string   { return "1063f819" }
 func (*LbAsDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LbAsDump) GetRetVal() error {
+	return nil
+}
 
 func (m *LbAsDump) Size() (size int) {
 	if m == nil {
@@ -495,6 +525,9 @@ func (*LbConf) GetCrcString() string   { return "56cd3261" }
 func (*LbConf) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *LbConf) GetRetVal() error {
+	return nil
+}
 
 func (m *LbConf) Size() (size int) {
 	if m == nil {
@@ -537,6 +570,9 @@ func (*LbConfReply) GetCrcString() string   { return "e8d4e804" }
 func (*LbConfReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LbConfReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LbConfReply) Size() (size int) {
 	if m == nil {
@@ -571,6 +607,9 @@ func (*LbFlushVip) GetMessageName() string { return "lb_flush_vip" }
 func (*LbFlushVip) GetCrcString() string   { return "1063f819" }
 func (*LbFlushVip) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LbFlushVip) GetRetVal() error {
+	return nil
 }
 
 func (m *LbFlushVip) Size() (size int) {
@@ -617,6 +656,9 @@ func (*LbFlushVipReply) GetCrcString() string   { return "e8d4e804" }
 func (*LbFlushVipReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *LbFlushVipReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *LbFlushVipReply) Size() (size int) {
 	if m == nil {
@@ -654,6 +696,9 @@ func (*LbVipDetails) GetMessageName() string { return "lb_vip_details" }
 func (*LbVipDetails) GetCrcString() string   { return "1329ec9b" }
 func (*LbVipDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *LbVipDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *LbVipDetails) Size() (size int) {
@@ -717,6 +762,9 @@ func (*LbVipDump) GetMessageName() string { return "lb_vip_dump" }
 func (*LbVipDump) GetCrcString() string   { return "56110cb7" }
 func (*LbVipDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *LbVipDump) GetRetVal() error {
+	return nil
 }
 
 func (m *LbVipDump) Size() (size int) {

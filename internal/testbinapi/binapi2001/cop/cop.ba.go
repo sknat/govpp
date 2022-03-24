@@ -298,6 +298,9 @@ func (*CopInterfaceEnableDisable) GetCrcString() string   { return "5501adee" }
 func (*CopInterfaceEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *CopInterfaceEnableDisable) GetRetVal() error {
+	return nil
+}
 
 func (m *CopInterfaceEnableDisable) Size() (size int) {
 	if m == nil {
@@ -336,6 +339,9 @@ func (*CopInterfaceEnableDisableReply) GetCrcString() string { return "e8d4e804"
 func (*CopInterfaceEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *CopInterfaceEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *CopInterfaceEnableDisableReply) Size() (size int) {
 	if m == nil {
@@ -372,6 +378,9 @@ func (*CopWhitelistEnableDisable) GetMessageName() string { return "cop_whitelis
 func (*CopWhitelistEnableDisable) GetCrcString() string   { return "debe13ea" }
 func (*CopWhitelistEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *CopWhitelistEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *CopWhitelistEnableDisable) Size() (size int) {
@@ -419,6 +428,9 @@ func (*CopWhitelistEnableDisableReply) GetMessageName() string {
 func (*CopWhitelistEnableDisableReply) GetCrcString() string { return "e8d4e804" }
 func (*CopWhitelistEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *CopWhitelistEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *CopWhitelistEnableDisableReply) Size() (size int) {

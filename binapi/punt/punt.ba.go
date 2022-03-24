@@ -162,6 +162,9 @@ func (*PuntReasonDetails) GetCrcString() string   { return "2c9d4a40" }
 func (*PuntReasonDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *PuntReasonDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *PuntReasonDetails) Size() (size int) {
 	if m == nil {
@@ -197,6 +200,9 @@ func (*PuntReasonDump) GetMessageName() string { return "punt_reason_dump" }
 func (*PuntReasonDump) GetCrcString() string   { return "5c0dd4fe" }
 func (*PuntReasonDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PuntReasonDump) GetRetVal() error {
+	return nil
 }
 
 func (m *PuntReasonDump) Size() (size int) {
@@ -234,6 +240,9 @@ func (*PuntSocketDeregister) GetCrcString() string   { return "98fc9102" }
 func (*PuntSocketDeregister) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *PuntSocketDeregister) GetRetVal() error {
+	return nil
+}
 
 func (m *PuntSocketDeregister) Size() (size int) {
 	if m == nil {
@@ -270,6 +279,9 @@ func (*PuntSocketDeregisterReply) GetCrcString() string   { return "e8d4e804" }
 func (*PuntSocketDeregisterReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *PuntSocketDeregisterReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *PuntSocketDeregisterReply) Size() (size int) {
 	if m == nil {
@@ -303,6 +315,9 @@ func (*PuntSocketDetails) GetMessageName() string { return "punt_socket_details"
 func (*PuntSocketDetails) GetCrcString() string   { return "de575080" }
 func (*PuntSocketDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PuntSocketDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *PuntSocketDetails) Size() (size int) {
@@ -343,6 +358,9 @@ func (*PuntSocketDump) GetCrcString() string   { return "52974935" }
 func (*PuntSocketDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *PuntSocketDump) GetRetVal() error {
+	return nil
+}
 
 func (m *PuntSocketDump) Size() (size int) {
 	if m == nil {
@@ -377,6 +395,9 @@ func (*PuntSocketRegister) GetMessageName() string { return "punt_socket_registe
 func (*PuntSocketRegister) GetCrcString() string   { return "95268cbf" }
 func (*PuntSocketRegister) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PuntSocketRegister) GetRetVal() error {
+	return nil
 }
 
 func (m *PuntSocketRegister) Size() (size int) {
@@ -421,6 +442,9 @@ func (*PuntSocketRegisterReply) GetCrcString() string   { return "bd30ae90" }
 func (*PuntSocketRegisterReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *PuntSocketRegisterReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *PuntSocketRegisterReply) Size() (size int) {
 	if m == nil {
@@ -457,6 +481,9 @@ func (*SetPunt) GetMessageName() string { return "set_punt" }
 func (*SetPunt) GetCrcString() string   { return "aa83d523" }
 func (*SetPunt) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SetPunt) GetRetVal() error {
+	return nil
 }
 
 func (m *SetPunt) Size() (size int) {
@@ -496,6 +523,9 @@ func (*SetPuntReply) GetMessageName() string { return "set_punt_reply" }
 func (*SetPuntReply) GetCrcString() string   { return "e8d4e804" }
 func (*SetPuntReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SetPuntReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SetPuntReply) Size() (size int) {

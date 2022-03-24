@@ -39,6 +39,9 @@ func (*DNSEnableDisable) GetCrcString() string   { return "8050327d" }
 func (*DNSEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *DNSEnableDisable) GetRetVal() error {
+	return nil
+}
 
 func (m *DNSEnableDisable) Size() (size int) {
 	if m == nil {
@@ -71,6 +74,9 @@ func (*DNSEnableDisableReply) GetMessageName() string { return "dns_enable_disab
 func (*DNSEnableDisableReply) GetCrcString() string   { return "e8d4e804" }
 func (*DNSEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *DNSEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *DNSEnableDisableReply) Size() (size int) {
@@ -106,6 +112,9 @@ func (*DNSNameServerAddDel) GetMessageName() string { return "dns_name_server_ad
 func (*DNSNameServerAddDel) GetCrcString() string   { return "3bb05d8c" }
 func (*DNSNameServerAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *DNSNameServerAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *DNSNameServerAddDel) Size() (size int) {
@@ -147,6 +156,9 @@ func (*DNSNameServerAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*DNSNameServerAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *DNSNameServerAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *DNSNameServerAddDelReply) Size() (size int) {
 	if m == nil {
@@ -180,6 +192,9 @@ func (*DNSResolveIP) GetMessageName() string { return "dns_resolve_ip" }
 func (*DNSResolveIP) GetCrcString() string   { return "ae96a1a3" }
 func (*DNSResolveIP) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *DNSResolveIP) GetRetVal() error {
+	return nil
 }
 
 func (m *DNSResolveIP) Size() (size int) {
@@ -219,6 +234,9 @@ func (*DNSResolveIPReply) GetCrcString() string   { return "49ed78d6" }
 func (*DNSResolveIPReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *DNSResolveIPReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *DNSResolveIPReply) Size() (size int) {
 	if m == nil {
@@ -255,6 +273,9 @@ func (*DNSResolveName) GetMessageName() string { return "dns_resolve_name" }
 func (*DNSResolveName) GetCrcString() string   { return "c6566676" }
 func (*DNSResolveName) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *DNSResolveName) GetRetVal() error {
+	return nil
 }
 
 func (m *DNSResolveName) Size() (size int) {
@@ -293,6 +314,9 @@ func (*DNSResolveNameReply) GetMessageName() string { return "dns_resolve_name_r
 func (*DNSResolveNameReply) GetCrcString() string   { return "c2d758c3" }
 func (*DNSResolveNameReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *DNSResolveNameReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *DNSResolveNameReply) Size() (size int) {

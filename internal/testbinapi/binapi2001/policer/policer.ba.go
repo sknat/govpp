@@ -54,6 +54,9 @@ func (*PolicerAddDel) GetCrcString() string   { return "dfea2be8" }
 func (*PolicerAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *PolicerAddDel) GetRetVal() error {
+	return nil
+}
 
 func (m *PolicerAddDel) Size() (size int) {
 	if m == nil {
@@ -134,6 +137,9 @@ func (*PolicerAddDelReply) GetCrcString() string   { return "a177cef2" }
 func (*PolicerAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *PolicerAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *PolicerAddDelReply) Size() (size int) {
 	if m == nil {
@@ -192,6 +198,9 @@ func (*PolicerDetails) GetMessageName() string { return "policer_details" }
 func (*PolicerDetails) GetCrcString() string   { return "ff2765f0" }
 func (*PolicerDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *PolicerDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *PolicerDetails) Size() (size int) {
@@ -296,6 +305,9 @@ func (*PolicerDump) GetMessageName() string { return "policer_dump" }
 func (*PolicerDump) GetCrcString() string   { return "8be04d34" }
 func (*PolicerDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *PolicerDump) GetRetVal() error {
+	return nil
 }
 
 func (m *PolicerDump) Size() (size int) {

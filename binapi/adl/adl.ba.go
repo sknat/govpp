@@ -45,6 +45,9 @@ func (*AdlAllowlistEnableDisable) GetCrcString() string   { return "ea88828d" }
 func (*AdlAllowlistEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *AdlAllowlistEnableDisable) GetRetVal() error {
+	return nil
+}
 
 func (m *AdlAllowlistEnableDisable) Size() (size int) {
 	if m == nil {
@@ -93,6 +96,9 @@ func (*AdlAllowlistEnableDisableReply) GetCrcString() string { return "e8d4e804"
 func (*AdlAllowlistEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *AdlAllowlistEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *AdlAllowlistEnableDisableReply) Size() (size int) {
 	if m == nil {
@@ -127,6 +133,9 @@ func (*AdlInterfaceEnableDisable) GetMessageName() string { return "adl_interfac
 func (*AdlInterfaceEnableDisable) GetCrcString() string   { return "5501adee" }
 func (*AdlInterfaceEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *AdlInterfaceEnableDisable) GetRetVal() error {
+	return nil
 }
 
 func (m *AdlInterfaceEnableDisable) Size() (size int) {
@@ -166,6 +175,9 @@ func (*AdlInterfaceEnableDisableReply) GetMessageName() string {
 func (*AdlInterfaceEnableDisableReply) GetCrcString() string { return "e8d4e804" }
 func (*AdlInterfaceEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *AdlInterfaceEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *AdlInterfaceEnableDisableReply) Size() (size int) {

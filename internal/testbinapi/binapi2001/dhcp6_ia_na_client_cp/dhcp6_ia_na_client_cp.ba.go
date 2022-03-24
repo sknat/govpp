@@ -298,6 +298,9 @@ func (*DHCP6ClientEnableDisable) GetCrcString() string   { return "ae6cfcfb" }
 func (*DHCP6ClientEnableDisable) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *DHCP6ClientEnableDisable) GetRetVal() error {
+	return nil
+}
 
 func (m *DHCP6ClientEnableDisable) Size() (size int) {
 	if m == nil {
@@ -335,6 +338,9 @@ func (*DHCP6ClientEnableDisableReply) GetMessageName() string {
 func (*DHCP6ClientEnableDisableReply) GetCrcString() string { return "e8d4e804" }
 func (*DHCP6ClientEnableDisableReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *DHCP6ClientEnableDisableReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *DHCP6ClientEnableDisableReply) Size() (size int) {

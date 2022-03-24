@@ -108,6 +108,9 @@ func (*SwInterfaceVirtioPciDetails) GetCrcString() string   { return "6ca9c167" 
 func (*SwInterfaceVirtioPciDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *SwInterfaceVirtioPciDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceVirtioPciDetails) Size() (size int) {
 	if m == nil {
@@ -163,6 +166,9 @@ func (*SwInterfaceVirtioPciDump) GetCrcString() string   { return "51077d14" }
 func (*SwInterfaceVirtioPciDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *SwInterfaceVirtioPciDump) GetRetVal() error {
+	return nil
+}
 
 func (m *SwInterfaceVirtioPciDump) Size() (size int) {
 	if m == nil {
@@ -197,6 +203,9 @@ func (*VirtioPciCreate) GetMessageName() string { return "virtio_pci_create" }
 func (*VirtioPciCreate) GetCrcString() string   { return "1944f8db" }
 func (*VirtioPciCreate) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VirtioPciCreate) GetRetVal() error {
+	return nil
 }
 
 func (m *VirtioPciCreate) Size() (size int) {
@@ -257,6 +266,9 @@ func (*VirtioPciCreateReply) GetCrcString() string   { return "5383d31f" }
 func (*VirtioPciCreateReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *VirtioPciCreateReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *VirtioPciCreateReply) Size() (size int) {
 	if m == nil {
@@ -296,6 +308,9 @@ func (*VirtioPciCreateV2) GetMessageName() string { return "virtio_pci_create_v2
 func (*VirtioPciCreateV2) GetCrcString() string   { return "5d096e1a" }
 func (*VirtioPciCreateV2) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *VirtioPciCreateV2) GetRetVal() error {
+	return nil
 }
 
 func (m *VirtioPciCreateV2) Size() (size int) {
@@ -352,6 +367,9 @@ func (*VirtioPciCreateV2Reply) GetCrcString() string   { return "5383d31f" }
 func (*VirtioPciCreateV2Reply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *VirtioPciCreateV2Reply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *VirtioPciCreateV2Reply) Size() (size int) {
 	if m == nil {
@@ -388,6 +406,9 @@ func (*VirtioPciDelete) GetCrcString() string   { return "f9e6675e" }
 func (*VirtioPciDelete) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *VirtioPciDelete) GetRetVal() error {
+	return nil
+}
 
 func (m *VirtioPciDelete) Size() (size int) {
 	if m == nil {
@@ -420,6 +441,9 @@ func (*VirtioPciDeleteReply) GetMessageName() string { return "virtio_pci_delete
 func (*VirtioPciDeleteReply) GetCrcString() string   { return "e8d4e804" }
 func (*VirtioPciDeleteReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *VirtioPciDeleteReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *VirtioPciDeleteReply) Size() (size int) {

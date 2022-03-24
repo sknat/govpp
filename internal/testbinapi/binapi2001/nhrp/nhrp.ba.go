@@ -899,6 +899,9 @@ func (*NhrpDetails) GetCrcString() string   { return "e351c50a" }
 func (*NhrpDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *NhrpDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *NhrpDetails) Size() (size int) {
 	if m == nil {
@@ -945,6 +948,9 @@ func (*NhrpDump) GetCrcString() string   { return "51077d14" }
 func (*NhrpDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *NhrpDump) GetRetVal() error {
+	return nil
+}
 
 func (m *NhrpDump) Size() (size int) {
 	if m == nil {
@@ -974,6 +980,9 @@ func (*NhrpEntryAddDel) GetMessageName() string { return "nhrp_entry_add_del" }
 func (*NhrpEntryAddDel) GetCrcString() string   { return "5a47c531" }
 func (*NhrpEntryAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *NhrpEntryAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *NhrpEntryAddDel) Size() (size int) {
@@ -1025,6 +1034,9 @@ func (*NhrpEntryAddDelReply) GetMessageName() string { return "nhrp_entry_add_de
 func (*NhrpEntryAddDelReply) GetCrcString() string   { return "e8d4e804" }
 func (*NhrpEntryAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *NhrpEntryAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *NhrpEntryAddDelReply) Size() (size int) {

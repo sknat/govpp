@@ -638,6 +638,9 @@ func (*IpfixClassifyStreamDetails) GetCrcString() string   { return "2903539d" }
 func (*IpfixClassifyStreamDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpfixClassifyStreamDetails) GetRetVal() error {
+	return nil
+}
 
 func (m *IpfixClassifyStreamDetails) Size() (size int) {
 	if m == nil {
@@ -672,6 +675,9 @@ func (*IpfixClassifyStreamDump) GetCrcString() string   { return "51077d14" }
 func (*IpfixClassifyStreamDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpfixClassifyStreamDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpfixClassifyStreamDump) Size() (size int) {
 	if m == nil {
@@ -703,6 +709,9 @@ func (*IpfixClassifyTableAddDel) GetMessageName() string { return "ipfix_classif
 func (*IpfixClassifyTableAddDel) GetCrcString() string   { return "5118bc5e" }
 func (*IpfixClassifyTableAddDel) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpfixClassifyTableAddDel) GetRetVal() error {
+	return nil
 }
 
 func (m *IpfixClassifyTableAddDel) Size() (size int) {
@@ -748,6 +757,9 @@ func (*IpfixClassifyTableAddDelReply) GetCrcString() string { return "e8d4e804" 
 func (*IpfixClassifyTableAddDelReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
 }
+func (m *IpfixClassifyTableAddDelReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
+}
 
 func (m *IpfixClassifyTableAddDelReply) Size() (size int) {
 	if m == nil {
@@ -782,6 +794,9 @@ func (*IpfixClassifyTableDetails) GetMessageName() string { return "ipfix_classi
 func (*IpfixClassifyTableDetails) GetCrcString() string   { return "7c8351ec" }
 func (*IpfixClassifyTableDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpfixClassifyTableDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *IpfixClassifyTableDetails) Size() (size int) {
@@ -820,6 +835,9 @@ func (*IpfixClassifyTableDump) GetCrcString() string   { return "51077d14" }
 func (*IpfixClassifyTableDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpfixClassifyTableDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpfixClassifyTableDump) Size() (size int) {
 	if m == nil {
@@ -854,6 +872,9 @@ func (*IpfixExporterDetails) GetMessageName() string { return "ipfix_exporter_de
 func (*IpfixExporterDetails) GetCrcString() string   { return "11e07413" }
 func (*IpfixExporterDetails) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpfixExporterDetails) GetRetVal() error {
+	return nil
 }
 
 func (m *IpfixExporterDetails) Size() (size int) {
@@ -910,6 +931,9 @@ func (*IpfixExporterDump) GetCrcString() string   { return "51077d14" }
 func (*IpfixExporterDump) GetMessageType() api.MessageType {
 	return api.RequestMessage
 }
+func (m *IpfixExporterDump) GetRetVal() error {
+	return nil
+}
 
 func (m *IpfixExporterDump) Size() (size int) {
 	if m == nil {
@@ -936,6 +960,9 @@ func (*IpfixFlush) GetMessageName() string { return "ipfix_flush" }
 func (*IpfixFlush) GetCrcString() string   { return "51077d14" }
 func (*IpfixFlush) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *IpfixFlush) GetRetVal() error {
+	return nil
 }
 
 func (m *IpfixFlush) Size() (size int) {
@@ -965,6 +992,9 @@ func (*IpfixFlushReply) GetMessageName() string { return "ipfix_flush_reply" }
 func (*IpfixFlushReply) GetCrcString() string   { return "e8d4e804" }
 func (*IpfixFlushReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *IpfixFlushReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *IpfixFlushReply) Size() (size int) {
@@ -999,6 +1029,9 @@ func (*SetIpfixClassifyStream) GetMessageName() string { return "set_ipfix_class
 func (*SetIpfixClassifyStream) GetCrcString() string   { return "c9cbe053" }
 func (*SetIpfixClassifyStream) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SetIpfixClassifyStream) GetRetVal() error {
+	return nil
 }
 
 func (m *SetIpfixClassifyStream) Size() (size int) {
@@ -1035,6 +1068,9 @@ func (*SetIpfixClassifyStreamReply) GetMessageName() string { return "set_ipfix_
 func (*SetIpfixClassifyStreamReply) GetCrcString() string   { return "e8d4e804" }
 func (*SetIpfixClassifyStreamReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SetIpfixClassifyStreamReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SetIpfixClassifyStreamReply) Size() (size int) {
@@ -1074,6 +1110,9 @@ func (*SetIpfixExporter) GetMessageName() string { return "set_ipfix_exporter" }
 func (*SetIpfixExporter) GetCrcString() string   { return "69284e07" }
 func (*SetIpfixExporter) GetMessageType() api.MessageType {
 	return api.RequestMessage
+}
+func (m *SetIpfixExporter) GetRetVal() error {
+	return nil
 }
 
 func (m *SetIpfixExporter) Size() (size int) {
@@ -1131,6 +1170,9 @@ func (*SetIpfixExporterReply) GetMessageName() string { return "set_ipfix_export
 func (*SetIpfixExporterReply) GetCrcString() string   { return "e8d4e804" }
 func (*SetIpfixExporterReply) GetMessageType() api.MessageType {
 	return api.ReplyMessage
+}
+func (m *SetIpfixExporterReply) GetRetVal() error {
+	return api.RetvalToVPPApiError(int32(m.Retval))
 }
 
 func (m *SetIpfixExporterReply) Size() (size int) {
