@@ -46,7 +46,10 @@ type WrapperRenderArgs struct {
 var (
 	wrapperTemplateDB = []templateDef{
 		{"vpp.go", "vpp_v1.go.tmpl", []dependency{}},
+		{"ip_helpers.go", "ip_helpers_v1.go.tmpl", []dependency{{"ip_types", ">= 3.0.0"}}},
 		{"ipip.go", "ipip_v1.go.tmpl", []dependency{{"ip_types", ">= 3.0.0"}, {"interface_types", ">= 1.0.0"}, {"ipip", ">= 2.0.2"}}},
+		{"ipsec.go", "ipsec_v1.go.tmpl", []dependency{{"ipsec_types", ">= 3.0.1"}, {"interface_types", ">= 1.0.0"}, {"ipsec", ">= 5.0.2"}}},
+		{"ipsec_helpers.go", "ipsec_helpers_v1.go.tmpl", []dependency{{"ipsec_types", ">= 3.0.1"}, {"tunnel_types", ">= 1.0.1"}}},
 	}
 )
 
