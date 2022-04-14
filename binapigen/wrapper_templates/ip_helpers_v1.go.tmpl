@@ -130,3 +130,23 @@ func toVppAddressFamily(isv6 bool) ip_types.AddressFamily {
 	}
 	return ip_types.ADDRESS_IP4
 }
+
+func ToVppPrefix(prefix *net.IPNet) ip_types.Prefix {
+	len, _ := prefix.Mask.Size()
+	r := ip_types.Prefix{
+		Address: ip_types.AddressFromIP(prefix.IP),
+		Len:     uint8(len),
+	}
+	return r
+}
+
+func FromVppPrefix(prefix ip_types.Prefix) *net.IPNet {
+	addressSize := 32
+	if prefix.Address.Af == ip_types.ADDRESS_IP6 {
+		addressSize = 128
+	}
+	return &net.IPNet{
+		IP:   prefix.Address.ToIP(),
+		Mask: net.CIDRMask(int(prefix.Len), addressSize),
+	}
+}
