@@ -15,9 +15,14 @@
 package types
 
 import (
-	"net"
-
 	"golang.org/x/sys/unix"
+	"net"
+)
+
+const (
+	FAMILY_ALL = unix.AF_UNSPEC
+	FAMILY_V4  = unix.AF_INET
+	FAMILY_V6  = unix.AF_INET6
 )
 
 type IPProto uint8
@@ -29,12 +34,6 @@ const (
 	ICMP
 	ICMP6
 	INVALID
-)
-const (
-	// Family type definitions
-	FAMILY_ALL = unix.AF_UNSPEC
-	FAMILY_V4  = unix.AF_INET
-	FAMILY_V6  = unix.AF_INET6
 )
 
 type IfAddress struct {
@@ -72,4 +71,13 @@ func formatProto(proto IPProto) string {
 	default:
 		return "???"
 	}
+}
+
+type IPNeighborFlags uint32
+
+type Neighbor struct {
+	SwIfIndex    uint32
+	IP           net.IP
+	HardwareAddr net.HardwareAddr
+	Flags        IPNeighborFlags
 }

@@ -26,7 +26,7 @@ import (
 	"{{ .BinAPI }}/wireguard"
 )
 func (v *Vpp) ListWireguardTunnels() ([]*types.WireguardTunnel, error) {
-	tunnels, err := v.listWireguardTunnels(interface_types.InterfaceIndex(types.InvalidInterface))
+	tunnels, err := v.listWireguardTunnels(interface_types.InterfaceIndex(InvalidInterface))
 	return tunnels, err
 }
 func (v *Vpp) GetWireguardTunnel(swIfIndex uint32) (*types.WireguardTunnel, error) {
@@ -74,7 +74,7 @@ func (v *Vpp) AddWireguardTunnel(tunnel *types.WireguardTunnel) (uint32, error) 
 		GenerateKey: true,
 		Interface: wireguard.WireguardInterface{
 			UserInstance: ^uint32(0),
-			SwIfIndex:    interface_types.InterfaceIndex(types.InvalidInterface),
+			SwIfIndex:    interface_types.InterfaceIndex(InvalidInterface),
 			Port:         tunnel.Port,
 			SrcIP:        ip_types.AddressFromIP(tunnel.Addr),
 			PrivateKey:   tunnel.PrivateKey,

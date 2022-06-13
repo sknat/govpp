@@ -29,7 +29,7 @@ func (v *Vpp) ListVXLanTunnels() ([]types.VXLanTunnel, error) {
 	defer v.Unlock()
 	tunnels := make([]types.VXLanTunnel, 0)
 	request := &vxlan.VxlanTunnelV2Dump{
-		SwIfIndex: interface_types.InterfaceIndex(types.InvalidInterface),
+		SwIfIndex: interface_types.InterfaceIndex(InvalidInterface),
 	}
 	stream := v.GetChannel().SendMultiRequest(request)
 	for {
@@ -74,9 +74,10 @@ func (v *Vpp) addDelVXLanTunnel(tunnel *types.VXLanTunnel, isAdd bool) (swIfInde
 		opStr = "Add"
 	}
 	if err != nil {
-		return ^uint32(1), errors.Wrapf(err, "%s vxlan Tunnel failed", opStr)
+	// TODO: return invalid interface here from types
+		return InvalidSwIfIndex, errors.Wrapf(err, "%s vxlan Tunnel failed", opStr)
 	} else if response.Retval != 0 {
-		return ^uint32(1), fmt.Errorf("%s vxlan Tunnel failed with retval %d", opStr, response.Retval)
+		return InvalidSwIfIndex, fmt.Errorf("%s vxlan Tunnel failed with retval %d", opStr, response.Retval)
 	}
 	tunnel.SwIfIndex = uint32(response.SwIfIndex)
 	return uint32(response.SwIfIndex), nil

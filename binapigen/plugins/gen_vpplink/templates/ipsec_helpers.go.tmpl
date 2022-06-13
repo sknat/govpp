@@ -37,16 +37,16 @@ func getVPPKey(in []byte) ipsec_types.Key {
 
 func toVppTunnel(tunnel types.Tunnel) tunnel_types.Tunnel {
 	return tunnel_types.Tunnel{
-		Src:     toVppAddress(tunnel.Src),
-		Dst:     toVppAddress(tunnel.Dst),
+		Src:     ToVppAddress(tunnel.Src),
+		Dst:     ToVppAddress(tunnel.Dst),
 		TableID: tunnel.TableID,
 	}
 }
 
 func fromVppTunnel(tunnel tunnel_types.Tunnel) types.Tunnel {
 	return types.Tunnel{
-		Src:     fromVppAddress(tunnel.Src),
-		Dst:     fromVppAddress(tunnel.Dst),
+		Src:     FromVppAddress(tunnel.Src),
+		Dst:     FromVppAddress(tunnel.Dst),
 		TableID: tunnel.TableID,
 	}
 }

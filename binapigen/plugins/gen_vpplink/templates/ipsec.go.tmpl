@@ -44,7 +44,7 @@ func (v *Vpp) GetIPsecTunnelProtection(tunnelInterface uint32) (protections []ty
 		}
 		protections = append(protections, types.IPsecTunnelProtection{
 			SwIfIndex:   uint32(response.Tun.SwIfIndex),
-			NextHop:     fromVppAddress(response.Tun.Nh),
+			NextHop:     FromVppAddress(response.Tun.Nh),
 			OutSAIndex:  response.Tun.SaOut,
 			InSAIndices: response.Tun.SaIn,
 		})
