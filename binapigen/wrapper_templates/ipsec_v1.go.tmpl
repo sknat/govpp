@@ -16,10 +16,12 @@
 package {{ .PackageName }}
 
 import (
+    "github.com/pkg/errors"
+
 	types "git.fd.io/govpp.git/api/v0"
-	"github.com/pkg/errors"
-        "{{ .ImportPath }}/interface_types"
-        "{{ .ImportPath }}/ipsec"
+
+    "{{ .ImportPath }}/interface_types"
+    "{{ .ImportPath }}/ipsec"
 	"{{ .ImportPath }}/ipsec_types"
 )
 
@@ -42,7 +44,7 @@ func (v *Vpp) GetIPsecTunnelProtection(tunnelInterface uint32) (protections []ty
 		}
 		protections = append(protections, types.IPsecTunnelProtection{
 			SwIfIndex:   uint32(response.Tun.SwIfIndex),
-			NextHop:     fromVppAddress(response.Tun.Nh),
+			NextHop:     FromVppAddress(response.Tun.Nh),
 			OutSAIndex:  response.Tun.SaOut,
 			InSAIndices: response.Tun.SaIn,
 		})

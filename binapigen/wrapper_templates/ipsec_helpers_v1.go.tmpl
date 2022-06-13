@@ -17,8 +17,9 @@ package {{ .PackageName }}
 
 import (
 	types "git.fd.io/govpp.git/api/v0"
+
 	"{{ .ImportPath }}/ipsec_types"
-        "{{ .ImportPath }}/tunnel_types"
+    "{{ .ImportPath }}/tunnel_types"
 )
 
 func fromVppSaFlags(vppFlags ipsec_types.IpsecSadFlags) types.SaFlags {
@@ -46,8 +47,8 @@ func toVppTunnel(tunnel types.Tunnel) tunnel_types.Tunnel {
 
 func fromVppTunnel(tunnel tunnel_types.Tunnel) types.Tunnel {
 	return types.Tunnel{
-		Src:     fromVppAddress(tunnel.Src),
-		Dst:     fromVppAddress(tunnel.Dst),
+		Src:     FromVppAddress(tunnel.Src),
+		Dst:     FromVppAddress(tunnel.Dst),
 		TableID: tunnel.TableID,
 	}
 }

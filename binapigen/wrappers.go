@@ -52,6 +52,7 @@ var (
 		{"ipsec_helpers.go", "ipsec_helpers_v1.go.tmpl", []dependency{{"ipsec_types", ">= 3.0.1"}, {"tunnel_types", ">= 1.0.1"}}},
 		{"vxlan.go", "vxlan_v1.go.tmpl", []dependency{{"ip_types", ">= 3.0.0"}, {"interface_types", ">= 1.0.0"}, {"vxlan", ">= 2.1.0"}}},
 		{"wireguard.go", "wireguard_v1.go.tmpl", []dependency{{"ip_types", ">= 3.0.0"}, {"interface_types", ">= 1.0.0"}, {"wireguard", ">= 0.1.0"}}},
+		{"interfaces.go", "interfaces_v1.go.tmpl", []dependency{}},
 	}
 )
 

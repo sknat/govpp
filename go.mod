@@ -12,6 +12,6 @@ require (
 	github.com/onsi/gomega v1.19.0
 	github.com/pkg/profile v1.2.1
 	github.com/sirupsen/logrus v1.6.0
-	golang.org/x/sys v0.0.0-20220503163025-988cb79eb6c6 // indirect
+	golang.org/x/sys v0.0.0-20220731174439-a90be440212d // indirect
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 )

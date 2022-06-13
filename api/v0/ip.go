@@ -16,9 +16,14 @@
 package types
 
 import (
-	"net"
-
 	"golang.org/x/sys/unix"
+	"net"
+)
+
+const (
+	FAMILY_ALL = unix.AF_UNSPEC
+	FAMILY_V4  = unix.AF_INET
+	FAMILY_V6  = unix.AF_INET6
 )
 
 type IPProto uint8
@@ -32,49 +37,16 @@ const (
 	INVALID
 )
 
-const (
-	// Family type definitions
-	FAMILY_ALL = unix.AF_UNSPEC
-	FAMILY_V4  = unix.AF_INET
-	FAMILY_V6  = unix.AF_INET6
-)
-
 type IfAddress struct {
 	IPNet     net.IPNet
 	SwIfIndex uint32
 }
 
-func GetIPFamily(ip net.IP) int {
-	if len(ip) <= net.IPv4len {
-		return FAMILY_V4
-	}
-	if ip.To4() != nil {
-		return FAMILY_V4
-	}
-	return FAMILY_V6
-}
+type IPNeighborFlags uint32
 
-func IsIP4(ip net.IP) bool {
-	return GetIPFamily(ip) == FAMILY_V4
-}
-
-func IsIP6(ip net.IP) bool {
-	return GetIPFamily(ip) == FAMILY_V6
-}
-
-func formatProto(proto IPProto) string {
-	switch proto {
-	case UDP:
-		return "UDP"
-	case TCP:
-		return "TCP"
-	case SCTP:
-		return "SCTP"
-	case ICMP:
-		return "ICMP"
-	case ICMP6:
-		return "ICMP6"
-	default:
-		return "???"
-	}
+type Neighbor struct {
+	SwIfIndex    uint32
+	IP           net.IP
+	HardwareAddr net.HardwareAddr
+	Flags        IPNeighborFlags
 }
